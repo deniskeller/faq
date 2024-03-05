@@ -1,22 +1,18 @@
 .Header {
-  position: absolute;
+  position: fixed;
   z-index: 1001;
   top: 0;
   left: 0;
   width: 100%;
-  min-height: em(125px);
-  padding: em(36px) 0;
-  @include iflaptop {
-    min-height: em(97px);
-    padding: em(33px) 0;
-  }
-  @include iftablet {
-    min-height: em(97px);
-    padding: em(33px) 0;
-  }
-  @include ifmobile {
-    min-height: em(57px);
-    padding: em(33px) 0;
+  min-height: em(74px);
+  padding: em(18px) 0;
+  border-bottom: 2px solid rgb(240, 240, 240);
+  box-shadow: 0px 2px 12px 0px rgb(247, 247, 247);
+  background: rgb(255, 255, 255);
+
+  @include ifdesktop {
+    min-height: em(100px);
+    padding: em(25px) 0;
   }
 
   &_Container {
@@ -24,7 +20,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    gap: em(10px);
+    position: relative;
   }
 
   &_Logo {
@@ -32,44 +28,7 @@
     flex-direction: row;
     align-items: center;
     cursor: pointer;
-    .Icon {
-      width: em(107px);
-      height: em(48px);
-      margin-right: em(15px);
-      overflow: visible;
-
-      @include iflaptop {
-        width: em(49.777px);
-        height: em(25.752px);
-        margin-right: em(10px);
-      }
-      @include iftablet {
-        width: em(49.777px);
-        height: em(25.752px);
-        margin-right: em(10px);
-      }
-      @include ifmobile {
-        width: em(37.333px);
-        height: em(19.314px);
-        margin-right: em(8px);
-      }
-    }
-    .Label {
-      color: $white;
-      font-size: em(36px);
-      font-style: normal;
-      font-weight: 600;
-      line-height: 115%; /* 41.4px */
-      @include iflaptop {
-        font-size: em(27px);
-      }
-      @include iftablet {
-        font-size: em(27px);
-      }
-      @include ifmobile {
-        font-size: em(20px);
-      }
-    }
+    margin-right: em(20px);
   }
 
   &_Navbar {
@@ -80,22 +39,33 @@
       display: flex;
     }
     li:not(:last-child) {
-      margin-right: em(44px);
+      margin-right: em(48px);
     }
+
     .Link {
-      color: $text;
-      font-size: em(20px);
-      font-style: normal;
-      font-weight: 600;
       line-height: normal;
       white-space: nowrap;
-      // transition: color $speed ease;
+      color: $text;
+      font-family: $Poppins;
+      font-size: em(20px);
+      font-weight: 500;
+
+      overflow: hidden;
+      background: linear-gradient(to right, $purple, $purple 50%, $text 50%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 200% 100%;
+      background-position: 100%;
+      transition: background-position $speed ease;
       &:hover {
-        color: $white;
+        // color: $purple;
+        background-position: 0 100%;
       }
 
       &_Active {
-        color: $white;
+        // color: $purple;
+        background-position: 0 100%;
       }
     }
   }
@@ -107,36 +77,34 @@
     @include ifdesktop {
       display: flex;
     }
-    .SignUp {
-      margin-right: em(8px);
-    }
-    .Login,
-    .SignUp {
-      height: em(53px);
-      padding: em(16px) em(44px);
-      span {
-        font-size: em(17px);
-      }
+    .Login {
+      margin-right: em(12px);
     }
 
     .User {
       display: flex;
-      margin-right: em(30px);
+      justify-content: center;
+      align-items: center;
+      width: em(40px);
+      height: em(40px);
+      margin-right: em(20px);
+      border-radius: 100%;
+      background: $purple;
+      transition: all $speed ease;
       &_Icon {
-        width: em(45px);
-        height: em(45px);
+        width: em(20px);
+        height: em(20px);
       }
+
       &:hover {
-        .User_Icon path {
-          stroke: $text;
-        }
+        background: rgb(98, 60, 246);
       }
+
       &:active {
-        .User_Icon path {
-          stroke-opacity: 0.7;
-        }
+        background: $text;
       }
     }
+
     .Logout {
       display: flex;
       align-items: center;
@@ -144,70 +112,102 @@
       @extend %button;
       background: transparent;
       font-size: 100%;
+      padding: em(8px) em(12px);
+      border: 2px solid transparent;
+      border-radius: em(8px);
+      transition: border $speed ease;
       &_Label {
         display: flex;
-        color: $white;
-        font-size: em(20px);
-        font-style: normal;
-        font-weight: 600;
-        line-height: 100%;
-        font-family: 'Gantari', sans-serif;
+        color: $text;
+        font-family: $Poppins;
+        font-size: em(18px);
+        font-weight: 500;
       }
+
       &_Icon {
-        width: em(45px);
-        height: em(45px);
-        margin-left: em(10px);
+        width: em(24px);
+        height: em(24px);
+        margin-left: em(12px);
         path {
           transition: transform $speed ease;
         }
       }
 
       &:hover {
-        .Logout_Label {
-          color: $text;
-        }
-        .Logout_Icon path {
-          stroke: $text;
-        }
-        .Logout_Icon path:nth-child(2) {
-          transform: translate(5px, 0);
-        }
+        border: 2px solid rgb(204, 191, 255);
+        // .Logout_Icon path:nth-child(2) {
+        //   transform: translate(5px, 0);
+        // }
       }
+
       &:active {
-        .Logout_Label {
-          color: $text;
-          opacity: 0.7;
-        }
-        .Logout_Icon path {
-          stroke: $text;
-          stroke-opacity: 0.7;
-        }
+        border: 2px solid rgb(118, 86, 245);
       }
     }
   }
 
   &_Burder {
+    position: fixed;
+    right: em(48px);
+    z-index: 10000;
     cursor: pointer;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: em(43px);
-    height: em(29px);
-    @include ifmobile {
-      width: em(31px);
-      height: em(20px);
-    }
-    span {
-      width: 100%;
-      height: 3px;
-      background: $white;
-      border-radius: em(9px);
-      @include ifmobile {
-        height: 2px;
-      }
-    }
+    justify-content: center;
+    align-items: center;
+    width: em(27px);
+    height: em(18px);
+    cursor: pointer;
+
     @include ifdesktop {
       display: none;
+    }
+    @include iftablet {
+      right: em(20px);
+    }
+    @include ifmobile {
+      right: em(12px);
+    }
+    span {
+      position: absolute;
+      width: 100%;
+      height: em(3px);
+      background: rgb(153, 153, 153);
+      border-radius: em(9px);
+      opacity: 1;
+      left: 0;
+      transform: rotate(0deg);
+      transition: 0.25s ease-in-out;
+      &:nth-child(1) {
+        top: 0px;
+      }
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      &:nth-child(2),
+      &:nth-child(3) {
+        top: 50%;
+        transform: translate(0, -50%);
+      }
+
+      &:nth-child(4) {
+        bottom: 0;
+      }
+    }
+
+    &__Active {
+      span:nth-child(1),
+      span:nth-child(4) {
+        opacity: 0;
+      }
+
+      span:nth-child(2) {
+        opacity: 1;
+        transform: rotate(45deg);
+      }
+
+      span:nth-child(3) {
+        transform: rotate(-45deg);
+      }
     }
   }
 
@@ -434,76 +434,6 @@
       pointer-events: initial;
       .Sidebar {
         transform: translate(0);
-      }
-    }
-  }
-}
-
-.Header__Light {
-  .Header_Logo {
-    .Icon path {
-      stroke: $text;
-    }
-    .Label {
-      color: $text;
-    }
-  }
-  .Header_Navbar {
-    .Link {
-      color: $pr1;
-      &:hover {
-        color: $text;
-      }
-      &_Active {
-        color: $text;
-      }
-    }
-  }
-
-  .Header_Burder span {
-    background: $text;
-  }
-
-  .Header_Actions {
-    .User {
-      &_Icon {
-        circle {
-          fill: $pr1;
-        }
-        path {
-          stroke: $white;
-        }
-      }
-      &:hover {
-        .User_Icon {
-          circle {
-            fill: $text;
-            fill-opacity: 1;
-          }
-          path {
-            stroke: $white;
-          }
-        }
-      }
-      &:active {
-        .User_Icon {
-          circle {
-            fill: $text;
-          }
-          path {
-            stroke: $white;
-          }
-        }
-      }
-    }
-    .Logout {
-      &_Label {
-        color: $pr1;
-      }
-      &_Icon {
-        path {
-          stroke: $pr1;
-        }
       }
     }
   }

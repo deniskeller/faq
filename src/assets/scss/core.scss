@@ -72,6 +72,10 @@ ul {
   padding: 0;
   //ДЛЯ ВЫЯВЛЕНИЯ ВЫЛЕЗАЮЩИХ ЗА СТРАНИЦУ БЛОКОВ
   // border: 1px solid red;
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
 }
 
 picture {
