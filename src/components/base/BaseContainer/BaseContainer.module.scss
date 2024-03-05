@@ -1,0 +1,9 @@
+.BaseContainer {
+  width: 100%;
+  max-width: em(1660px);
+  margin: 0 auto;
+  padding: 0 em(30px);
+  @include ifmobile {
+    padding: 0 em(15px);
+  }
+}

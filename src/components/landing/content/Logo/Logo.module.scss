@@ -1,0 +1,53 @@
+.Logo {
+  display: flex;
+  height: 100%;
+  width: em(107px);
+  height: em(48px);
+  cursor: pointer;
+  overflow: visible;
+
+  @include iflaptop {
+    width: em(49.777px);
+    height: em(25.752px);
+  }
+  @include iftablet {
+    width: em(49.777px);
+    height: em(25.752px);
+  }
+  @include ifmobile {
+    width: em(37.333px);
+    height: em(19.314px);
+  }
+
+  svg {
+    width: inherit;
+    height: 100%;
+  }
+  &__Q,
+  &__F {
+    transition: all $speed ease;
+  }
+  &:hover {
+    @media (hover: hover) {
+      .Logo__F {
+        transform: translate(-4px);
+        transform-origin: right bottom;
+      }
+      .Logo__Q {
+        transform: rotate(4deg);
+        transform-origin: right bottom;
+      }
+    }
+
+    @media (hover: none) {
+      .Logo__F {
+        transform: translate(-4px);
+        transform-origin: right bottom;
+      }
+      .Logo__Q {
+        transform: rotate(4deg);
+        transform-origin: right bottom;
+      }
+    }
+  }
+}

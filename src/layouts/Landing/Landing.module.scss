@@ -1,0 +1,19 @@
+.Landing {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+}
+
+.Content {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}
