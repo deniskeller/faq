@@ -391,6 +391,7 @@
           background-position: right top;
 
           &_Label {
+            user-select: none;
             display: flex;
             color: $text;
             font-family: $Poppins;
