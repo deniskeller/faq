@@ -387,7 +387,7 @@
             transparent 50%,
             rgb(118, 86, 245) 50%
           );
-          background-size: 201% 100%;
+          background-size: 200% 0%;
           background-position: right top;
 
           &_Label {
@@ -412,6 +412,7 @@
           &:hover {
             border: 2px solid rgb(118, 86, 245);
             background-position: left top;
+            background-size: 200% 100%;
             .Logout_Label {
               color: $white;
             }
