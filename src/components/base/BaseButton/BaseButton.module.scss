@@ -1,4 +1,5 @@
 .Button {
+  position: relative;
   font-size: 100%;
   display: flex;
   justify-content: center;
@@ -10,24 +11,16 @@
   border-radius: em(39px);
   box-shadow: 2px 4px 12px 0px rgba(31, 30, 88, 0.2);
   transition: all $speed ease;
-  position: relative;
-  border: unset;
 
   @include ifdesktop {
     height: em(64px);
     padding: em(20px) em(54px);
   }
 
-  // &:active {
-  //   span {
-  //     opacity: 0.7;
-  //   }
-  // }
-
   span {
     color: $text;
     text-align: center;
-    font-family: 'Gantari', sans-serif;
+    font-family: 'Days One', sans-serif;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -42,12 +35,13 @@
 //login/signup
 .Button_login,
 .Button_signup {
-  height: em(46px);
+  height: em(40px);
   padding: em(8px) em(20px);
   border-radius: em(8px);
   box-shadow: -6px 6px 0px 0px rgba(55, 55, 55, 0.2);
-  overflow: hidden;
-  z-index: 1;
+  @include ifdesktop {
+    height: em(46px);
+  }
 
   span {
     text-align: center;
@@ -55,27 +49,10 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-    font-size: em(18px);
-  }
-
-  &::before {
-    content: '';
-    display: flex;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 100%;
-    width: 0;
-    z-index: -1;
-    transition: width $speed ease;
-    pointer-events: none;
-    background: rgb(118, 86, 245);
-  }
-
-  &:hover::before {
-    width: 100%;
+    font-size: em(16px);
+    @include ifdesktop {
+      font-size: em(18px);
+    }
   }
 
   &:active {
@@ -86,12 +63,16 @@
 
 .Button_login {
   border: 2px solid rgb(240, 240, 240);
+  background: linear-gradient(to left, transparent 50%, rgb(118, 86, 245) 50%);
+  background-size: 201% 100%;
+  background-position: right top;
   span {
     color: rgb(55, 55, 55);
   }
 
   &:hover {
-    // border: 2px solid rgb(118, 86, 245);
+    border: 2px solid rgb(118, 86, 245);
+    background-position: left top;
     span {
       color: rgb(255, 255, 255);
     }
@@ -99,9 +80,18 @@
 }
 
 .Button_signup {
-  background: rgb(55, 55, 55);
+  background: linear-gradient(
+    to left,
+    rgb(55, 55, 55) 50%,
+    rgb(118, 86, 245) 50%
+  );
+  background-size: 201% 100%;
+  background-position: right top;
   span {
     color: rgb(255, 255, 255);
+  }
+  &:hover {
+    background-position: left top;
   }
 }
 

@@ -8,7 +8,7 @@
   padding: em(18px) 0;
   border-bottom: 2px solid rgb(240, 240, 240);
   box-shadow: 0px 2px 12px 0px rgb(247, 247, 247);
-  background: rgb(255, 255, 255);
+  background: $white;
 
   @include ifdesktop {
     min-height: em(100px);
@@ -85,10 +85,11 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      width: em(40px);
-      height: em(40px);
+      // width: em(46px);
+      height: em(46px);
+      padding: em(8px) em(12px);
       margin-right: em(20px);
-      border-radius: 100%;
+      border-radius: em(8px);
       background: $purple;
       transition: all $speed ease;
       box-shadow: -6px 6px 0px 0px rgba(55, 55, 55, 0.2);
@@ -106,29 +107,29 @@
         box-shadow: none;
         transform: translate(-4px, 4px);
       }
-
-      // &:active {
-      //   background: $text;
-      // }
     }
 
     .Logout {
       position: relative;
-      overflow: hidden;
-      z-index: 1;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
       @extend %button;
-      background: transparent;
       font-size: 100%;
       padding: em(8px) em(12px);
-      border: 1px solid rgb(240, 240, 240);
+      border: 2px solid rgb(240, 240, 240);
       border-radius: em(8px);
-      transition: border $speed ease;
       box-shadow: -6px 6px 0px 0px rgba(55, 55, 55, 0.2);
       transition: all $speed ease;
+
+      background: linear-gradient(
+        to left,
+        transparent 50%,
+        rgb(118, 86, 245) 50%
+      );
+      background-size: 200% 100%;
+      background-position: right top;
 
       &_Label {
         display: flex;
@@ -148,50 +149,27 @@
         }
       }
 
-      &::before {
-        content: '';
-        display: flex;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        height: 100%;
-        width: 0;
-        z-index: -1;
-        transition: width $speed ease;
-        pointer-events: none;
-        background: rgb(118, 86, 245);
-      }
-
       &:hover {
+        border: 2px solid rgb(118, 86, 245);
+        background-position: left top;
         .Logout_Label {
-          color: rgb(255, 255, 255);
+          color: $white;
         }
         .Logout_Icon path {
-          fill: rgb(255, 255, 255);
+          fill: $white;
         }
       }
+
       &:active {
+        border: 2px solid rgb(118, 86, 245);
+        background-position: left top;
         box-shadow: none;
         transform: translate(-4px, 4px);
-      }
-
-      &:hover {
-        &::before {
-          width: 100%;
-        }
-      }
-
-      &:active {
-        &::before {
-          width: 100%;
-        }
         .Logout_Label {
-          color: rgb(255, 255, 255);
+          color: $white;
         }
         .Logout_Icon path {
-          fill: rgb(255, 255, 255);
+          fill: $white;
         }
       }
     }
@@ -253,10 +231,12 @@
 
       span:nth-child(2) {
         opacity: 1;
+        top: auto;
         transform: rotate(45deg);
       }
 
       span:nth-child(3) {
+        top: auto;
         transform: rotate(-45deg);
       }
     }
@@ -275,8 +255,7 @@
 
     .Overlay {
       @extend %fullsize;
-      opacity: 0.5;
-      background: #19192d;
+      background: rgba(55, 55, 55, 0.3);
     }
 
     .Sidebar {
@@ -284,40 +263,24 @@
       z-index: 1001;
       top: 0;
       right: 0;
-      width: em(384px);
-      // min-height: 100vh;
-      min-height: 100dvh;
-      height: 100%;
+      width: em(432px);
       overflow: auto;
       overflow-x: hidden;
+      max-height: 100dvh;
+      height: auto;
+      border: 1px solid rgb(240, 240, 240);
+      border-radius: 0px 0px 0px 8px;
+      box-shadow: -2px 4px 12px 0px rgba(163, 163, 163, 0.7);
       background: $white;
-      box-shadow: 0px 4px 46px 0px rgba(0, 0, 0, 0.05);
       transition: all $speed ease;
       transform: translate(100%, 0);
-      @include ifmobile {
-        width: 100%;
+      @include iftablet {
+        width: em(376px);
       }
 
-      &_Flower_1,
-      &_Flower_2 {
-        position: absolute;
-      }
-      &_Flower_1 {
-        left: 0;
-        top: em(117px);
-        width: em(137px);
-        height: em(196px);
-      }
-      &_Flower_2 {
-        right: 0;
-        bottom: em(134px);
-        width: em(123px);
-        height: em(304px);
-        @include iftablet {
-          bottom: em(114px);
-          width: em(174px);
-          height: em(430px);
-        }
+      @include ifmobile {
+        width: 100%;
+        border-radius: 0px 0px 9px 8px;
       }
 
       &_Content {
@@ -327,70 +290,41 @@
         overflow: hidden;
         max-width: 100%;
         min-height: 100%;
-        padding: em(35px) em(30px) em(47px);
+        padding: em(20px) em(48px) em(32px);
+        @include iftablet {
+          padding: em(20px) em(20px) em(32px);
+        }
         @include ifmobile {
-          padding: em(35px) em(18px) em(47px);
+          padding: em(20px) em(12px) em(32px);
         }
       }
 
       &_Header {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: em(60px);
-        .Logo {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          cursor: pointer;
-
-          &_Icon {
-            width: em(37.333px);
-            height: em(19.314px);
-            margin-right: em(8px);
-            overflow: visible;
-            path {
-              stroke: #1f1e58;
-            }
-          }
-          &_Label {
-            color: $text;
-            font-size: em(20px);
-            font-style: normal;
-            font-weight: 600;
-            line-height: 115%;
-          }
-        }
-
-        .Close {
-          width: em(18px);
-          height: em(18px);
-        }
+        margin-bottom: em(76px);
       }
 
       &_Navbar {
         display: flex;
         flex-direction: column;
         text-align: center;
-        margin: auto;
+        margin: 0 auto em(120px);
         li:not(:last-child) {
-          margin-bottom: em(44px);
+          margin-bottom: em(30px);
         }
         .Link {
-          font-family: 'Gantari', sans-serif;
           color: $text;
-          font-size: em(20px);
-          font-style: normal;
-          font-weight: 600;
+          font-family: $Poppins;
+          font-size: em(16px);
+          font-weight: 400;
+          text-align: center;
           line-height: normal;
           white-space: nowrap;
           &_Active {
-            color: $pr1;
+            color: $purple;
           }
 
           &:hover {
-            color: $pr1;
+            color: $purple;
           }
         }
       }
@@ -398,84 +332,111 @@
       &_Actions {
         display: flex;
         flex-direction: column;
-        margin-top: em(30px);
-        .SignUp {
-          margin-bottom: em(8px);
+        .Login {
+          margin-bottom: em(18px);
         }
         .Login,
         .SignUp {
           width: 100%;
-          height: em(53px);
-          padding: em(16px) em(41px);
-          span {
-            font-size: em(17px);
-          }
         }
 
         .User {
           display: flex;
-          margin: 0 auto em(30px);
+          justify-content: center;
+          align-items: center;
+          height: em(40px);
+          padding: em(8px) em(12px);
+          margin-bottom: em(18px);
+          border-radius: em(8px);
+          background: $purple;
+          transition: all $speed ease;
+          box-shadow: -6px 6px 0px 0px rgba(55, 55, 55, 0.2);
+
           &_Icon {
-            width: em(72px);
-            height: em(72px);
+            width: em(20px);
+            height: em(20px);
           }
+
           &:hover {
-            .User_Icon circle {
-              fill: #1f1e58;
-            }
+            background: rgb(98, 60, 246);
           }
+
           &:active {
-            .User_Icon circle {
-              fill: #1f1e58;
-            }
+            box-shadow: none;
+            transform: translate(-4px, 4px);
           }
         }
 
         .Logout {
+          position: relative;
           display: flex;
           align-items: center;
+          justify-content: center;
           cursor: pointer;
           @extend %button;
-          background: transparent;
           font-size: 100%;
-          margin: 0 auto;
+          padding: em(8px) em(12px);
+          height: em(40px);
+          border: 2px solid rgb(240, 240, 240);
+          border-radius: em(8px);
+          box-shadow: -6px 6px 0px 0px rgba(55, 55, 55, 0.2);
+          transition: all $speed ease;
+
+          background: linear-gradient(
+            to left,
+            transparent 50%,
+            rgb(118, 86, 245) 50%
+          );
+          background-size: 201% 100%;
+          background-position: right top;
+
           &_Label {
             display: flex;
-            color: $pr1;
-            font-size: em(20px);
-            font-style: normal;
-            font-weight: 600;
-            line-height: 100%;
-            font-family: 'Gantari', sans-serif;
+            color: $text;
+            font-family: $Poppins;
+            font-size: em(16px);
+            font-weight: 500;
+            transition: all $speed ease;
           }
+
           &_Icon {
-            width: em(45px);
-            height: em(45px);
-            margin-left: em(10px);
+            width: em(18px);
+            height: em(18px);
+            margin-left: em(12px);
             path {
-              transition: transform $speed ease;
+              transition: all $speed ease;
             }
           }
 
           &:hover {
+            border: 2px solid rgb(118, 86, 245);
+            background-position: left top;
             .Logout_Label {
-              color: $text;
+              color: $white;
             }
             .Logout_Icon path {
-              stroke: $text;
+              fill: $white;
             }
           }
+
           &:active {
+            border: 2px solid rgb(118, 86, 245);
+            background-position: left top;
+            box-shadow: none;
+            transform: translate(-4px, 4px);
             .Logout_Label {
-              color: $text;
+              color: $white;
             }
             .Logout_Icon path {
-              stroke: $text;
-            }
-            .Logout_Icon path:nth-child(2) {
-              transform: translate(5px, 0);
+              fill: $white;
             }
           }
+        }
+
+        .User,
+        .Logout {
+          width: max-content;
+          align-self: center;
         }
       }
     }
