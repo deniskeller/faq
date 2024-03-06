@@ -91,6 +91,8 @@
       border-radius: 100%;
       background: $purple;
       transition: all $speed ease;
+      box-shadow: -6px 6px 0px 0px rgba(55, 55, 55, 0.2);
+
       &_Icon {
         width: em(20px);
         height: em(20px);
@@ -101,27 +103,40 @@
       }
 
       &:active {
-        background: $text;
+        box-shadow: none;
+        transform: translate(-4px, 4px);
       }
+
+      // &:active {
+      //   background: $text;
+      // }
     }
 
     .Logout {
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
       display: flex;
       align-items: center;
+      justify-content: center;
       cursor: pointer;
       @extend %button;
       background: transparent;
       font-size: 100%;
       padding: em(8px) em(12px);
-      border: 2px solid transparent;
+      border: 1px solid rgb(240, 240, 240);
       border-radius: em(8px);
       transition: border $speed ease;
+      box-shadow: -6px 6px 0px 0px rgba(55, 55, 55, 0.2);
+      transition: all $speed ease;
+
       &_Label {
         display: flex;
         color: $text;
         font-family: $Poppins;
         font-size: em(18px);
         font-weight: 500;
+        transition: all $speed ease;
       }
 
       &_Icon {
@@ -129,19 +144,55 @@
         height: em(24px);
         margin-left: em(12px);
         path {
-          transition: transform $speed ease;
+          transition: all $speed ease;
         }
       }
 
+      &::before {
+        content: '';
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        width: 0;
+        z-index: -1;
+        transition: width $speed ease;
+        pointer-events: none;
+        background: rgb(118, 86, 245);
+      }
+
       &:hover {
-        border: 2px solid rgb(204, 191, 255);
-        // .Logout_Icon path:nth-child(2) {
-        //   transform: translate(5px, 0);
-        // }
+        .Logout_Label {
+          color: rgb(255, 255, 255);
+        }
+        .Logout_Icon path {
+          fill: rgb(255, 255, 255);
+        }
+      }
+      &:active {
+        box-shadow: none;
+        transform: translate(-4px, 4px);
+      }
+
+      &:hover {
+        &::before {
+          width: 100%;
+        }
       }
 
       &:active {
-        border: 2px solid rgb(118, 86, 245);
+        &::before {
+          width: 100%;
+        }
+        .Logout_Label {
+          color: rgb(255, 255, 255);
+        }
+        .Logout_Icon path {
+          fill: rgb(255, 255, 255);
+        }
       }
     }
   }
@@ -176,7 +227,7 @@
       opacity: 1;
       left: 0;
       transform: rotate(0deg);
-      transition: 0.25s ease-in-out;
+      transition: all $speed ease;
       &:nth-child(1) {
         top: 0px;
       }
