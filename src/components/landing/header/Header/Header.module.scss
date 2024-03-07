@@ -57,9 +57,13 @@
       -webkit-text-fill-color: transparent;
       background-size: 200% 100%;
       background-position: 100%;
-      transition: background-position $speed ease;
+      transition: all $speed ease;
       &:hover {
         // color: $purple;
+        background-position: 0 100%;
+      }
+      &:active {
+        // font-weight: 500;
         background-position: 0 100%;
       }
 

@@ -1,0 +1,217 @@
+.Footer {
+  background: rgb(250, 250, 250);
+  padding: em(60px) 0;
+  @include iftablet {
+    padding: em(40px) 0;
+  }
+  @include ifmobile {
+    padding: em(40px) 0;
+  }
+
+  &_Container {
+    display: grid;
+    grid-template-columns: em(212px) 1fr em(500px);
+    grid-template-rows: auto auto;
+    @include iflaptop {
+      grid-template-columns: em(183px) 1fr em(312px);
+    }
+    @include iftablet {
+      grid-template-columns: em(280px) 1fr;
+    }
+    @include ifmobile {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &_Logo {
+    @include ifmobile {
+      margin-bottom: em(28px);
+    }
+  }
+
+  &_Partners {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    @include iflaptop {
+      margin-top: em(-50px);
+    }
+    @include iftablet {
+      margin-top: em(-50px);
+    }
+    @include ifmobile {
+      grid-column-start: auto;
+      grid-column-end: auto;
+      grid-row-start: 4;
+      grid-row-end: 5;
+      margin-bottom: em(20px);
+    }
+
+    .Visa {
+      width: em(51px);
+      height: em(17px);
+      @include ifdesktop {
+        width: em(62px);
+        height: em(20px);
+      }
+    }
+    .MasterCard {
+      width: em(39px);
+      height: em(24px);
+      margin: 0 em(15px);
+      @include ifdesktop {
+        width: em(42px);
+        height: em(26px);
+        margin: 0 em(20px);
+      }
+    }
+
+    .Pci {
+      width: em(63px);
+      height: em(24px);
+      @include ifdesktop {
+        width: em(68px);
+        height: em(26px);
+      }
+    }
+  }
+
+  &_Navbar {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    margin: 0 em(200px) 0 em(180px);
+    @include iflaptop {
+      margin: 0 em(50px) 0 em(56px);
+    }
+    @include iftablet {
+      grid-column-start: 2;
+      grid-column-end: 2;
+      grid-row-start: 1;
+      grid-row-end: 3;
+      margin: 0 0 em(28px) em(40px);
+      row-gap: em(12px);
+    }
+    @include ifmobile {
+      grid-column-start: auto;
+      grid-column-end: auto;
+      grid-row-start: auto;
+      grid-row-end: auto;
+      margin: 0 0 em(32px) 0;
+      row-gap: em(12px);
+    }
+
+    li {
+      display: flex;
+      line-height: 100%;
+      align-self: center;
+    }
+
+    li a {
+      color: $text;
+      font-family: $Poppins;
+      font-size: em(14px);
+      font-weight: 500;
+      text-align: center;
+
+      overflow: hidden;
+      background: linear-gradient(to right, $purple, $purple 50%, $text 50%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 200% 100%;
+      background-position: 100%;
+      transition: background-position $speed ease;
+      @include ifmobile {
+        font-size: em(12px);
+      }
+      &:hover {
+        // color: $purple;
+        background-position: 0 100%;
+      }
+      &:active {
+        // font-weight: 500;
+        background-position: 0 100%;
+      }
+      &_Active {
+        // font-weight: 500;
+        background-position: 0 100%;
+      }
+    }
+
+    li:nth-child(4) {
+      grid-column-start: 2;
+      grid-row-start: 2;
+      grid-row-end: 4;
+    }
+  }
+
+  &_Info {
+    grid-column-start: 3;
+    grid-row-end: 2;
+    margin-bottom: em(14px);
+
+    @include iftablet {
+      grid-column-start: auto;
+      grid-row-end: auto;
+      align-self: end;
+      margin-bottom: 0;
+    }
+    @include ifmobile {
+      grid-column-start: auto;
+      grid-row-end: auto;
+      margin-bottom: em(20px);
+    }
+
+    p {
+      color: $text;
+      font-size: em(14px);
+      font-weight: 500;
+      text-align: left;
+      @include iflaptop {
+        font-size: em(12px);
+      }
+      @include iftablet {
+        font-size: em(12px);
+      }
+      @include ifmobile {
+        font-size: em(12px);
+      }
+    }
+  }
+
+  &_Copyright {
+    @include iftablet {
+      margin-left: em(24px);
+      align-self: end;
+    }
+    p {
+      color: rgb(153, 153, 153);
+      font-size: em(14px);
+      font-weight: 400;
+      text-align: left;
+      @include iflaptop {
+        font-size: em(12px);
+      }
+      @include iftablet {
+        font-size: em(12px);
+      }
+      @include ifmobile {
+        font-size: em(12px);
+      }
+    }
+  }
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}
