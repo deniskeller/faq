@@ -1,0 +1,124 @@
+.NotFound {
+  padding: em(230px) 0 em(176px);
+  @include iflaptop {
+    padding: em(110px) 0 em(80px);
+  }
+  @include iftablet {
+    padding: em(110px) 0 em(70px);
+  }
+  @include ifmobile {
+    padding: em(100px) 0 em(54px);
+  }
+
+  &_Container {
+    position: relative;
+    @include ifmobile {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &_Title {
+    margin-bottom: em(22px);
+    @include iftablet {
+      margin-bottom: em(14px);
+    }
+    @include ifmobile {
+      margin-bottom: em(10px);
+    }
+    h1 {
+      color: $purple;
+      font-size: em(264px);
+      font-family: $DaysOne;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: 29px;
+      @include iflaptop {
+        font-size: em(188px);
+        letter-spacing: 16px;
+      }
+      @include iftablet {
+        font-size: em(120px);
+        letter-spacing: 14px;
+      }
+      @include ifmobile {
+        text-align: center;
+        font-size: em(136px);
+        letter-spacing: 4px;
+      }
+    }
+  }
+
+  &_Subtitle {
+    margin-bottom: em(60px);
+    @include iflaptop {
+      margin-bottom: em(48px);
+    }
+    @include iftablet {
+      margin-bottom: em(30px);
+    }
+    @include ifmobile {
+      margin-bottom: em(38px);
+    }
+    p {
+      color: rgb(99, 99, 99);
+      font-size: em(28px);
+      font-weight: 400;
+      text-align: left;
+      @include iflaptop {
+        font-size: em(20px);
+      }
+      @include iftablet {
+        font-size: em(16px);
+      }
+      @include ifmobile {
+        text-align: center;
+        font-size: em(14px);
+      }
+    }
+  }
+
+  &_Image {
+    width: em(590px);
+    height: em(581px);
+    position: absolute;
+    top: em(-47px);
+    right: em(54px);
+    @include iflaptop {
+      width: em(365px);
+      height: em(355px);
+      top: em(9px);
+      right: em(48px);
+    }
+    @include iftablet {
+      width: em(253.73px);
+      height: em(246.62px);
+      top: em(9px);
+      right: em(20px);
+    }
+    @include ifmobile {
+      position: relative;
+      top: auto;
+      right: auto;
+      width: em(253.73px);
+      height: em(246.62px);
+      margin: 0 auto em(42px);
+    }
+  }
+
+  &_Button {
+    margin-left: em(6px);
+    @include ifmobile {
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}
