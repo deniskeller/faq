@@ -29,8 +29,9 @@ const Advantages = () => {
         </BaseButton>
 
         <div
-          className={s.Advantages_Content}
-          style={{ maxHeight: showMore && isMobile ? '1999px' : '734px' }}
+          className={`${s.Advantages_Content} ${
+            showMore && isMobile ? s.Advantages_Content__ShowMore : ''
+          }`}
         >
           {/* 1 */}
           <Link
