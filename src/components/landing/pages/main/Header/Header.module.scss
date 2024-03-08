@@ -1,10 +1,13 @@
 .Header {
   padding: em(240px) 0 em(120px);
   @include iflaptop {
+    padding: em(122px) 0 em(66px);
   }
   @include iftablet {
+    padding: em(122px) 0 em(66px);
   }
   @include ifmobile {
+    padding: em(126px) 0 em(40px);
   }
 
   &_Container {
@@ -17,10 +20,16 @@
     max-width: em(860px);
     margin-bottom: em(40px);
     @include iflaptop {
+      max-width: em(520px);
+      margin-bottom: em(34px);
     }
     @include iftablet {
+      max-width: em(403px);
+      margin-bottom: em(28px);
     }
     @include ifmobile {
+      text-align: center;
+      margin-bottom: em(28px);
     }
   }
 
@@ -30,10 +39,16 @@
     max-width: em(860px);
     margin-bottom: em(53px);
     @include iflaptop {
+      max-width: em(520px);
+      margin-bottom: em(40px);
     }
     @include iftablet {
+      max-width: em(403px);
+      margin-bottom: em(30px);
     }
     @include ifmobile {
+      text-align: center;
+      margin-bottom: em(28px);
     }
   }
 
@@ -41,6 +56,10 @@
     position: relative;
     z-index: 1;
     margin-left: em(6px);
+    @include ifmobile {
+      margin: 0 auto em(62px);
+      max-width: em(168px);
+    }
   }
 
   &_Image {
@@ -50,10 +69,23 @@
     top: em(-42px);
     right: em(57px);
     @include iflaptop {
+      width: em(392px);
+      height: em(268px);
+      top: em(23px);
+      right: em(48px);
     }
     @include iftablet {
+      width: em(289px);
+      height: em(198px);
+      top: em(82px);
+      right: em(20px);
     }
     @include ifmobile {
+      width: em(336px);
+      height: em(230px);
+      position: relative;
+      top: auto;
+      right: auto;
     }
   }
 }

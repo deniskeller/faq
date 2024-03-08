@@ -19,10 +19,10 @@ const NotFound: React.FC = () => {
         </div>
 
         <Image
-          src="/pictures/images/404.svg"
+          src="/pictures/images/404.webp"
           width={590}
           height={581}
-          alt="404 image"
+          alt="404"
           priority
           className={s.NotFound_Image}
         />
