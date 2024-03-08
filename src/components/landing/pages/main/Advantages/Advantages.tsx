@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { isMobile } from 'react-device-detect';
 
-const Advantages = () => {
+const Advantages: React.FC = () => {
   const [showMore, setShowMore] = useState(false);
 
   const showMoreHundler = () => {
@@ -43,7 +43,6 @@ const Advantages = () => {
               width={123}
               height={100}
               alt=""
-              priority
               className={s.AdvantageCard_Image}
             />
             <div className={s.AdvantageCard_Title}>
@@ -67,7 +66,6 @@ const Advantages = () => {
               width={66}
               height={100}
               alt=""
-              priority
               className={s.AdvantageCard_Image}
             />
             <div className={s.AdvantageCard_Title}>
@@ -91,7 +89,6 @@ const Advantages = () => {
               width={134}
               height={100}
               alt=""
-              priority
               className={s.AdvantageCard_Image}
             />
             <div className={s.AdvantageCard_Title}>
@@ -115,7 +112,6 @@ const Advantages = () => {
               width={121}
               height={100}
               alt=""
-              priority
               className={s.AdvantageCard_Image}
             />
             <div className={s.AdvantageCard_Title}>
@@ -139,7 +135,6 @@ const Advantages = () => {
               width={97}
               height={100}
               alt=""
-              priority
               className={s.AdvantageCard_Image}
             />
             <div className={s.AdvantageCard_Title}>
@@ -163,7 +158,6 @@ const Advantages = () => {
               width={90}
               height={100}
               alt=""
-              priority
               className={s.AdvantageCard_Image}
             />
             <div className={s.AdvantageCard_Title}>

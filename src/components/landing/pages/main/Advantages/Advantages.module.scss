@@ -63,7 +63,7 @@
     margin: 0 auto;
     height: auto;
     max-height: 100%;
-    overflow: hidden;
+
     transition: all 1s ease-in-out;
 
     @include iflaptop {
@@ -77,7 +77,8 @@
       display: flex;
       flex-direction: column;
       gap: 0;
-      max-height: em(734px);
+      max-height: em(740px);
+      overflow: hidden;
     }
 
     &__ShowMore {

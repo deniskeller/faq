@@ -1,0 +1,112 @@
+.TypesOfJobs {
+  padding: em(100px) 0 em(100px);
+  @include iflaptop {
+    padding: em(60px) 0 em(80px);
+  }
+  @include iftablet {
+    padding: em(60px) 0 em(60px);
+  }
+  @include ifmobile {
+    padding: em(44px) 0 em(60px);
+  }
+
+  &_Container {
+    position: relative;
+  }
+
+  &_Title {
+    max-width: em(748px);
+    margin-bottom: em(40px);
+    @include iflaptop {
+      max-width: em(505px);
+      margin-bottom: em(32px);
+    }
+    @include iftablet {
+      max-width: em(450px);
+      margin: 0 auto em(28px);
+      text-align: center;
+    }
+    @include ifmobile {
+      margin: 0 auto em(28px);
+      text-align: center;
+    }
+  }
+
+  &_Description {
+    max-width: em(505px);
+    margin-bottom: em(48px);
+    @include iflaptop {
+      max-width: em(480px);
+      margin-bottom: em(28px);
+    }
+    @include iftablet {
+      max-width: em(400px);
+      margin: 0 auto em(28px);
+      text-align: center;
+    }
+    @include ifmobile {
+      margin: 0 auto em(32px);
+      text-align: center;
+    }
+  }
+
+  &_Button {
+    margin-left: em(6px);
+    @include iftablet {
+      margin: 0 auto em(62px);
+    }
+    @include ifmobile {
+      margin: 0 auto em(62px);
+    }
+  }
+
+  &_Image {
+    position: absolute;
+    top: em(79px);
+    right: em(48px);
+    width: em(748px);
+    height: em(263.69px);
+    @include iflaptop {
+      top: em(91px);
+      right: em(48px);
+      width: em(477px);
+      height: em(168.15px);
+    }
+    @include iftablet {
+      position: relative;
+      top: auto;
+      right: auto;
+      width: em(568px);
+      height: em(200px);
+      margin: 0 auto;
+    }
+    @include ifmobile {
+      position: relative;
+      top: auto;
+      right: auto;
+      width: em(336px);
+      height: em(226px);
+      margin: 0 auto;
+    }
+
+    &__Desktop {
+      @include ifmobile {
+        display: none;
+      }
+    }
+
+    &__Mobile {
+      display: none;
+      @include ifmobile {
+        display: block;
+      }
+    }
+  }
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}

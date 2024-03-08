@@ -1,0 +1,55 @@
+.Categories {
+  padding: em(100px) 0 em(120px);
+  @include iflaptop {
+    padding: em(60px) 0 em(80px);
+  }
+  @include iftablet {
+    padding: em(60px) 0 em(60px);
+  }
+  @include ifmobile {
+    padding: em(44px) 0 em(60px);
+  }
+
+  &_Title {
+    max-width: em(780px);
+    margin: 0 auto em(40px);
+    text-align: center;
+    @include iflaptop {
+      max-width: em(580px);
+      margin: 0 auto em(32px);
+    }
+    @include iftablet {
+      max-width: em(500px);
+      margin: 0 auto em(28px);
+    }
+    @include ifmobile {
+      max-width: em(500px);
+      margin: 0 auto em(28px);
+    }
+  }
+
+  &_Description {
+    max-width: em(780px);
+    margin: 0 auto em(80px);
+    text-align: center;
+    @include iflaptop {
+      max-width: em(660px);
+      margin: 0 auto em(40px);
+    }
+    @include iftablet {
+      max-width: em(660px);
+      margin: 0 auto em(56px);
+    }
+    @include ifmobile {
+      max-width: em(660px);
+      margin: 0 auto em(56px);
+    }
+  }
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}
