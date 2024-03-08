@@ -19,6 +19,7 @@
   }
 
   &_Title {
+    position: relative;
     margin-bottom: em(22px);
     @include iftablet {
       margin-bottom: em(14px);
@@ -51,6 +52,7 @@
   }
 
   &_Subtitle {
+    position: relative;
     margin-bottom: em(60px);
     @include iflaptop {
       margin-bottom: em(48px);
@@ -108,6 +110,7 @@
   }
 
   &_Button {
+    position: relative;
     margin-left: em(6px);
     @include ifmobile {
       width: 100%;

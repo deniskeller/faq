@@ -1,0 +1,66 @@
+.Header {
+  padding: em(240px) 0 em(120px);
+  @include iflaptop {
+  }
+  @include iftablet {
+  }
+  @include ifmobile {
+  }
+
+  &_Container {
+    position: relative;
+  }
+
+  &_Title {
+    position: relative;
+    z-index: 1;
+    max-width: em(860px);
+    margin-bottom: em(40px);
+    @include iflaptop {
+    }
+    @include iftablet {
+    }
+    @include ifmobile {
+    }
+  }
+
+  &_Description {
+    position: relative;
+    z-index: 1;
+    max-width: em(860px);
+    margin-bottom: em(53px);
+    @include iflaptop {
+    }
+    @include iftablet {
+    }
+    @include ifmobile {
+    }
+  }
+
+  &_Order {
+    position: relative;
+    z-index: 1;
+    margin-left: em(6px);
+  }
+
+  &_Image {
+    position: absolute;
+    width: em(700px);
+    height: em(479px);
+    top: em(-42px);
+    right: em(57px);
+    @include iflaptop {
+    }
+    @include iftablet {
+    }
+    @include ifmobile {
+    }
+  }
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}

@@ -1,0 +1,55 @@
+.Text {
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  transform-style: preserve-3d;
+  &_h1 {
+    color: rgb(55, 55, 55);
+    font-size: em(70px);
+    font-weight: 500;
+    line-height: 135%;
+
+    @include iflaptop {
+      font-size: em(42px);
+    }
+    @include iftablet {
+      font-size: em(36px);
+    }
+    @include ifmobile {
+      font-size: em(28px);
+    }
+  }
+
+  &_h2 {
+    color: rgb(55, 55, 55);
+    font-size: em(52px);
+    line-height: 135%;
+    font-weight: 500;
+
+    @include iflaptop {
+      font-size: em(38px);
+    }
+    @include iftablet {
+      font-size: em(32px);
+    }
+    @include ifmobile {
+      font-size: em(24px);
+    }
+  }
+
+  &_p {
+    color: rgb(99, 99, 99);
+    font-size: em(16px);
+    font-weight: 400;
+    line-height: normal;
+    @include ifdesktop {
+      font-size: em(18px);
+    }
+  }
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}

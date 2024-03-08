@@ -1,0 +1,146 @@
+.BaseToast {
+  position: fixed;
+  z-index: $toast;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+
+  &_Wrapper {
+    left: 0px;
+    right: 0px;
+    display: flex;
+    position: absolute;
+    transition: all 230ms cubic-bezier(0.21, 1.02, 0.73, 1) 0s;
+    transform: translateY(0px);
+    bottom: em(44px);
+    justify-content: center;
+    z-index: $toast;
+    pointer-events: none;
+  }
+
+  &_Toast {
+    pointer-events: initial;
+    position: relative;
+    width: 100%;
+    max-width: em(486px);
+    padding: em(26px) em(60px) em(37px) em(93px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    backdrop-filter: blur(15px);
+    border-radius: em(23px);
+    background: #fff;
+    box-shadow: 0px 4px 46px 0px rgba(0, 0, 0, 0.05);
+    background: transparent;
+    border: em(3px) solid transparent;
+    background-image: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255)),
+      linear-gradient(-2deg, #6e6ccf 0.91%, #fb8873 93.07%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+
+    animation: 0.35s cubic-bezier(0.21, 1.02, 0.73, 1) 0s 1 normal forwards
+      running fadeIn;
+
+    @include ifmobile {
+      max-width: em(311px);
+      padding: em(12px) em(38px) em(18px) em(77px);
+    }
+
+    &_Flower {
+      position: absolute;
+      left: em(-14px);
+      bottom: 0;
+      width: em(99px);
+      height: em(102px);
+      @include ifmobile {
+        left: em(-14px);
+        width: em(79px);
+        height: em(102px);
+      }
+    }
+  }
+
+  &_Icon {
+    width: em(44px);
+    height: em(44px);
+    margin-right: em(20px);
+  }
+
+  &_Content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+
+    .Text {
+      p {
+        color: rgba(26, 26, 26, 0.9);
+        font-family: 'Gantari', sans-serif;
+        font-size: em(16px);
+        font-style: normal;
+        font-weight: 500;
+        line-height: 130%;
+      }
+    }
+  }
+
+  &_Close {
+    cursor: pointer;
+    position: absolute;
+    top: em(17px);
+    right: em(26px);
+    width: em(18px);
+    height: em(18px);
+    @include ifmobile {
+      top: em(18px);
+      right: em(17px);
+      width: em(10px);
+      height: em(10px);
+    }
+  }
+}
+
+// .BaseToastApp {
+//   .BaseToast_Toast {
+//     border-radius: em(6px);
+//     background: #f9fafb;
+//     box-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.1),
+//       0px 10px 10px -5px rgba(0, 0, 0, 0.04);
+//     padding: em(10px) em(86px) em(10px) em(16px);
+//     .BaseToast_Content {
+//       .Icon {
+//         width: em(44px);
+//         height: em(44px);
+//         margin-right: em(14px);
+//       }
+//       .Text {
+//         p {
+//           color: rgba(26, 26, 26, 0.9);
+//           font-family: 'Gantari', sans-serif;
+//           font-size: em(18px);
+//           font-style: normal;
+//           font-weight: 400;
+//           line-height: 120%;
+//         }
+//       }
+//     }
+//     .BaseToast_Close path {
+//       stroke: #1a1a1a;
+//       stroke-opacity: 0.3;
+//     }
+//   }
+// }
+
+@include keyframe(fadeIn) {
+  0% {
+    transform: translate3d(0, 200%, 0) scale(0.6);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 1;
+  }
+}
