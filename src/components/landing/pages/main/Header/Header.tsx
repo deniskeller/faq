@@ -17,7 +17,7 @@ const Header: React.FC = () => {
           manner.
         </BaseText>
 
-        <BaseButton as="a" href="/order" className={s.Header_Order}>
+        <BaseButton as="a" href="/order" className={s.Header_Button}>
           Place an order
         </BaseButton>
 

@@ -1,0 +1,204 @@
+.Advantages {
+  padding: em(100px) 0 em(120px);
+  @include iflaptop {
+    padding: em(48px) 0 em(80px);
+  }
+  @include iftablet {
+    padding: em(60px) 0 em(60px);
+  }
+  @include ifmobile {
+    padding: em(44px) 0 em(40px);
+  }
+
+  &_Title {
+    text-align: center;
+    margin-bottom: em(40px);
+    @include iflaptop {
+      margin-bottom: em(32px);
+    }
+    @include iftablet {
+      margin-bottom: em(28px);
+    }
+    @include ifmobile {
+      margin-bottom: em(28px);
+    }
+  }
+
+  &_Description {
+    text-align: center;
+    max-width: em(750px);
+    margin: 0 auto em(40px);
+    @include iflaptop {
+      max-width: em(650px);
+      margin: 0 auto em(40px);
+    }
+    @include iftablet {
+      max-width: em(650px);
+      margin: 0 auto em(40px);
+    }
+    @include ifmobile {
+      margin-bottom: em(28px);
+    }
+  }
+
+  &_Button {
+    margin: 0 auto em(86px);
+    @include iflaptop {
+      margin: 0 auto em(66px);
+    }
+    @include iftablet {
+      margin: 0 auto em(62px);
+    }
+    @include ifmobile {
+      margin: 0 auto em(62px);
+    }
+  }
+
+  &_Content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: em(48px) em(51px);
+    max-width: em(1242px);
+    width: 100%;
+    margin: 0 auto;
+    @include iflaptop {
+      gap: em(32px) em(20px);
+    }
+    @include iftablet {
+      grid-template-columns: repeat(2, 1fr);
+      gap: em(20px) em(24px);
+    }
+    @include ifmobile {
+      grid-template-columns: 1fr;
+      gap: em(12px) 0;
+    }
+
+    .AdvantageCard {
+      border: 2px solid $border;
+      border-radius: em(16px);
+      box-shadow: -2px 4px 12px 0px rgb(246, 246, 246);
+      background: $white;
+      padding: em(20px) em(16px);
+      @include ifdesktop {
+        padding: em(28px) em(16px);
+      }
+
+      &_Image {
+        width: em(123px);
+        height: em(100px);
+        margin: 0 auto em(22px);
+        @include iflaptop {
+          width: em(92px);
+          height: em(75px);
+          margin: 0 auto em(16px);
+        }
+        @include iftablet {
+        }
+        @include ifmobile {
+        }
+      }
+
+      &_Title {
+        margin-top: auto;
+        margin-bottom: em(8px);
+        @include ifdesktop {
+          margin-bottom: em(12px);
+        }
+        h3 {
+          color: $text;
+          font-weight: 500;
+          font-size: em(16px);
+          text-align: center;
+          @include ifdesktop {
+            font-size: em(18px);
+          }
+        }
+      }
+
+      &_Description {
+        p {
+          color: rgb(99, 99, 99);
+          font-size: em(14px);
+          font-weight: 400;
+          text-align: center;
+          @include ifdesktop {
+            font-size: em(16px);
+          }
+        }
+      }
+
+      &__ReasonablePrices {
+        .AdvantageCard_Image {
+          width: em(92px);
+          height: em(75px);
+          @include ifdesktop {
+            width: em(123px);
+            height: em(100px);
+          }
+        }
+      }
+
+      &__UniquenessGuaranteed {
+        .AdvantageCard_Image {
+          width: em(50px);
+          height: em(75px);
+          @include ifdesktop {
+            width: em(66px);
+            height: em(100px);
+          }
+        }
+      }
+
+      &__Support {
+        .AdvantageCard_Image {
+          width: em(100.55px);
+          height: em(69.86px);
+          @include ifdesktop {
+            width: em(134.06px);
+            height: em(100px);
+          }
+        }
+      }
+
+      &__PrivacyGuarantee {
+        .AdvantageCard_Image {
+          width: em(87.86px);
+          height: em(72.52px);
+          @include ifdesktop {
+            width: em(117.14px);
+            height: em(100px);
+          }
+        }
+      }
+
+      &__TopWriters {
+        .AdvantageCard_Image {
+          width: em(72.38px);
+          height: em(75px);
+          @include ifdesktop {
+            width: em(96.5px);
+            height: em(100px);
+          }
+        }
+      }
+
+      &__OnTime {
+        .AdvantageCard_Image {
+          width: em(67.65px);
+          height: em(75px);
+          @include ifdesktop {
+            width: em(90.2px);
+            height: em(100px);
+          }
+        }
+      }
+    }
+  }
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}

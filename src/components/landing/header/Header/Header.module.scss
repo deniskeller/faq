@@ -6,7 +6,7 @@
   width: 100%;
   min-height: em(74px);
   padding: em(18px) 0;
-  border-bottom: 2px solid rgb(240, 240, 240);
+  border-bottom: 2px solid $border;
   box-shadow: 0px 2px 12px 0px rgb(247, 247, 247);
   background: $white;
 
@@ -122,7 +122,7 @@
       @extend %button;
       font-size: 100%;
       padding: em(8px) em(12px);
-      border: 2px solid rgb(240, 240, 240);
+      border: 2px solid $border;
       border-radius: em(8px);
       box-shadow: -6px 6px 0px 0px rgba(55, 55, 55, 0.2);
       transition: all $speed ease;
@@ -272,7 +272,7 @@
       overflow-x: hidden;
       max-height: 100dvh;
       height: auto;
-      border: 1px solid rgb(240, 240, 240);
+      border: 1px solid $border;
       border-radius: 0px 0px 0px 8px;
       box-shadow: -2px 4px 12px 0px rgba(163, 163, 163, 0.7);
       background: $white;
@@ -381,7 +381,7 @@
           font-size: 100%;
           padding: em(8px) em(12px);
           height: em(40px);
-          border: 2px solid rgb(240, 240, 240);
+          border: 2px solid $border;
           border-radius: em(8px);
           box-shadow: -6px 6px 0px 0px rgba(55, 55, 55, 0.2);
           transition: all $speed ease;
