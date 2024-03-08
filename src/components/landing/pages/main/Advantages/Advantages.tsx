@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import s from './Advantages.module.scss';
 import { BaseButton, BaseContainer, BaseText } from '@base/index';
 import Link from 'next/link';
 import Image from 'next/image';
+import { isMobile } from 'react-device-detect';
 
 const Advantages = () => {
+  const [showMore, setShowMore] = useState(false);
+
+  const showMoreHundler = () => {
+    setShowMore(!showMore);
+  };
+
   return (
     <section className={s.Advantages}>
       <BaseContainer className={s.Advantages_Container}>
@@ -21,7 +28,10 @@ const Advantages = () => {
           Place an order
         </BaseButton>
 
-        <div className={s.Advantages_Content}>
+        <div
+          className={s.Advantages_Content}
+          style={{ maxHeight: showMore && isMobile ? '9999px' : '734px' }}
+        >
           {/* 1 */}
           <Link
             href={'/'}
@@ -165,6 +175,10 @@ const Advantages = () => {
               </p>
             </div>
           </Link>
+        </div>
+
+        <div className={s.Advantages_ShowMore} onClick={showMoreHundler}>
+          <span>{!showMore ? 'Show more' : 'Hide'}</span>
         </div>
       </BaseContainer>
     </section>
