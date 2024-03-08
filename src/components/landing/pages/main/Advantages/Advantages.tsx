@@ -30,7 +30,7 @@ const Advantages = () => {
 
         <div
           className={s.Advantages_Content}
-          style={{ maxHeight: showMore ? '1999px' : '734px' }}
+          style={{ maxHeight: showMore && isMobile ? '1999px' : '734px' }}
         >
           {/* 1 */}
           <Link
