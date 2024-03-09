@@ -45,6 +45,285 @@
       margin: 0 auto em(56px);
     }
   }
+
+  &_Content {
+    display: grid;
+    width: 100%;
+    max-width: em(1242px);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0 em(48px);
+    margin: 0 auto;
+    align-items: center;
+    @include iflaptop {
+      gap: 0 em(20px);
+    }
+    @include iftablet {
+      gap: 0 em(20px);
+    }
+    @include ifmobile {
+      grid-template-columns: 1fr;
+      gap: em(20px) 0;
+    }
+
+    .CategoryItem {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      padding: em(40px) em(24px);
+      box-sizing: border-box;
+      border: 2px solid rgb(240, 240, 240);
+      border-radius: em(16px);
+      box-shadow: -2px 4px 12px 0px rgb(246, 246, 246);
+      background: rgb(255, 255, 255);
+      transition: all $speed ease;
+      min-height: em(614px);
+      @include iflaptop {
+        min-height: em(435px);
+        padding: em(28px) em(16px);
+      }
+      @include iftablet {
+        min-height: em(423px);
+        padding: em(24px) em(16px);
+      }
+      @include ifmobile {
+        min-height: em(449px);
+        padding: em(28px) em(40px);
+      }
+
+      &_Decor {
+        position: absolute;
+        top: em(-32px);
+        right: em(-29px);
+        width: em(147px);
+        height: em(134px);
+        @include iflaptop {
+          top: em(-25px);
+          right: em(-22px);
+          width: em(111.47px);
+          height: em(101.92px);
+        }
+        @include iftablet {
+          top: em(-25px);
+          right: em(-22px);
+          width: em(111.47px);
+          height: em(101.92px);
+        }
+        @include ifmobile {
+          top: em(-25px);
+          right: em(-22px);
+          width: em(111.47px);
+          height: em(101.92px);
+        }
+      }
+
+      &_Name {
+        text-align: center;
+        margin: 0 auto em(2px);
+        span {
+          color: $text;
+          font-size: em(26px);
+          font-weight: 500;
+          @include iflaptop {
+            font-size: em(20px);
+          }
+          @include iftablet {
+            font-size: em(20px);
+          }
+          @include ifmobile {
+            font-size: em(20px);
+          }
+        }
+      }
+
+      &_Price {
+        text-align: center;
+        margin: 0 auto em(32px);
+        @include iflaptop {
+          margin: 0 auto em(20px);
+        }
+        @include iftablet {
+          margin: 0 auto em(20px);
+        }
+        @include ifmobile {
+          margin: 0 auto em(16px);
+        }
+
+        .Value {
+          font-size: em(18px);
+          font-weight: 400;
+          @include iflaptop {
+            font-size: em(16px);
+          }
+          @include iftablet {
+            font-size: em(16px);
+          }
+          @include ifmobile {
+            font-size: em(16px);
+          }
+          span {
+            color: $purple;
+            font-size: em(28px);
+            font-weight: 600;
+            @include iflaptop {
+              font-size: em(22px);
+            }
+            @include iftablet {
+              font-size: em(22px);
+            }
+            @include ifmobile {
+              font-size: em(22px);
+            }
+          }
+        }
+      }
+
+      &_ListIncludes {
+        margin-bottom: em(38px);
+        @include iflaptop {
+          margin-bottom: em(28px);
+        }
+        @include iftablet {
+          margin-bottom: em(28px);
+        }
+        @include ifmobile {
+          margin-bottom: em(24px);
+        }
+        li {
+          display: flex;
+          flex-direction: row;
+          position: relative;
+          padding-left: em(32px);
+          @include iflaptop {
+            padding-left: em(24px);
+          }
+          @include iftablet {
+            padding-left: em(24px);
+          }
+          @include ifmobile {
+            padding-left: em(24px);
+          }
+          svg {
+            position: absolute;
+            top: em(4px);
+            left: 0;
+            width: em(18px);
+            height: em(18px);
+            flex-shrink: 0;
+            @include iflaptop {
+              top: em(2px);
+              width: em(16px);
+              height: em(16px);
+            }
+            @include iftablet {
+              top: em(4px);
+              width: em(14px);
+              height: em(14px);
+            }
+            @include ifmobile {
+              top: em(2px);
+              width: em(16px);
+              height: em(16px);
+            }
+          }
+          p {
+            color: $grey;
+            font-size: em(16px);
+            font-weight: 400;
+            text-align: left;
+            @include iflaptop {
+              font-size: em(12px);
+            }
+            @include iftablet {
+              font-size: em(12px);
+            }
+            @include ifmobile {
+              font-size: em(13px);
+            }
+          }
+          &:not(:last-child) {
+            margin-bottom: em(16px);
+            @include iflaptop {
+              margin-bottom: em(10px);
+            }
+            @include iftablet {
+              margin-bottom: em(9px);
+            }
+            @include ifmobile {
+              margin-bottom: em(9.6px);
+            }
+          }
+        }
+      }
+
+      &_Button {
+        width: 100%;
+        margin: auto auto 0;
+        @include iftablet {
+          padding: em(12px) em(16px);
+          span {
+            font-size: em(14px);
+          }
+        }
+        @include ifmobile {
+        }
+      }
+
+      &:hover {
+        border: 2px solid rgba(193, 253, 97, 0.6);
+        box-shadow: -2px 4px 12px 0px rgba(193, 253, 97, 0.6),
+          2px -4px 12px 0px rgba(193, 253, 97, 0.6);
+      }
+
+      &:nth-child(2) {
+        padding: em(50px) em(24px);
+        border: 2px solid rgb(118, 86, 245);
+        background: rgb(118, 86, 245);
+        min-height: em(640px);
+        @include iflaptop {
+          min-height: em(461px);
+          padding: em(38px) em(16px);
+        }
+        @include iftablet {
+          min-height: em(473px);
+          padding: em(24px) em(16px);
+        }
+        @include ifmobile {
+          min-height: em(449px);
+          padding: em(32px) em(40px);
+        }
+
+        .CategoryItem_Name {
+          span {
+            color: $white;
+          }
+        }
+
+        .CategoryItem_Price {
+          .Value {
+            color: $white;
+            span {
+              color: $white;
+            }
+          }
+        }
+
+        .CategoryItem_ListIncludes {
+          svg path {
+            fill: rgb(193, 253, 97);
+          }
+          li p {
+            color: $white;
+          }
+        }
+
+        &:hover {
+          box-shadow: -2px 4px 12px 0px rgba(118, 86, 245, 0.6),
+            2px -4px 12px 0px rgba(118, 86, 245, 0.6);
+          background: rgb(118, 86, 245);
+        }
+      }
+    }
+  }
 }
 
 @include iflaptop {

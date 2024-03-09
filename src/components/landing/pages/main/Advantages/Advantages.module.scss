@@ -93,6 +93,7 @@
       box-shadow: -2px 4px 12px 0px rgb(246, 246, 246);
       background: $white;
       padding: em(20px) em(16px);
+      transition: all $speed ease;
       @include ifdesktop {
         padding: em(28px) em(16px);
       }
@@ -137,7 +138,7 @@
 
       &_Description {
         p {
-          color: rgb(99, 99, 99);
+          color: 16px;
           font-size: em(14px);
           font-weight: 400;
           text-align: center;
@@ -212,6 +213,18 @@
           }
         }
       }
+
+      &:hover {
+        border: 2px solid rgba(193, 253, 97, 0.6);
+        box-shadow: -2px 4px 12px 0px rgba(193, 253, 97, 0.6),
+          2px -4px 12px 0px rgba(193, 253, 97, 0.6);
+      }
+
+      &:active {
+        border: 2px solid rgba(118, 86, 245, 0.6);
+        box-shadow: -2px 4px 12px 0px rgba(118, 86, 245, 0.6),
+          2px -4px 12px 0px rgba(118, 86, 245, 0.6);
+      }
     }
   }
 
@@ -224,7 +237,7 @@
       display: flex;
     }
     span {
-      color: rgb(99, 99, 99);
+      color: $grey;
       font-size: em(18px);
       font-weight: 400;
       text-align: center;
