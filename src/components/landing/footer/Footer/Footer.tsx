@@ -13,7 +13,7 @@ const Footer: React.FC<Props> = () => {
 
   return (
     <div className={s.Footer}>
-      <BaseContainer className={s.Footer_Container}>
+      <BaseContainer className={s.Footer_Container} large>
         <Logo footer className={s.Footer_Logo} />
 
         <div className={s.Footer_Partners}>

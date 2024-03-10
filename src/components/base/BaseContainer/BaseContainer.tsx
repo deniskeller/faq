@@ -1,15 +1,26 @@
 import React, { ReactNode } from 'react';
-import styles from './BaseContainer.module.scss';
+import s from './BaseContainer.module.scss';
 
 interface Props {
-	children: ReactNode | ReactNode[];
-	className?: string;
+  children: ReactNode | ReactNode[];
+  className?: string;
+  large?: boolean;
 }
 
-const BaseContainer: React.FC<Props> = ({ children, className = '' }) => {
-	return (
-		<div className={`${styles.BaseContainer} ${className}`}>{children}</div>
-	);
+const BaseContainer: React.FC<Props> = ({
+  children,
+  className = '',
+  large = false,
+}) => {
+  return (
+    <div
+      className={`${s.BaseContainer} ${
+        large ? s.BaseContainer__Large : ''
+      } ${className}`}
+    >
+      {children}
+    </div>
+  );
 };
 
 export default BaseContainer;

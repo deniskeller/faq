@@ -6,7 +6,7 @@ import Image from 'next/image';
 const HowWorks: React.FC = () => {
   return (
     <section className={s.HowWorks}>
-      <BaseContainer className={s.HowWorks_Container}>
+      <BaseContainer className={s.HowWorks_Container} large>
         <BaseText className={s.HowWorks_Title}>How our service works</BaseText>
 
         <BaseText className={s.HowWorks_Description} as="p">

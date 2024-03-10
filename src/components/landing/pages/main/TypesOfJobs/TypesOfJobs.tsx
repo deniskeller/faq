@@ -6,7 +6,7 @@ import Image from 'next/image';
 const TypesOfJobs: React.FC = () => {
   return (
     <section className={s.TypesOfJobs}>
-      <BaseContainer className={s.TypesOfJobs_Container}>
+      <BaseContainer className={s.TypesOfJobs_Container} large>
         <BaseText className={s.TypesOfJobs_Title}>
           We create written content for diverse sectors
         </BaseText>

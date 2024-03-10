@@ -14,7 +14,7 @@ const Advantages: React.FC = () => {
 
   return (
     <section className={s.Advantages}>
-      <BaseContainer className={s.Advantages_Container}>
+      <BaseContainer className={s.Advantages_Container} large>
         <BaseText className={s.Advantages_Title}>
           Why choose Coursepal?
         </BaseText>

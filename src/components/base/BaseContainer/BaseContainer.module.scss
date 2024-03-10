@@ -1,6 +1,6 @@
 .BaseContainer {
   width: 100%;
-  max-width: em(1664px);
+  max-width: em(1456px);
   margin: 0 auto;
   padding: 0 em(48px);
   @include iftablet {
@@ -8,5 +8,9 @@
   }
   @include ifmobile {
     padding: 0 em(12px);
+  }
+
+  &__Large {
+    max-width: em(1664px);
   }
 }

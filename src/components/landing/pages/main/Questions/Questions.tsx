@@ -68,7 +68,7 @@ const Questions: React.FC = () => {
 
   return (
     <section className={s.Questions}>
-      <BaseContainer className={s.Questions_Container}>
+      <BaseContainer className={s.Questions_Container} large>
         <div className={s.Header}>
           <BaseText className={s.Questions_Title}>
             Got questions? <br /> We have answers

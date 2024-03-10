@@ -1,0 +1,126 @@
+.Header {
+  padding: em(180px) 0 em(80px);
+  @include iflaptop {
+    padding: em(134px) 0 em(60px);
+  }
+  @include iftablet {
+    padding: em(134px) 0 em(52px);
+  }
+  @include ifmobile {
+    padding: em(114px) 0 em(56px);
+  }
+
+  &_Container {
+    position: relative;
+  }
+
+  &_Title {
+    position: relative;
+    z-index: 1;
+    margin-bottom: em(40px);
+    @include iflaptop {
+      margin-bottom: em(32px);
+    }
+    @include iftablet {
+      margin-bottom: em(28px);
+    }
+    @include ifmobile {
+      margin-bottom: em(24px);
+    }
+  }
+
+  &_Description {
+    position: relative;
+    z-index: 1;
+    max-width: em(698px);
+    margin-bottom: em(32px);
+    @include iflaptop {
+      max-width: em(546px);
+      margin-bottom: em(28px);
+    }
+    @include iftablet {
+      max-width: em(434px);
+      margin-bottom: em(24px);
+    }
+    @include ifmobile {
+      margin-bottom: em(20px);
+    }
+  }
+
+  &_Subtitle {
+    position: relative;
+    z-index: 1;
+    margin-bottom: em(24px);
+    @include iflaptop {
+      margin-bottom: em(20px);
+    }
+    @include iftablet {
+      margin-bottom: em(20px);
+    }
+    @include ifmobile {
+      margin-bottom: em(16px);
+    }
+    h3 {
+      color: $purple;
+      font-size: em(26px);
+      font-weight: 500;
+      @include iflaptop {
+        font-size: em(20px);
+      }
+      @include iftablet {
+        font-size: em(18px);
+      }
+      @include ifmobile {
+        font-size: em(16px);
+      }
+    }
+  }
+
+  &_Subdescription {
+    position: relative;
+    z-index: 1;
+    max-width: em(750px);
+    @include iflaptop {
+      max-width: em(519px);
+    }
+    @include iftablet {
+      max-width: em(434px);
+    }
+    @include ifmobile {
+      max-width: em(519px);
+      margin-bottom: em(32px);
+    }
+  }
+
+  &_Image {
+    position: absolute;
+    width: em(480px);
+    height: em(360.04px);
+    right: em(57px);
+    bottom: 0;
+    @include iflaptop {
+      width: em(333px);
+      height: em(249.78px);
+      right: em(48px);
+    }
+    @include iftablet {
+      width: em(273px);
+      height: em(204.77px);
+      right: em(21px);
+    }
+    @include ifmobile {
+      width: em(273px);
+      height: em(204.77px);
+      position: relative;
+      right: auto;
+      margin: 0 auto;
+    }
+  }
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}

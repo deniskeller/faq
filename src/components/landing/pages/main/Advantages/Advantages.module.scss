@@ -69,7 +69,6 @@
     margin: 0 auto;
     height: auto;
     max-height: 100%;
-
     transition: all 1s ease-in-out;
 
     @include iflaptop {
@@ -145,7 +144,7 @@
 
       &_Description {
         p {
-          color: 16px;
+          color: $grey;
           font-size: em(14px);
           font-weight: 400;
           text-align: center;

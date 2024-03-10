@@ -47,7 +47,7 @@ const Header: React.FC<Props> = ({ pages }) => {
 
   return (
     <div className={`${s.Header}`}>
-      <BaseContainer className={s.Header_Container}>
+      <BaseContainer className={s.Header_Container} large>
         <Logo className={s.Header_Logo} />
 
         <ul className={s.Header_Navbar}>

@@ -6,7 +6,7 @@ import Image from 'next/image';
 const Header: React.FC = () => {
   return (
     <section className={s.Header}>
-      <BaseContainer className={s.Header_Container}>
+      <BaseContainer className={s.Header_Container} large>
         <BaseText className={s.Header_Title} as="h1">
           Do what you like while we are writing for you!
         </BaseText>

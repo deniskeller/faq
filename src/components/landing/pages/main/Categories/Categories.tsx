@@ -49,7 +49,7 @@ const categories = [
 const Categories: React.FC = () => {
   return (
     <section className={s.Categories}>
-      <BaseContainer className={s.Categories_Container}>
+      <BaseContainer className={s.Categories_Container} large>
         <BaseText className={s.Categories_Title}>
           Choose an author according to his/her category
         </BaseText>
