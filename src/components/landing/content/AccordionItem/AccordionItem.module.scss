@@ -1,0 +1,113 @@
+.AccordionItem {
+  border: 2px solid rgb(240, 240, 240);
+  border-radius: em(12px);
+  box-shadow: -2px 4px 12px 0px rgb(246, 246, 246);
+  background: rgb(255, 255, 255);
+  overflow: hidden;
+
+  &_Header {
+    cursor: pointer;
+    position: relative;
+    .Content {
+      padding: em(20px) em(70px) em(20px) em(24px);
+      @include iflaptop {
+        padding: em(16px) em(64px) em(16px) em(16px);
+      }
+      @include iftablet {
+        padding: em(16px) em(64px) em(16px) em(16px);
+      }
+      @include ifmobile {
+        padding: em(16px) em(56px) em(16px) em(16px);
+      }
+
+      .Question {
+        color: rgb(55, 55, 55);
+        font-family: 'Poppins', sans-serif;
+        font-size: em(18px);
+        font-weight: 500;
+        @include iflaptop {
+          font-size: em(16px);
+        }
+        @include iftablet {
+          font-size: em(16px);
+        }
+        @include ifmobile {
+          font-size: em(14px);
+        }
+      }
+      .Icon {
+        position: absolute;
+        top: 50%;
+        right: em(24px);
+        width: em(32px);
+        height: em(32px);
+        transform: translate(0%, -50%) rotate(180deg);
+        transform-origin: center;
+        transition: transform $speed ease;
+        @include iflaptop {
+          right: em(16px);
+        }
+        @include iftablet {
+          right: em(16px);
+        }
+        @include ifmobile {
+          width: em(24px);
+          height: em(24px);
+          right: em(16px);
+        }
+      }
+    }
+  }
+
+  &_Body {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    transition: height $speed ease;
+    .Content {
+      padding: 0 em(24px) em(20px) em(24px);
+      @include iflaptop {
+        padding: 0 em(16px) em(16px) em(16px);
+      }
+      @include iftablet {
+        padding: 0 em(16px) em(16px) em(16px);
+      }
+      @include ifmobile {
+        padding: 0 em(16px) em(16px) em(16px);
+      }
+
+      .Answer {
+        color: rgb(99, 99, 99);
+        font-family: 'Poppins', sans-serif;
+        font-size: em(16px);
+        font-weight: 400;
+        text-align: left;
+        @include iflaptop {
+          font-size: em(14px);
+        }
+        @include iftablet {
+          font-size: em(14px);
+        }
+        @include ifmobile {
+          font-size: em(12px);
+        }
+      }
+    }
+  }
+
+  &__Active {
+    .AccordionItem_Header .Content .Icon {
+      transform: translate(0%, -50%) rotate(0deg);
+    }
+    .AccordionItem_Body {
+      height: auto;
+    }
+  }
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}

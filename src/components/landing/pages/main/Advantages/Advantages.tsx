@@ -63,7 +63,7 @@ const Advantages: React.FC = () => {
           >
             <Image
               src="/pictures/icons/uniqueness-guaranteed.webp"
-              width={66}
+              width={66.36}
               height={100}
               alt=""
               className={s.AdvantageCard_Image}

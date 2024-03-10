@@ -1,0 +1,101 @@
+.HowWorks {
+  border-radius: em(80px);
+  background: $white;
+  padding: em(100px) 0 em(120px);
+  box-shadow: -2px 4px 12px 0px rgb(246, 246, 246);
+  @include iflaptop {
+    border-radius: em(40px);
+    padding: em(60px) 0 em(80px);
+  }
+  @include iftablet {
+    border-radius: em(40px);
+    padding: em(60px) 0 em(60px);
+  }
+  @include ifmobile {
+    border-radius: em(40px);
+    padding: em(44px) 0 em(60px);
+  }
+
+  &_Container {
+    position: relative;
+  }
+
+  &_Title {
+    position: relative;
+    z-index: 1;
+    margin: 0 auto em(40px);
+    text-align: center;
+    @include iflaptop {
+      margin: 0 auto em(32px);
+    }
+    @include iftablet {
+      margin: 0 auto em(28px);
+    }
+    @include ifmobile {
+      margin: 0 auto em(28px);
+    }
+  }
+
+  &_Description {
+    position: relative;
+    z-index: 1;
+    max-width: em(480px);
+    margin: 0 auto em(140px);
+    text-align: center;
+    @include iflaptop {
+      max-width: em(420px);
+      margin: 0 auto em(60px);
+    }
+    @include iftablet {
+      max-width: em(420px);
+      margin: 0 auto em(56px);
+    }
+    @include ifmobile {
+      margin: 0 auto em(56px);
+    }
+  }
+
+  &_Button {
+    position: relative;
+    z-index: 1;
+    margin-left: em(6px);
+    @include ifmobile {
+      margin: 0 auto em(62px);
+      max-width: em(168px);
+    }
+  }
+
+  &_Image {
+    position: absolute;
+    width: em(700px);
+    height: em(479px);
+    top: em(-42px);
+    right: em(57px);
+    @include iflaptop {
+      width: em(392px);
+      height: em(268px);
+      top: em(23px);
+      right: em(48px);
+    }
+    @include iftablet {
+      width: em(289px);
+      height: em(198px);
+      top: em(82px);
+      right: em(20px);
+    }
+    @include ifmobile {
+      width: em(336px);
+      height: em(230px);
+      position: relative;
+      top: auto;
+      right: auto;
+    }
+  }
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}

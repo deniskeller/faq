@@ -21,18 +21,18 @@ const TypesOfJobs: React.FC = () => {
         </BaseButton>
 
         <Image
-          src="/pictures/images/main-blocks-desktop.png"
-          width={748}
-          height={263.69}
+          src="/pictures/images/main-blocks-desktop.webp"
+          width={1496}
+          height={528}
           alt=""
           quality={100}
           className={`${s.TypesOfJobs_Image} ${s.TypesOfJobs_Image__Desktop}`}
         />
 
         <Image
-          src="/pictures/images/main-blocks-mobile.png"
-          width={336}
-          height={226}
+          src="/pictures/images/main-blocks-mobile.webp"
+          width={673}
+          height={453}
           alt=""
           quality={100}
           className={`${s.TypesOfJobs_Image} ${s.TypesOfJobs_Image__Mobile}`}

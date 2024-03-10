@@ -1,0 +1,74 @@
+.Questions {
+  padding: em(100px) 0 em(120px);
+  @include iflaptop {
+    padding: em(60px) 0 em(80px);
+  }
+  @include iftablet {
+    padding: em(60px) 0 em(60px);
+  }
+  @include ifmobile {
+    padding: em(44px) 0 em(40px);
+  }
+
+  &_Container {
+    position: relative;
+    display: grid;
+    grid-template-columns: em(552px) 1fr;
+    gap: 0 em(228px);
+    @include iflaptop {
+      grid-template-columns: em(338px) 1fr;
+      gap: 0 em(43px);
+    }
+    @include iftablet {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+    @include ifmobile {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+  }
+
+  &_Title {
+    margin-bottom: em(100px);
+    @include iftablet {
+      text-align: center;
+      margin-bottom: em(56px);
+    }
+    @include ifmobile {
+      text-align: center;
+      margin-bottom: em(40px);
+    }
+  }
+
+  &_Image {
+    width: em(539.7px);
+    height: em(482.72px);
+    @include iflaptop {
+      width: em(336px);
+      height: em(304.3px);
+    }
+    @include iftablet {
+      display: none;
+    }
+    @include ifmobile {
+      display: none;
+    }
+  }
+
+  .Answers {
+    &_AccortionItem:not(:last-child) {
+      margin-bottom: em(16px);
+      @include ifmobile {
+        margin-bottom: em(10px);
+      }
+    }
+  }
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}

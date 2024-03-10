@@ -4,6 +4,8 @@ import {
   Advantages,
   Categories,
   Header,
+  HowWorks,
+  Questions,
   TypesOfJobs,
 } from 'components/landing/pages/main';
 
@@ -14,6 +16,8 @@ const Main: React.FC = () => {
       <Advantages />
       <TypesOfJobs />
       <Categories />
+      <HowWorks />
+      <Questions />
     </div>
   );
 };
