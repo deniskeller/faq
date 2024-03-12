@@ -1,0 +1,35 @@
+.Map {
+  padding: em(60px) 0 em(100px);
+  @include iflaptop {
+    padding: em(60px) 0 em(80px);
+  }
+  @include iftablet {
+    padding: em(52px) 0 em(60px);
+  }
+  @include ifmobile {
+    padding: em(56px) 0 em(40px);
+  }
+  &_Map {
+    width: 100%;
+    height: em(425px);
+    border-radius: em(16px);
+    overflow: hidden;
+    box-shadow: -2px 4px 12px 0px rgb(246, 246, 246);
+    @include iflaptop {
+      height: em(290px);
+    }
+    @include iftablet {
+      height: em(227.5px);
+    }
+    @include ifmobile {
+      height: em(200px);
+    }
+  }
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}
