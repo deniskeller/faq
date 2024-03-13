@@ -1,0 +1,295 @@
+.PrivacyPolicy {
+  padding: em(180px) 0 em(100px);
+  @include iflaptop {
+    padding: em(134px) 0 em(80px);
+  }
+  @include iftablet {
+    padding: em(134px) 0 em(60px);
+  }
+  @include ifmobile {
+    padding: em(102px) 0 em(40px);
+  }
+
+  &_ToMainPage {
+    margin-bottom: em(28px);
+  }
+
+  &_Container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr em(329px);
+    gap: 0 em(92px);
+    @include iflaptop {
+      grid-template-columns: 1fr em(246px);
+      gap: 0 em(28px);
+    }
+    @include iftablet {
+      grid-template-columns: 1fr;
+    }
+    @include ifmobile {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &_Content {
+    .Header {
+      margin-bottom: em(24px);
+      @include iflaptop {
+        margin-bottom: em(20px);
+      }
+      @include iftablet {
+        margin-bottom: em(16px);
+      }
+      @include ifmobile {
+        margin-bottom: em(16px);
+      }
+
+      h1 {
+        color: $purple;
+        font-size: em(52px);
+        font-weight: 500;
+        @include iflaptop {
+          font-size: em(38px);
+        }
+        @include iftablet {
+          font-size: em(32px);
+        }
+        @include ifmobile {
+          font-size: em(24px);
+        }
+      }
+    }
+
+    .SectionList {
+      list-style: none;
+      .Section:not(:last-child) {
+        margin-bottom: em(20px);
+        @include iflaptop {
+          margin-bottom: em(16px);
+        }
+        @include iftablet {
+          margin-bottom: em(16px);
+        }
+        @include ifmobile {
+        }
+      }
+
+      .Section {
+        &_Title {
+          margin-bottom: em(16px);
+          @include iflaptop {
+            margin-bottom: em(10px);
+          }
+          @include iftablet {
+            margin-bottom: em(10px);
+          }
+          @include ifmobile {
+          }
+          h2 {
+            color: $purple;
+            font-size: em(20px);
+            font-weight: 500;
+            @include iflaptop {
+              font-size: em(18px);
+            }
+            @include iftablet {
+              font-size: em(18px);
+            }
+            @include ifmobile {
+              font-size: em(16px);
+            }
+          }
+        }
+
+        &_Content {
+          list-style: none;
+          &:not(:last-child) {
+            margin-bottom: em(12px);
+          }
+          .Paragraph:not(:last-child) {
+            margin-bottom: em(8px);
+          }
+
+          .Paragraph {
+            &_Title {
+              margin-bottom: em(20px);
+              h2 {
+                color: rgba(31, 30, 88, 0.9);
+                font-size: em(18px);
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+              }
+            }
+
+            &_Description {
+              $size: 16px;
+              color: $grey;
+              font-size: em($size);
+              font-style: normal;
+              font-weight: 400;
+              @include iflaptop {
+                $size: 14px;
+                font-size: em($size);
+              }
+              @include iftablet {
+                $size: 14px;
+                font-size: em($size);
+              }
+              @include ifmobile {
+                $size: 14px;
+                font-size: em($size);
+              }
+              &:not(:last-child) {
+                margin-bottom: em(20px, $size);
+                @include ifmobile {
+                  margin-bottom: em(12px, $size);
+                }
+              }
+              a {
+                color: inherit;
+                text-decoration: underline;
+                transition: all $speed ease;
+                &:hover {
+                  color: $purple;
+                }
+              }
+            }
+
+            &_List {
+              list-style: none;
+              padding-left: em(24px);
+              @include ifmobile {
+                padding-left: em(18px);
+              }
+
+              li {
+                position: relative;
+                $size: 16px;
+                color: $grey;
+                font-size: em($size);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 150%;
+                @include iflaptop {
+                  $size: 14px;
+                  font-size: em($size);
+                }
+                @include iftablet {
+                  $size: 14px;
+                  font-size: em($size);
+                }
+                @include ifmobile {
+                  $size: 13px;
+                  font-size: em($size);
+                }
+                &:before {
+                  position: absolute;
+                  top: em(10px);
+                  left: em(-14px);
+                  content: '';
+                  background: $grey;
+                  width: em(4px);
+                  height: em(4px);
+                  border-radius: 100%;
+                }
+                &:not(:last-child) {
+                  margin-bottom: em(0px, $size);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &_Sidebar {
+    position: relative;
+    @include iftablet {
+      display: none;
+    }
+    @include ifmobile {
+      display: none;
+    }
+
+    .Sidebar {
+      position: sticky;
+      top: em(130px);
+      @include iflaptop {
+        top: em(100px);
+      }
+
+      &_Header {
+        margin-bottom: em(20px);
+        @include iflaptop {
+          margin-bottom: em(16px);
+        }
+        p {
+          color: $purple;
+          font-size: em(20px);
+          font-weight: 500;
+
+          @include iflaptop {
+            font-size: em(16px);
+          }
+        }
+      }
+
+      &_Navbar {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr;
+        &_Item {
+          display: inline-flex;
+          cursor: pointer;
+          position: relative;
+          line-height: 100%;
+          &:not(:last-child) {
+            margin-bottom: em(12px);
+          }
+          &::before {
+            display: block;
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -3px;
+            width: 0%;
+            height: 2px;
+            background: $purple;
+            transition: width $speed ease;
+          }
+
+          p {
+            color: $grey;
+            font-size: em(14px);
+            font-weight: 400;
+            line-height: 140%;
+            transition: all $speed ease;
+            @include iflaptop {
+              font-size: em(12px);
+            }
+          }
+          &:hover {
+            &::before {
+              width: 100%;
+            }
+            p {
+              color: $text;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}
