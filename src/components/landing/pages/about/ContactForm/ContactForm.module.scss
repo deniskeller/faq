@@ -4,26 +4,90 @@
   border-radius: em(16px);
   box-shadow: -2px 4px 12px 0px rgb(246, 246, 246);
   background: $white;
-  padding: em(40px) em(60px) em(60px);
   display: grid;
   grid-template-columns: em(462px) 1fr;
   gap: 0 em(166px);
+  padding: em(40px) em(60px) em(60px);
+
+  @include iflaptop {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: em(40px) em(60px);
+  }
+  @include iftablet {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: em(40px) em(20px);
+  }
+  @include ifmobile {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: em(40px) em(20px);
+  }
 
   .Header {
     grid-column-end: 2;
     margin-bottom: em(28px);
+    @include iflaptop {
+      grid-column-end: 2;
+      margin-bottom: 0;
+    }
+    @include iftablet {
+      grid-column-end: 2;
+      margin-bottom: 0;
+    }
+    @include ifmobile {
+      grid-column-end: 2;
+      margin-bottom: em(28px);
+    }
     h2 {
       color: $text;
-      font-size: em(26px);
+      font-size: em(20px);
       font-weight: 500;
+      @include ifdesktop {
+        font-size: em(26px);
+      }
     }
   }
 
   &_Info {
     grid-row-start: 2;
+    @include iflaptop {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 em(16px);
+      margin-bottom: em(37px);
+    }
+    @include iftablet {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 em(16px);
+      margin-bottom: em(37px);
+    }
+    @include ifmobile {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: em(28px) 0;
+      margin-bottom: em(44px);
+    }
     .Description {
       max-width: em(429px);
       margin-bottom: em(44px);
+      @include iflaptop {
+        max-width: em(278px);
+        margin-bottom: 0;
+        padding-top: em(26px);
+      }
+      @include iftablet {
+        max-width: em(278px);
+        margin-bottom: 0;
+        padding-top: em(26px);
+      }
+      @include ifmobile {
+        max-width: 100%;
+        margin-bottom: 0;
+        padding-top: 0;
+      }
       p {
         color: $grey;
         font-size: em(16px);
@@ -42,30 +106,76 @@
           width: em(24px);
           height: em(24px);
           margin-right: em(8px);
+          @include ifmobile {
+            width: em(20px);
+            height: em(20px);
+          }
         }
         .Value {
           color: $grey;
           font-size: em(18px);
           font-weight: 400;
+          @include iflaptop {
+            font-size: em(16px);
+          }
+          @include iftablet {
+            font-size: em(12px);
+          }
+          @include ifmobile {
+            font-size: em(12px);
+          }
         }
       }
       &_Phone,
       &_Email {
         margin-bottom: em(12px);
       }
+      &_Address {
+        @include ifmobile {
+          align-items: flex-start;
+        }
+      }
     }
   }
 
   &_Form {
-    grid-row-start: 2;
     display: grid;
+    grid-row-start: 2;
     grid-template-columns: 1fr 1fr;
     gap: em(18px) em(20px);
     max-width: em(620px);
+    @include iflaptop {
+      grid-row-start: auto;
+      grid-template-columns: 1fr 1fr;
+      gap: em(24px);
+      max-width: 100%;
+    }
+    @include iftablet {
+      grid-row-start: auto;
+      grid-template-columns: 1fr 1fr;
+      gap: em(16px);
+      max-width: 100%;
+    }
+    @include ifmobile {
+      grid-row-start: auto;
+      grid-template-columns: 1fr;
+      gap: em(16px) 0;
+    }
 
     .Message {
       grid-column-start: 1;
       grid-column-end: 3;
+      @include ifmobile {
+        grid-column-start: auto;
+        grid-column-end: auto;
+      }
     }
   }
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
 }

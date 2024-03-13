@@ -94,7 +94,7 @@ const ContactForm: React.FC = () => {
               label="Phone number"
               value={value.phone}
               onChange={(val: string) => setNewValue(val, 'phone')}
-              error="Some text"
+              // error="Some text"
             />
 
             <BaseInput
