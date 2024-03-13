@@ -1,7 +1,15 @@
 import React from 'react';
 import s from './ContactForm.module.scss';
-import { BaseContainer, BaseIcon, BaseInput, BaseTextarea } from '@base/index';
+import {
+  BaseButton,
+  BaseCheckbox,
+  BaseContainer,
+  BaseIcon,
+  BaseInput,
+  BaseTextarea,
+} from '@base/index';
 import { ALL_ICONS } from '@constants/icons';
+import Link from 'next/link';
 
 interface IFormData {
   fullname: string;
@@ -25,6 +33,9 @@ const ContactForm: React.FC = () => {
   const setNewValue = (value: string, prop: keyof IFormData) => {
     setValue((prev) => ({ ...prev, [prop]: value }));
   };
+
+  //checkbox
+  const [checked, setChecked] = React.useState<any>(false);
 
   return (
     <section>
@@ -125,6 +136,22 @@ const ContactForm: React.FC = () => {
               onChange={(val: string) => setNewValue(val, 'message')}
               className={s.Message}
             />
+
+            <BaseCheckbox
+              checked={checked}
+              onChange={() => setChecked(!checked)}
+              className={s.Checkbox}
+              // error
+            >
+              I have read and agree with the&nbsp;
+              <Link href={'/terms-and-conditions'}>terms and conditions</Link>
+              &nbsp; and&nbsp;
+              <Link href={'/privacy-policy'}>privacy policy</Link>
+            </BaseCheckbox>
+
+            <BaseButton as="button" className={s.Button}>
+              Submit
+            </BaseButton>
           </form>
         </div>
       </BaseContainer>

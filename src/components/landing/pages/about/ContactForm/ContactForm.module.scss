@@ -170,6 +170,37 @@
         grid-column-end: auto;
       }
     }
+
+    .Checkbox {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      margin-top: em(6px);
+      margin-bottom: em(10px);
+      @include iflaptop {
+        margin-top: 0;
+        margin-bottom: em(16px);
+      }
+      @include iftablet {
+        margin-top: 0;
+        margin-bottom: em(16px);
+      }
+      @include ifmobile {
+        grid-column-start: auto;
+        grid-column-end: auto;
+      }
+    }
+
+    .Button {
+      margin-left: em(6px);
+      grid-column-start: 1;
+      grid-column-end: 3;
+      @include ifmobile {
+        width: 100%;
+        margin-left: 0;
+        grid-column-start: auto;
+        grid-column-end: auto;
+      }
+    }
   }
 }
 
