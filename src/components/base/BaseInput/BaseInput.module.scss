@@ -1,0 +1,134 @@
+.BaseInput {
+  font-size: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &_Label {
+    user-select: none;
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    top: 50%;
+    left: em(12px);
+    transform: translate(0, -50%);
+    transform-origin: left top;
+    transition: all $speed ease;
+
+    span {
+      color: rgb(153, 153, 153);
+      font-family: 'Poppins', sans-serif;
+      font-size: em(16px);
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      transition: all $speed ease;
+    }
+
+    &__NoEmpty {
+      transform: translate(0, em(-22px)) scale(0.8);
+    }
+  }
+
+  &_Wrapper {
+    position: relative;
+
+    .Input {
+      width: 100%;
+      height: em(58px);
+      padding: em(26px) em(12px) em(8px);
+      outline: none;
+      border: none;
+      position: relative;
+      box-shadow: none;
+      transition: $speed ease all;
+      border: 1px solid rgb(204, 191, 255);
+      border-radius: em(8px);
+      background: rgb(255, 255, 255);
+
+      color: rgb(55, 55, 55);
+      font-family: 'Poppins', sans-serif;
+      font-size: em(16px);
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      @include placeholder-color(transparent);
+
+      &::-webkit-contacts-auto-fill-button {
+        opacity: 0;
+      }
+    }
+
+    &:hover {
+      .Input {
+        border-color: rgb(118, 86, 245);
+      }
+    }
+  }
+
+  &__Focus {
+    .BaseInput_Wrapper {
+      .Input {
+        border-color: rgb(118, 86, 245);
+      }
+    }
+    .BaseInput_Label {
+      transform: translate(0, em(-22px)) scale(0.8);
+    }
+  }
+
+  &__Error {
+    .BaseInput_Wrapper {
+      .Input {
+        border-color: rgb(255, 5, 5);
+      }
+    }
+
+    .BaseInput_ErrorText {
+      margin-top: em(4px);
+      p {
+        color: rgb(255, 5, 5);
+        font-family: 'Poppins', sans-serif;
+        font-size: em(12px);
+        font-weight: 400;
+      }
+    }
+  }
+
+  &__WithIcon {
+    .BaseInput_Wrapper {
+      padding-right: em(50px);
+    }
+  }
+
+  &__Disabled,
+  &__Disabled:hover,
+  &__Disabled:focus {
+    cursor: not-allowed;
+    pointer-events: none;
+    user-select: none;
+    .BaseInput_Label span {
+      opacity: 0.6;
+    }
+    .BaseInput_Wrapper {
+      .Input {
+        opacity: 0.4;
+      }
+    }
+  }
+}
+
+.Icon {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: em(18px);
+  height: em(18px);
+  right: em(26px);
+  &:hover {
+    path {
+      stroke-opacity: 1;
+    }
+  }
+}

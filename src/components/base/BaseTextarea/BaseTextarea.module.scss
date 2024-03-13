@@ -1,0 +1,140 @@
+.BaseTextarea {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: em(34px) em(16px) em(10px) em(25px);
+  border-radius: em(12px);
+  border: 1px solid #e8e8ea;
+  background: #fff;
+  cursor: text;
+  transition: 0.3s ease all;
+
+  &:hover {
+    border-color: #425eec;
+  }
+
+  &_Focus {
+    border-color: #425eec;
+  }
+
+  @include ifmobile {
+    border-radius: em(10px);
+    padding: em(27px) em(16px) em(9px) em(16px);
+  }
+
+  .Textarea {
+    $size: 18px;
+    width: 100%;
+    min-height: em(44px, $size);
+    max-height: em(200px, $size);
+
+    border-radius: 0;
+    background: none;
+    outline: none;
+    border: none;
+    position: relative;
+    box-shadow: none;
+    transition: all 0.3s ease;
+    @include placeholder-color(transparent);
+    resize: none;
+    font-size: em($size);
+    text-overflow: ellipsis;
+    color: rgba(26, 26, 26, 0.9);
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    color: #1a1a1a;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+
+    @include ifmobile {
+      $size: 16px;
+      font-size: em($size);
+      min-height: em(44px, $size);
+      max-height: em(200px, $size);
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    -ms-overflow-style: none; /* IE и Edge */
+    scrollbar-width: none; /* Firefox */
+
+    &::placeholder {
+      visibility: hidden;
+    }
+
+    &:focus + .Label {
+      top: em(10px);
+      left: em(25px);
+      @include ifmobile {
+        top: em(10px);
+        left: em(16px);
+      }
+      span {
+        font-size: em(14px);
+        @include ifmobile {
+          font-size: em(12px);
+        }
+      }
+    }
+
+    & + .NoEmpty {
+      top: em(10px);
+      left: em(25px);
+      @include ifmobile {
+        top: em(10px);
+        left: em(16px);
+      }
+      span {
+        font-size: em(14px);
+        @include ifmobile {
+          font-size: em(12px);
+        }
+      }
+    }
+  }
+
+  .Label {
+    position: absolute;
+    pointer-events: none;
+    top: em(24px);
+    left: em(25px);
+    transition: all 0.3s ease;
+    @include ifmobile {
+      left: em(15px);
+    }
+
+    span {
+      display: flex;
+      color: rgba(26, 26, 26, 0.4);
+      font-family: 'Poppins', sans-serif;
+      font-size: em(18px);
+      font-style: normal;
+      font-weight: 400;
+      line-height: 100%; /* 18px */
+      transition: all 0.3s ease;
+      @include ifmobile {
+        font-size: em(16px);
+      }
+    }
+  }
+
+  &_Error {
+    border-color: #ff5f5f !important;
+  }
+
+  //disabled style
+  &_Disabled,
+  &_Disabled:hover,
+  &_Disabled:focus {
+    cursor: not-allowed;
+    pointer-events: none;
+    background: #f4f4f5;
+    border: 1px solid #e5e7eb !important;
+    .Textarea {
+      color: rgba(26, 26, 26, 0.5);
+    }
+  }
+}

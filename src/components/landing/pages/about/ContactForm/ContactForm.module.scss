@@ -1,0 +1,71 @@
+.ContactForm {
+  position: relative;
+  border: 2px solid $border;
+  border-radius: em(16px);
+  box-shadow: -2px 4px 12px 0px rgb(246, 246, 246);
+  background: $white;
+  padding: em(40px) em(60px) em(60px);
+  display: grid;
+  grid-template-columns: em(462px) 1fr;
+  gap: 0 em(166px);
+
+  .Header {
+    grid-column-end: 2;
+    margin-bottom: em(28px);
+    h2 {
+      color: $text;
+      font-size: em(26px);
+      font-weight: 500;
+    }
+  }
+
+  &_Info {
+    grid-row-start: 2;
+    .Description {
+      max-width: em(429px);
+      margin-bottom: em(44px);
+      p {
+        color: $grey;
+        font-size: em(16px);
+        font-weight: 400;
+      }
+    }
+
+    .Contacts {
+      &_Phone,
+      &_Email,
+      &_Address {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .Icon {
+          width: em(24px);
+          height: em(24px);
+          margin-right: em(8px);
+        }
+        .Value {
+          color: $grey;
+          font-size: em(18px);
+          font-weight: 400;
+        }
+      }
+      &_Phone,
+      &_Email {
+        margin-bottom: em(12px);
+      }
+    }
+  }
+
+  &_Form {
+    grid-row-start: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: em(18px) em(20px);
+    max-width: em(620px);
+
+    .Message {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+  }
+}
