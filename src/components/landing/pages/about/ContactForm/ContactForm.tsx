@@ -141,7 +141,6 @@ const ContactForm: React.FC = () => {
               checked={checked}
               onChange={() => setChecked(!checked)}
               className={s.Checkbox}
-              // error
             >
               I have read and agree with the&nbsp;
               <Link href={'/terms-and-conditions'}>terms and conditions</Link>
@@ -153,6 +152,22 @@ const ContactForm: React.FC = () => {
               Submit
             </BaseButton>
           </form>
+
+          <svg
+            viewBox="0 0 785 155"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className={s.ContactForm_Pictures}
+          >
+            <path
+              id="Vector 22"
+              d="M0 12.87C44.63 40.74 96.25 70.12 153.51 68.14C205.22 66.35 262.43 32.64 310.52 18.7C370.06 1.46 475.44 -19.46 510.04 35.44C536.9 78.08 498.81 166.41 435.44 152.53C411.01 147.18 398.39 121.79 409.21 104.18C420.9 85.16 455.84 75.98 480 71.59C544.89 59.81 588.13 107.13 646.85 115.44C701.71 123.21 742.45 104.08 784 "
+              stroke="#424242"
+              strokeOpacity="1.000000"
+              strokeWidth="1.000000"
+              strokeDasharray="14 14"
+            />
+          </svg>
         </div>
       </BaseContainer>
     </section>

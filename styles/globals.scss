@@ -1,1 +1,5 @@
 @import './../src/assets/scss/core.scss';
+
+.gm-style iframe + div {
+  border: none !important;
+}
