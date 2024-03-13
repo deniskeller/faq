@@ -4,7 +4,8 @@
   display: flex;
   flex-direction: column;
 
-  &_Label {
+  &_Label,
+  &_Optional {
     user-select: none;
     position: absolute;
     z-index: 1;
@@ -22,11 +23,22 @@
       font-style: normal;
       font-weight: 400;
       line-height: normal;
-      transition: all $speed ease;
     }
 
     &__NoEmpty {
       transform: translate(0, em(-22px)) scale(0.8);
+    }
+  }
+
+  &_Optional {
+    left: auto;
+    right: em(12px);
+    &__NoEmpty {
+      right: em(7px);
+      transform: translate(0, em(-22px)) scale(0.9);
+    }
+    span {
+      font-size: em(14px);
     }
   }
 
@@ -74,6 +86,10 @@
     }
     .BaseInput_Label {
       transform: translate(0, em(-22px)) scale(0.8);
+    }
+    .BaseInput_Optional {
+      right: em(7px);
+      transform: translate(0, em(-22px)) scale(0.9);
     }
   }
 

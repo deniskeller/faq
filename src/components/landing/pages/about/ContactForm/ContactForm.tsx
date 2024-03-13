@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './ContactForm.module.scss';
-import { BaseContainer, BaseIcon, BaseInput } from '@base/index';
+import { BaseContainer, BaseIcon, BaseInput, BaseTextarea } from '@base/index';
 import { ALL_ICONS } from '@constants/icons';
 
 interface IFormData {
@@ -79,6 +79,7 @@ const ContactForm: React.FC = () => {
 
           <form className={s.ContactForm_Form}>
             <BaseInput
+              required={false}
               name="fullname"
               placeholder="Full name"
               label="Full name"
@@ -112,7 +113,7 @@ const ContactForm: React.FC = () => {
               onChange={(val: string) => setNewValue(val, 'topic')}
             />
 
-            <BaseInput
+            <BaseTextarea
               name="message"
               placeholder="Message"
               label="Message"

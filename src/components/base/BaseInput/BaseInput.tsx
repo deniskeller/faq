@@ -29,7 +29,7 @@ const BaseInput: React.FC<Props> = ({
   name,
   min,
   max,
-  required = false,
+  required = true,
   withIcon = false,
   disabled = false,
   placeholder,
@@ -71,6 +71,16 @@ const BaseInput: React.FC<Props> = ({
           >
             <span>{label}</span>
           </label>
+        ) : null}
+
+        {!required ? (
+          <div
+            className={`${s.BaseInput_Optional} ${
+              value ? s.BaseInput_Optional__NoEmpty : ''
+            }`}
+          >
+            <span>Optional</span>
+          </div>
         ) : null}
 
         <input
