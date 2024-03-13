@@ -4,46 +4,46 @@
   display: flex;
   flex-direction: column;
 
-  &_Label,
-  &_Optional {
-    user-select: none;
-    position: absolute;
-    z-index: 1;
-    pointer-events: none;
-    top: 50%;
-    left: em(12px);
-    transform: translate(0, -50%);
-    transform-origin: left top;
-    transition: all $speed ease;
-
-    span {
-      color: rgb(153, 153, 153);
-      font-family: 'Poppins', sans-serif;
-      font-size: em(16px);
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-    }
-
-    &__NoEmpty {
-      transform: translate(0, em(-22px)) scale(0.8);
-    }
-  }
-
-  &_Optional {
-    left: auto;
-    right: em(12px);
-    &__NoEmpty {
-      right: em(7px);
-      transform: translate(0, em(-24px)) scale(0.9);
-    }
-    span {
-      font-size: em(14px);
-    }
-  }
-
   &_Wrapper {
     position: relative;
+
+    .Label,
+    .Optional {
+      user-select: none;
+      position: absolute;
+      z-index: 1;
+      pointer-events: none;
+      top: 50%;
+      left: em(12px);
+      transform: translate(0, -50%);
+      transform-origin: left top;
+      transition: all $speed ease;
+
+      span {
+        color: rgb(153, 153, 153);
+        font-family: 'Poppins', sans-serif;
+        font-size: em(16px);
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+
+      &__NoEmpty {
+        transform: translate(0, em(-22px)) scale(0.8);
+      }
+    }
+
+    .Optional {
+      left: auto;
+      right: em(12px);
+      &__NoEmpty {
+        right: em(7px);
+        transform: translate(0, em(-24px)) scale(0.9);
+      }
+      span {
+        font-size: em(14px);
+      }
+    }
 
     .Input {
       width: 100%;
@@ -71,6 +71,21 @@
       }
     }
 
+    .Icon {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: em(18px);
+      height: em(18px);
+      right: em(26px);
+      &:hover {
+        path {
+          stroke-opacity: 1;
+        }
+      }
+    }
+
     &:hover {
       .Input {
         border-color: rgb(118, 86, 245);
@@ -84,10 +99,10 @@
         border-color: rgb(118, 86, 245);
       }
     }
-    .BaseInput_Label {
+    .Label {
       transform: translate(0, em(-22px)) scale(0.8);
     }
-    .BaseInput_Optional {
+    .Optional {
       right: em(7px);
       transform: translate(0, em(-24px)) scale(0.9);
     }
@@ -123,28 +138,18 @@
     cursor: not-allowed;
     pointer-events: none;
     user-select: none;
-    .BaseInput_Label span {
-      opacity: 0.6;
-    }
+
     .BaseInput_Wrapper {
       .Input {
         opacity: 0.4;
       }
     }
-  }
-}
 
-.Icon {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: em(18px);
-  height: em(18px);
-  right: em(26px);
-  &:hover {
-    path {
-      stroke-opacity: 1;
+    .Label,
+    .Optional {
+      span {
+        opacity: 0.6;
+      }
     }
   }
 }

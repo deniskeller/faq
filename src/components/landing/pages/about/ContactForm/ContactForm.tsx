@@ -13,11 +13,11 @@ interface IFormData {
 
 const ContactForm: React.FC = () => {
   const initialState = {
-    fullname: '',
+    fullname: 'Quentin Tarantino',
     phone: '',
     email: '',
     topic: '',
-    message: '',
+    message: 'sdfdsfsdfsdfs',
   };
 
   const [value, setValue] = React.useState<IFormData>(initialState);
@@ -79,12 +79,12 @@ const ContactForm: React.FC = () => {
 
           <form className={s.ContactForm_Form}>
             <BaseInput
-              required={false}
               name="fullname"
               placeholder="Full name"
               label="Full name"
               value={value.fullname}
               onChange={(val: string) => setNewValue(val, 'fullname')}
+              disabled
             />
 
             <BaseInput
@@ -94,6 +94,7 @@ const ContactForm: React.FC = () => {
               label="Phone number"
               value={value.phone}
               onChange={(val: string) => setNewValue(val, 'phone')}
+              error="Some text"
             />
 
             <BaseInput
@@ -103,6 +104,7 @@ const ContactForm: React.FC = () => {
               label="Email adress"
               value={value.email}
               onChange={(val: string) => setNewValue(val, 'email')}
+              required={false}
             />
 
             <BaseInput
@@ -111,6 +113,8 @@ const ContactForm: React.FC = () => {
               label="Topic"
               value={value.topic}
               onChange={(val: string) => setNewValue(val, 'topic')}
+              required={false}
+              disabled
             />
 
             <BaseTextarea

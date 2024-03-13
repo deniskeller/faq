@@ -64,21 +64,13 @@ const BaseInput: React.FC<Props> = ({
     >
       <div className={s.BaseInput_Wrapper}>
         {label ? (
-          <label
-            className={`${s.BaseInput_Label} ${
-              value ? s.BaseInput_Label__NoEmpty : ''
-            }`}
-          >
+          <label className={`${s.Label} ${value ? s.Label__NoEmpty : ''}`}>
             <span>{label}</span>
           </label>
         ) : null}
 
         {!required ? (
-          <div
-            className={`${s.BaseInput_Optional} ${
-              value ? s.BaseInput_Optional__NoEmpty : ''
-            }`}
-          >
+          <div className={`${s.Optional} ${value ? s.Optional__NoEmpty : ''}`}>
             <span>Optional</span>
           </div>
         ) : null}
