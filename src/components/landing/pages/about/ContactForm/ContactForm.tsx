@@ -35,7 +35,7 @@ const ContactForm: React.FC = () => {
   };
 
   //checkbox
-  const [checked, setChecked] = React.useState<any>(false);
+  const [checked, setChecked] = React.useState<boolean>(false);
 
   return (
     <section>

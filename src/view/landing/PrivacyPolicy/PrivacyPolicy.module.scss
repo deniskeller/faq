@@ -152,6 +152,7 @@
                 transition: all $speed ease;
                 &:hover {
                   color: $purple;
+                  text-decoration: none;
                 }
               }
             }

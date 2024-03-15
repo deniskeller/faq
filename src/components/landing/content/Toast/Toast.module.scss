@@ -1,0 +1,29 @@
+.Toast {
+  &_Title {
+    $size: 26px;
+    color: $text;
+    font-family: 'Gantari', sans-serif;
+    font-size: em($size);
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: em(12px, $size);
+    @include ifmobile {
+      $size: 18px;
+      font-size: em($size);
+      margin-bottom: em(8px, $size);
+    }
+  }
+  &_Text {
+    color: $text;
+    font-family: 'Gantari', sans-serif;
+    font-size: em(18px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    opacity: 0.5;
+  }
+}
+
+@include ifmobile {
+}

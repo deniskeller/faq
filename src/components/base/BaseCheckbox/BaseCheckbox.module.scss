@@ -41,18 +41,14 @@
   &_Label {
     display: flex;
     line-height: 100%;
-    margin-left: em(14px);
-    margin-top: em(-3px);
+    margin-left: em(12px);
     p {
       color: rgb(99, 99, 99);
       font-family: 'Poppins', sans-serif;
-      font-size: em(16px);
+      font-size: em(12px);
       font-style: normal;
       font-weight: 400;
       line-height: normal;
-      @include ifmobile {
-        font-size: em(14px);
-      }
     }
   }
 

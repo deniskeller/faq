@@ -1,0 +1,181 @@
+.SignUp {
+  padding: em(160px) 0 em(187px);
+  @include iflaptop {
+    padding: em(134px) 0 em(80px);
+  }
+  @include iftablet {
+    padding: em(134px) 0 em(60px);
+  }
+  @include ifmobile {
+    padding: em(114px) 0 em(40px);
+  }
+
+  &_Container {
+    max-width: em(1270px);
+    @include iftablet {
+      max-width: em(560px);
+    }
+  }
+
+  &_Title {
+    text-align: center;
+    margin-bottom: em(20px);
+    @include iflaptop {
+      margin-bottom: em(32px);
+    }
+    @include iftablet {
+      margin-bottom: em(28px);
+    }
+    @include ifmobile {
+      margin-bottom: em(24px);
+    }
+    span {
+      color: $purple;
+    }
+  }
+
+  &_Subtitle {
+    text-align: center;
+    margin-bottom: em(40px);
+    @include iflaptop {
+      max-width: em(355px);
+      margin: 0 auto em(60px);
+    }
+    @include iftablet {
+      max-width: em(355px);
+      margin: 0 auto em(52px);
+    }
+    @include ifmobile {
+      margin: 0 auto em(40px);
+    }
+  }
+
+  &_Content {
+    box-sizing: border-box;
+    border: 2px solid $border;
+    box-shadow: -2px 4px 12px 0px rgb(246, 246, 246);
+    background: $white;
+    border-radius: em(16px);
+    display: grid;
+    grid-template-columns: em(360px) 1fr;
+    gap: 0 em(186px);
+    padding: em(60px) em(91px) em(32px);
+    @include iflaptop {
+      grid-template-columns: em(269px) 1fr;
+      gap: 0 em(98px);
+      padding: em(40px) em(40px) em(32px);
+    }
+    @include iftablet {
+      grid-template-columns: 1fr;
+      padding: em(40px) em(40px) em(32px);
+    }
+    @include ifmobile {
+      grid-template-columns: 1fr;
+      padding: em(40px) em(20px) em(32px);
+    }
+
+    .Image {
+      width: em(360px);
+      height: em(410px);
+      margin: em(62px) 0 auto;
+      @include iflaptop {
+        width: em(269px);
+        height: em(306px);
+        margin: em(97px) 0 auto;
+      }
+      @include iftablet {
+        display: none;
+      }
+      @include ifmobile {
+        display: none;
+      }
+    }
+
+    .Form {
+      &_Fields {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: em(20px) 0;
+        margin-bottom: em(24px);
+        @include ifmobile {
+          margin-bottom: em(28px);
+        }
+      }
+
+      &_Password {
+        .PasswordCheck {
+          display: flex;
+          flex-direction: row;
+          margin-top: em(4px);
+          &_Item {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            &:not(:last-child) {
+              margin-right: em(16px);
+            }
+            .Icon {
+              width: em(16px);
+              height: em(16px);
+              margin-right: em(4px);
+            }
+            .Label {
+              color: $grey;
+              font-size: em(12px);
+              font-weight: 400;
+            }
+            &__Valid {
+              .Icon path {
+                fill: rgb(45, 172, 0);
+              }
+            }
+          }
+        }
+      }
+
+      &_Checkbox {
+        margin-bottom: em(32px);
+        @include iflaptop {
+          margin-bottom: em(22px);
+        }
+        @include iftablet {
+          margin-bottom: em(22px);
+        }
+        @include ifmobile {
+          margin-bottom: em(24px);
+        }
+        a {
+          color: $grey;
+          text-decoration: underline;
+          transition: all $speed ease;
+          &:hover {
+            color: $purple;
+            text-decoration: none;
+          }
+        }
+      }
+
+      &_Button {
+        margin-left: em(6px);
+        margin-bottom: em(52px);
+        @include iflaptop {
+          margin-bottom: em(46px);
+        }
+        @include iftablet {
+          margin-bottom: em(46px);
+        }
+        @include ifmobile {
+          width: 100%;
+          margin-bottom: em(46px);
+        }
+      }
+    }
+  }
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}

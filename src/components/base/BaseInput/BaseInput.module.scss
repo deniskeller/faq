@@ -76,12 +76,15 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      width: em(18px);
-      height: em(18px);
-      right: em(26px);
+      width: em(24px);
+      height: em(24px);
+      right: em(12px);
+      path {
+        transition: stroke $speed ease;
+      }
       &:hover {
         path {
-          stroke-opacity: 1;
+          stroke: $purple;
         }
       }
     }
@@ -127,7 +130,7 @@
   }
 
   &__WithIcon {
-    .BaseInput_Wrapper {
+    .Input {
       padding-right: em(50px);
     }
   }
