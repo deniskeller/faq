@@ -9,7 +9,7 @@ import {
   BaseText,
 } from '@base/index';
 import Link from 'next/link';
-import { ToMainPage, Toast } from '@content/landing/index';
+import { ToMainPage } from '@content/landing/index';
 import Image from 'next/image';
 import toast from 'react-hot-toast';
 // import BaseInputPhone from '@base/BaseInputPhone/BaseInputPhone';
@@ -52,9 +52,10 @@ const SignUp: React.FC = () => {
   const submitHandler = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     if (value.fullname != '') {
-      router.push('/');
-      toast.custom(<Toast />, {
-        duration: 3000,
+      // router.push('/');
+      toast.success('Thank you! Our manager will contact you shortly.', {
+        duration: 300000,
+        // className: 'login',
       });
     } else {
       setError('Поле не должно быть пустым!');
@@ -223,6 +224,7 @@ const SignUp: React.FC = () => {
               type="submit"
               className={s.Form_Button}
               onClick={submitHandler}
+              // disabled
             >
               Sign Up
             </BaseButton>

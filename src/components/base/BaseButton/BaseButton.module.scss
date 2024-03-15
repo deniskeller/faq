@@ -151,6 +151,5 @@
 .Button:disabled:active {
   cursor: not-allowed !important;
   pointer-events: none !important;
-  color: rgba(66, 94, 236, 0.4) !important;
-  background: rgba(66, 94, 236, 0.15) !important;
+  opacity: 0.5;
 }
