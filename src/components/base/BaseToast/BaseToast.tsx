@@ -8,7 +8,7 @@ const BaseToast: React.FC = () => {
   const { toasts, handlers } = useToaster();
   const { startPause, endPause, calculateOffset, updateHeight } = handlers;
 
-  console.log('toasts: ', toasts);
+  // console.log('toasts: ', toasts);
 
   const typeIcon = (type: ToastType) => {
     switch (type) {
