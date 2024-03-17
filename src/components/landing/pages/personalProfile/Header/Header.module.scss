@@ -1,0 +1,158 @@
+.Header {
+  padding: em(180px) 0 0;
+  padding-top: em(180px);
+  margin-bottom: em(112px);
+  @include iflaptop {
+    padding-top: em(134px);
+    margin-bottom: em(60px);
+  }
+  @include iftablet {
+    padding-top: em(134px);
+    margin-bottom: em(52px);
+  }
+  @include ifmobile {
+    padding-top: em(114px);
+    margin-bottom: em(56px);
+  }
+
+  &_Container {
+    position: relative;
+  }
+
+  &_Title {
+    position: relative;
+    z-index: 1;
+    margin-bottom: em(40px);
+    span {
+      color: $purple;
+    }
+    @include iflaptop {
+      margin-bottom: em(32px);
+    }
+    @include iftablet {
+      margin-bottom: em(28px);
+    }
+    @include ifmobile {
+      margin-bottom: em(24px);
+    }
+  }
+
+  &_Description {
+    position: relative;
+    z-index: 1;
+    max-width: em(596px);
+    margin-bottom: em(48px);
+    @include iflaptop {
+      max-width: em(513px);
+      margin-bottom: em(28px);
+    }
+    @include iftablet {
+      max-width: em(454px);
+      margin-bottom: em(24px);
+    }
+    @include ifmobile {
+      margin-bottom: em(28px);
+    }
+  }
+
+  &_Orders {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0 em(32px);
+    width: 100%;
+    max-width: em(596px);
+    @include iflaptop {
+      gap: 0 em(20px);
+      max-width: em(574px);
+    }
+    @include iftablet {
+      gap: 0 em(12px);
+      max-width: em(534px);
+    }
+    @include ifmobile {
+      grid-template-columns: 1fr 1fr;
+      gap: em(16px);
+      margin-bottom: em(36px);
+    }
+
+    .OrderItem {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid $border;
+      border-radius: em(12px);
+      box-shadow: -2px 4px 12px 0px rgb(246, 246, 246);
+      background: $white;
+      min-height: em(117px);
+      @include iftablet {
+        min-height: em(109px);
+      }
+      @include ifmobile {
+        min-height: em(106px);
+        &:last-child {
+          grid-column-start: 1;
+          grid-column-end: 3;
+          justify-self: center;
+          width: 100%;
+          max-width: em(168px);
+        }
+      }
+      &_Value {
+        margin-bottom: em(8px);
+        span {
+          color: $purple;
+          font-size: em(30px);
+          font-weight: 500;
+        }
+      }
+      &_Label {
+        color: $grey;
+        font-size: em(16px);
+        font-weight: 400;
+        letter-spacing: 0%;
+        text-align: center;
+        @include ifmobile {
+          font-size: em(14px);
+        }
+      }
+    }
+  }
+
+  &_Image {
+    position: absolute;
+    width: em(450.85px);
+    height: em(387px);
+    top: 0;
+    right: em(163px);
+    @include iflaptop {
+      width: em(291.25px);
+      height: em(250px);
+      right: em(48px);
+      top: auto;
+      bottom: 0;
+    }
+    @include iftablet {
+      width: em(161px);
+      height: em(138.2px);
+      right: em(20px);
+      top: auto;
+      bottom: 0;
+    }
+    @include ifmobile {
+      width: em(291.25px);
+      height: em(250px);
+      position: relative;
+      top: auto;
+      right: auto;
+      margin: 0 auto;
+    }
+  }
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}

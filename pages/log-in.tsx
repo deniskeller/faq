@@ -1,7 +1,7 @@
 import { Landing } from '@layouts/index';
 import { LogIn } from '@view/landing';
 
-const SignUpPage = () => {
+const LogInPage = () => {
   return (
     <Landing footer={false}>
       <LogIn />
@@ -9,4 +9,4 @@ const SignUpPage = () => {
   );
 };
 
-export default SignUpPage;
+export default LogInPage;

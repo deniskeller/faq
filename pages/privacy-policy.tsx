@@ -1,7 +1,7 @@
 import { Landing } from '@layouts/index';
 import { PrivacyPolicy } from '@view/landing';
 
-const MainPage = () => {
+const PrivacyPolicyPage = () => {
   return (
     <Landing>
       <PrivacyPolicy />
@@ -9,4 +9,4 @@ const MainPage = () => {
   );
 };
 
-export default MainPage;
+export default PrivacyPolicyPage;
