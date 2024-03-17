@@ -1,0 +1,231 @@
+.OrdersHistory {
+  margin-bottom: em(89px);
+  @include iflaptop {
+    margin-bottom: em(60px);
+  }
+  @include iftablet {
+    margin-bottom: em(52px);
+  }
+  @include ifmobile {
+    margin-bottom: em(56px);
+    overflow: hidden;
+  }
+
+  &_Container {
+    @include ifmobile {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+
+  &_Title {
+    margin-bottom: em(12px);
+    @include ifdesktop {
+      margin-bottom: em(28px);
+    }
+    @include ifmobile {
+      padding-right: em(12px);
+      padding-left: em(12px);
+    }
+    h2 {
+      color: $text;
+      font-size: em(20px);
+
+      font-weight: 500;
+      line-height: 135%;
+      letter-spacing: 0%;
+      @include ifdesktop {
+        font-size: em(26px);
+      }
+    }
+  }
+
+  &_Subtitle {
+    margin-bottom: em(40px);
+    @include iftablet {
+      margin-bottom: em(32px);
+    }
+    @include ifmobile {
+      margin-bottom: em(32px);
+      padding-right: em(12px);
+      padding-left: em(12px);
+    }
+    p {
+      color: $grey;
+      font-size: em(16px);
+      font-weight: 400;
+      letter-spacing: 0%;
+    }
+  }
+
+  &_Table {
+    position: relative;
+    box-shadow: -2px 4px 12px 0px rgb(246, 246, 246);
+    @include ifmobile {
+      overflow: auto;
+      width: 100%;
+    }
+
+    .ScrollWrapper {
+      @include ifmobile {
+        overflow: auto;
+        position: relative;
+        width: max-content;
+        padding-right: em(12px);
+        padding-left: em(12px);
+      }
+    }
+
+    .THead {
+      background: rgb(193, 253, 97);
+      display: grid;
+      grid-template-columns: repeat(6, minmax(em(225px), 1fr));
+      border-top-left-radius: em(12px);
+      border-top-right-radius: em(12px);
+      position: sticky;
+      @include iflaptop {
+        grid-template-columns:
+          minmax(em(142px), 1fr) minmax(em(166px), 1fr) minmax(em(180px), 1fr)
+          minmax(em(120px), 1fr) minmax(em(140px), 1fr) minmax(em(190px), 1fr);
+      }
+      @include iftablet {
+        grid-template-columns:
+          minmax(em(118px), 1fr) minmax(em(132px), 1fr) minmax(em(148px), 1fr)
+          minmax(em(95px), 1fr) minmax(em(100px), 1fr) minmax(em(136px), 1fr);
+      }
+      @include ifmobile {
+        grid-template-columns:
+          minmax(em(118px), 1fr) minmax(em(132px), 1fr) minmax(em(148px), 1fr)
+          minmax(em(95px), 1fr) minmax(em(100px), 1fr) minmax(em(136px), 1fr);
+      }
+
+      &_Column {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        min-height: em(59px);
+        padding: 0 em(10px) 0 em(36px);
+        @include iflaptop {
+          padding: 0 em(10px) 0 em(20px);
+        }
+        @include iftablet {
+          min-height: em(56px);
+          padding: 0 em(10px) 0 em(20px);
+        }
+        @include ifmobile {
+          min-height: em(56px);
+          padding: 0 em(10px) 0 em(20px);
+        }
+        span {
+          color: $text;
+          font-size: em(18px);
+          font-weight: 400;
+          @include iftablet {
+            font-size: em(15px);
+          }
+          @include ifmobile {
+            font-size: em(15px);
+          }
+        }
+      }
+    }
+
+    .TBody {
+      border: 2px solid $border;
+      background: rgb(255, 255, 255);
+      border-bottom-left-radius: em(12px);
+      border-bottom-right-radius: em(12px);
+      overflow-y: auto;
+      overflow-x: hidden;
+      max-height: em(404px);
+      @include iflaptop {
+      }
+      @include iftablet {
+        max-height: em(306px);
+      }
+      @include ifmobile {
+        overflow-y: auto;
+        overflow-x: auto;
+        max-height: em(306px);
+      }
+
+      &_Row {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(em(225px), 1fr));
+        @include iflaptop {
+          grid-template-columns:
+            minmax(em(142px), 1fr) minmax(em(166px), 1fr) minmax(em(180px), 1fr)
+            minmax(em(120px), 1fr) minmax(em(140px), 1fr) minmax(em(190px), 1fr);
+        }
+        @include iftablet {
+          grid-template-columns:
+            minmax(em(118px), 1fr) minmax(em(132px), 1fr) minmax(em(148px), 1fr)
+            minmax(em(95px), 1fr) minmax(em(100px), 1fr) minmax(em(136px), 1fr);
+        }
+        @include ifmobile {
+          grid-template-columns:
+            minmax(em(118px), 1fr) minmax(em(132px), 1fr) minmax(em(148px), 1fr)
+            minmax(em(95px), 1fr) minmax(em(100px), 1fr) minmax(em(136px), 1fr);
+        }
+
+        &:not(:last-child) {
+          border-bottom: 2px solid $border;
+        }
+
+        &_Column {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          min-height: em(65px);
+          padding: em(4px) em(10px) em(4px) em(36px);
+          @include iflaptop {
+            padding: em(4px) em(10px) em(4px) em(20px);
+          }
+          @include iftablet {
+            min-height: em(48px);
+            padding: em(4px) em(10px) em(4px) em(20px);
+          }
+          @include ifmobile {
+          }
+          &:not(:last-child) {
+            border-right: 2px solid $border;
+          }
+          span {
+            color: $grey;
+            font-size: em(20px);
+            font-weight: 400;
+            @include iflaptop {
+              font-size: em(16px);
+            }
+            @include iftablet {
+              font-size: em(14px);
+            }
+            @include ifmobile {
+              font-size: em(14px);
+            }
+          }
+          .Marker {
+            width: em(8px);
+            height: em(8px);
+            border-radius: 100%;
+            background: $purple;
+            margin-right: em(10px);
+            @include iflaptop {
+            }
+            @include iftablet {
+            }
+            @include ifmobile {
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}

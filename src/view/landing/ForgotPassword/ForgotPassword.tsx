@@ -15,7 +15,7 @@ interface IFormData {
 
 const ForgotPassword: React.FC = () => {
   const router = useRouter();
-  const [step, setStep] = useState(3);
+  const [step, setStep] = useState(1);
   const [subtitle, setSubtitle] = useState(
     'Please login to your account using the email you signed up with and	the password which was sent to your email.'
   );
