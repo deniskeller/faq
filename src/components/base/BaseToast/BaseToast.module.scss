@@ -64,6 +64,9 @@
       &_ToLogin {
         position: relative;
         margin-left: em(16px);
+        @include ifmobile {
+          margin-left: em(12px);
+        }
         &::before {
           content: '';
           display: block;
@@ -84,6 +87,9 @@
           font-weight: 500;
           white-space: nowrap;
           transition: color $speed ease;
+          @include ifmobile {
+            font-size: em(14px);
+          }
         }
 
         &:hover {
@@ -111,6 +117,9 @@
         width: em(26px);
         height: em(26px);
         margin-left: em(35px);
+        @include ifmobile {
+          margin-left: em(15px);
+        }
         .Progress {
           position: absolute;
           top: 0;

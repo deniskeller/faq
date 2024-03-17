@@ -1,6 +1,69 @@
 @import './../src/assets/scss/core.scss';
 
+// УБИРАЕМ БАГНУТЫЙ БОРДЕР У КАРТЫ
 .gm-style iframe + div {
   border: none !important;
   outline: none !important;
+}
+
+// КОД ВАРИФИКАЦИИ ИЗМЕНЕНИЯ ТЕЛЕФОНА
+.vi__wrapper {
+  width: 100%;
+}
+
+.VerificationCode {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  .Input {
+    $size: 26px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: em(58px, $size) !important;
+    height: em(58px, $size) !important;
+    padding: em(0px, $size) em(22px, $size) !important;
+    background: none !important;
+    outline: none !important;
+    border: none !important;
+    position: relative !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    border: 1px solid rgb(204, 191, 255) !important;
+    border-radius: em(8px, $size) !important;
+    transition: all 0.3s ease !important;
+    @include placeholder-color(transparent);
+    text-align: center !important;
+    flex-grow: initial;
+    flex-basis: initial;
+    color: rgb(55, 55, 55) !important;
+    text-overflow: ellipsis !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: em($size) !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: 100% !important;
+    &.Selected {
+      border-color: rgb(118, 86, 245) !important;
+    }
+
+    &.vi__character--filled {
+      border-color: rgb(118, 86, 245) !important;
+    }
+
+    @include ifmobile {
+      $size: 20px;
+      max-width: em(46px, $size) !important;
+      height: em(46px, $size) !important;
+      padding: em(0px, $size) em(12px, $size) !important;
+      font-size: em($size) !important;
+    }
+  }
+
+  .Error {
+    border-color: rgb(255, 5, 5) !important;
+  }
 }

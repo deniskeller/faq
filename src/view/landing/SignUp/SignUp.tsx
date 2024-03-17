@@ -54,7 +54,7 @@ const SignUp: React.FC = () => {
     if (value.fullname != '') {
       // router.push('/');
       toast.success('Thank you! Our manager will contact you shortly.', {
-        duration: 300000,
+        duration: 3000,
         // className: 'login',
       });
     } else {

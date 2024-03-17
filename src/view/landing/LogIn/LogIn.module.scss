@@ -11,7 +11,7 @@
   }
 
   &_Container {
-    max-width: em(1270px);
+    max-width: em(1296px);
     @include iftablet {
       max-width: em(550px);
     }
@@ -152,6 +152,7 @@
         @include ifmobile {
           width: 100%;
           margin-bottom: em(45px);
+          margin-left: 0;
         }
       }
 
