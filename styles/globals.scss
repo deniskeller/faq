@@ -90,7 +90,7 @@
   border: 1px solid rgb(204, 191, 255);
   border-radius: em(8px, $size) !important;
   background: #fff !important;
-  padding: em(31px, $size) em(12px, $size) em(12px, $size) em(54px, $size) !important;
+  padding: em(31px, $size) em(12px, $size) em(12px, $size) em(60px, $size) !important;
   transition: all $speed ease;
   @include placeholder-color(transparent);
 }
@@ -160,8 +160,8 @@
   top: 50% !important;
   transform: translate(0%, -50%) rotate(180deg) !important;
   transition: all $speed ease;
-  width: em(20px) !important;
-  height: em(20px) !important;
+  width: em(24px) !important;
+  height: em(24px) !important;
   border: none !important;
   background-image: url('/pictures/icons/accordion-arrow.svg');
   background-size: contain;
@@ -276,12 +276,12 @@ input[type='search']::-webkit-search-results-decoration {
   margin-right: em(8px, 16px) !important;
 }
 
-.country.active {
+.country.highlight {
   background: transparent !important;
 }
 
-.react-tel-input .country-list .active .dial-code,
-.react-tel-input .country-list .active .country-name {
+.react-tel-input .country-list .highlight .dial-code,
+.react-tel-input .country-list .highlight .country-name {
   color: rgb(118, 86, 245) !important;
 }
 //пустоe значениe

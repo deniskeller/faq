@@ -8,4 +8,5 @@ export { default as BaseInput } from "./BaseInput/BaseInput";
 export { default as BaseTextarea } from "./BaseTextarea/BaseTextarea";
 export { default as BaseCheckbox } from "./BaseCheckbox/BaseCheckbox";
 export { default as BaseInputPhone } from "./BaseInputPhone/BaseInputPhone";
+export { default as BaseSelect } from "./BaseSelect/BaseSelect";
 

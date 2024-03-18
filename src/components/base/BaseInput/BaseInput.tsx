@@ -115,7 +115,7 @@ const BaseInput: React.FC<Props> = ({
         ) : null}
       </div>
 
-      {error ? (
+      {error !== ' ' ? (
         <div className={s.BaseInput_ErrorText}>
           <p>{error}</p>
         </div>

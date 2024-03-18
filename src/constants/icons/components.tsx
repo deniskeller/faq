@@ -1,6 +1,7 @@
 export enum ComponentsIcons {
   EYE = 'EYE',
   EYE_OFF = 'EYE_OFF',
+  CHEVRON = 'CHEVRON',
 }
 
 export const componentsIcons = {
@@ -37,4 +38,20 @@ export const componentsIcons = {
       />
     </>
   ),
+
+  [ComponentsIcons.CHEVRON]: (
+    <>
+      <path
+        id="Vector"
+        d="M24 19L15 10L6 19"
+        stroke="rgb(153, 153, 153)"
+        strokeOpacity="1.000000"
+        strokeWidth="3.000000"
+        strokeLinejoin="round"
+        strokeLinecap="round"
+      />
+    </>
+  ),
+
+  // [ComponentsIcons.LOGO]: <></>,
 };

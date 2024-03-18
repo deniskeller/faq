@@ -7,6 +7,7 @@ import {
   BaseIcon,
   BaseInput,
   BaseInputPhone,
+  BaseSelect,
   BaseTextarea,
 } from '@base/index';
 import { ALL_ICONS } from '@constants/icons';
@@ -16,8 +17,13 @@ interface IFormData {
   fullname: string;
   phone: string;
   email: string;
-  topic: string;
+  topic: ISelectItem[];
   message: string;
+}
+
+interface ISelectItem {
+  label: string;
+  value: string;
 }
 
 const ContactForm: React.FC = () => {
@@ -25,18 +31,30 @@ const ContactForm: React.FC = () => {
     fullname: 'Quentin Tarantino',
     phone: '',
     email: '',
-    topic: '',
-    message: 'sdfdsfsdfsdfs',
+    topic: [],
+    message: '',
   };
 
   const [value, setValue] = React.useState<IFormData>(initialState);
 
-  const setNewValue = (value: string, prop: keyof IFormData) => {
+  const setNewValue = (
+    value: ISelectItem | ISelectItem[] | string,
+    prop: keyof IFormData
+  ) => {
     setValue((prev) => ({ ...prev, [prop]: value }));
   };
 
   //checkbox
   const [checked, setChecked] = React.useState<boolean>(false);
+  const [error, setError] = React.useState<boolean>(false);
+
+  const submitHandler = (e: { preventDefault: () => void }) => {
+    e.preventDefault();
+    if (value.fullname != '') {
+      setError(true);
+    } else {
+    }
+  };
 
   return (
     <section>
@@ -89,20 +107,21 @@ const ContactForm: React.FC = () => {
             </div>
           </div>
 
-          <form className={s.ContactForm_Form}>
+          <form className={s.ContactForm_Form} autoComplete="off">
             <BaseInput
               name="fullname"
               placeholder="Full name"
               label="Full name"
               value={value.fullname}
               onChange={(val: string) => setNewValue(val, 'fullname')}
-              disabled
+              error={error}
             />
 
             <BaseInputPhone
-              country="us"
+              country="ru"
               value={value.phone}
               onChange={(val: string) => setNewValue(val, 'phone')}
+              error={error}
             />
 
             <BaseInput
@@ -113,16 +132,26 @@ const ContactForm: React.FC = () => {
               value={value.email}
               onChange={(val: string) => setNewValue(val, 'email')}
               required={false}
+              error="Some text error"
             />
 
-            <BaseInput
+            <BaseSelect
               name="topic"
-              placeholder="Topic"
-              label="Topic"
               value={value.topic}
-              onChange={(val: string) => setNewValue(val, 'topic')}
-              required={false}
-              disabled
+              placeholder="Topic"
+              options={[
+                { value: 'topic 1', label: 'Topic 1' },
+                { value: 'topic 2', label: 'Topic 2' },
+                { value: 'topic 3', label: 'Topic 3' },
+                { value: 'topic 4', label: 'Topic 4' },
+              ]}
+              onChange={(val: ISelectItem[] | ISelectItem) =>
+                setNewValue(val, 'topic')
+              }
+              onClear={() => {}}
+              onBlur={() => {}}
+              withLabel
+              error={error}
             />
 
             <BaseTextarea
@@ -132,6 +161,7 @@ const ContactForm: React.FC = () => {
               value={value.message}
               onChange={(val: string) => setNewValue(val, 'message')}
               className={s.Message}
+              error={error}
             />
 
             <BaseCheckbox
@@ -145,7 +175,11 @@ const ContactForm: React.FC = () => {
               <Link href={'/privacy-policy'}>privacy policy</Link>
             </BaseCheckbox>
 
-            <BaseButton as="button" className={s.Button}>
+            <BaseButton
+              as="button"
+              onClick={submitHandler}
+              className={s.Button}
+            >
               Submit
             </BaseButton>
           </form>
