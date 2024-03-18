@@ -30,7 +30,7 @@ const ForgotPassword: React.FC = () => {
     setValue((prev) => ({ ...prev, [prop]: value }));
   };
 
-  const [error, setError] = useState('');
+  const [error, setError] = useState(false);
   useEffect(() => {
     if (step == 1)
       setSubtitle(
@@ -53,7 +53,7 @@ const ForgotPassword: React.FC = () => {
       setStep(2);
       setSubtitle('Write the code that we sent to your email');
     } else {
-      setError('We found no account with this email');
+      setError(true);
     }
   };
 
@@ -114,7 +114,7 @@ const ForgotPassword: React.FC = () => {
       //   router.push('/log-in');
       // }, 4000);
     } else {
-      setError('Поле не должно быть пустым!');
+      setError(true);
     }
   };
 

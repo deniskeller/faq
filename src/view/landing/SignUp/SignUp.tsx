@@ -48,7 +48,7 @@ const SignUp: React.FC = () => {
     return /[a-zа-яё]/i.test(str);
   };
 
-  const [error, setError] = useState('');
+  const [error, setError] = useState(false);
 
   const submitHandler = (e: { preventDefault: () => void }) => {
     e.preventDefault();
@@ -59,7 +59,7 @@ const SignUp: React.FC = () => {
         // className: 'login',
       });
     } else {
-      setError('Поле не должно быть пустым!');
+      setError(true);
     }
   };
 

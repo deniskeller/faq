@@ -23,14 +23,14 @@ const LogIn: React.FC = () => {
     setValue((prev) => ({ ...prev, [prop]: value }));
   };
 
-  const [error, setError] = useState('');
+  const [error, setError] = useState(false);
 
   const submitHandler = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     if (value.email != '') {
       router.push('/');
     } else {
-      setError('Поле не должно быть пустым!');
+      setError(true);
     }
   };
 
