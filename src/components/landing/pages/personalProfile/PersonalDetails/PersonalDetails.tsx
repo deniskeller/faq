@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import s from './PersonalDetails.module.scss';
-import { BaseButton, BaseContainer, BaseIcon, BaseInput } from '@base/index';
+import {
+  BaseButton,
+  BaseContainer,
+  BaseIcon,
+  BaseInput,
+  BaseInputPhone,
+} from '@base/index';
 import Image from 'next/image';
 import { ALL_ICONS } from '@constants/icons';
 
@@ -90,10 +96,8 @@ const PersonalDetails: React.FC = () => {
               </div>
 
               <div className={s.Fields_Input}>
-                <BaseInput
-                  name="phone"
-                  placeholder="Phone"
-                  label="Phone"
+                <BaseInputPhone
+                  country="us"
                   value={value.phone}
                   onChange={(val: string) => setNewValue(val, 'phone')}
                   error={error}

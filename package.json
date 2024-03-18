@@ -20,6 +20,7 @@
     "react-device-detect": "^2.2.3",
     "react-dom": "^18",
     "react-hot-toast": "^2.4.1",
+    "react-phone-input-2": "^2.15.1",
     "react-verification-input": "^4.1.1",
     "sass": "^1.71.1"
   },
