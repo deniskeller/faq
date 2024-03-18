@@ -140,6 +140,8 @@
   }
 
   &_Form {
+    position: relative;
+    z-index: 1;
     display: grid;
     grid-row-start: 2;
     grid-template-columns: 1fr 1fr;

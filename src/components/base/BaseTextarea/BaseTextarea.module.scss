@@ -85,6 +85,16 @@
     }
   }
 
+  &_ErrorText {
+    margin-top: em(4px);
+    p {
+      color: rgb(255, 5, 5);
+      font-family: 'Poppins', sans-serif;
+      font-size: em(12px);
+      font-weight: 400;
+    }
+  }
+
   &:hover {
     .BaseTextarea_Wrapper {
       border-color: rgb(118, 86, 245);
@@ -108,16 +118,6 @@
   &__Error {
     .BaseTextarea_Wrapper {
       border-color: rgb(255, 5, 5) !important;
-    }
-
-    .BaseTextarea_ErrorText {
-      margin-top: em(4px);
-      p {
-        color: rgb(255, 5, 5);
-        font-family: 'Poppins', sans-serif;
-        font-size: em(12px);
-        font-weight: 400;
-      }
     }
   }
 

@@ -8,7 +8,8 @@ interface Props {
   placeholder?: string;
   country?: string;
   className?: string;
-  error?: string | boolean;
+  error?: boolean;
+  errorText?: string;
   value: string;
   disabled?: boolean;
   onChange(value: string | number): void;
@@ -17,6 +18,7 @@ interface Props {
 const InputPhone: React.FC<Props> = ({
   value,
   error,
+  errorText,
   country = 'us',
   placeholder,
   className = '',
@@ -49,9 +51,9 @@ const InputPhone: React.FC<Props> = ({
           }}
         />
 
-        {error ? (
+        {errorText && errorText?.length > 0 ? (
           <div className={s.BaseInput_ErrorText}>
-            <p>{error}</p>
+            <p>{errorText}</p>
           </div>
         ) : null}
       </ReactLenis>

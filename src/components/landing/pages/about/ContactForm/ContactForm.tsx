@@ -132,7 +132,8 @@ const ContactForm: React.FC = () => {
               value={value.email}
               onChange={(val: string) => setNewValue(val, 'email')}
               required={false}
-              error="Some text error"
+              error
+              errorText="werwer"
             />
 
             <BaseSelect
@@ -168,6 +169,7 @@ const ContactForm: React.FC = () => {
               checked={checked}
               onChange={() => setChecked(!checked)}
               className={s.Checkbox}
+              error={error}
             >
               I have read and agree with the&nbsp;
               <Link href={'/terms-and-conditions'}>terms and conditions</Link>

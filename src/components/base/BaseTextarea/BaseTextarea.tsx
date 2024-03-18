@@ -8,7 +8,8 @@ interface Props {
   required?: boolean;
   disabled?: boolean;
   className?: string;
-  error?: string | boolean;
+  error?: boolean;
+  errorText?: string;
   value: string;
   maxLength?: number;
   onChange(value: string): void;
@@ -19,6 +20,7 @@ const BaseTextarea: React.FC<Props> = ({
   value,
   label,
   error,
+  errorText,
   name,
   maxLength,
   required = true,
@@ -95,9 +97,9 @@ const BaseTextarea: React.FC<Props> = ({
         />
       </div>
 
-      {error ? (
+      {errorText && errorText?.length > 0 ? (
         <div className={s.BaseTextarea_ErrorText}>
-          <p>{error}</p>
+          <p>{errorText}</p>
         </div>
       ) : null}
     </div>

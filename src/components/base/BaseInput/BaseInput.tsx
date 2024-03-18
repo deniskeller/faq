@@ -15,7 +15,8 @@ interface Props {
   withIcon?: boolean;
   className?: string;
   autocomplete?: string;
-  error?: string | boolean;
+  error?: boolean;
+  errorText?: string;
   value: string | number;
   onChange(value: string | number): void;
   onKeyDown?: React.KeyboardEventHandler;
@@ -26,6 +27,7 @@ const BaseInput: React.FC<Props> = ({
   label,
   type = 'text',
   error,
+  errorText,
   name,
   min,
   max,
@@ -115,9 +117,9 @@ const BaseInput: React.FC<Props> = ({
         ) : null}
       </div>
 
-      {error !== ' ' ? (
+      {errorText && errorText?.length > 0 ? (
         <div className={s.BaseInput_ErrorText}>
-          <p>{error}</p>
+          <p>{errorText}</p>
         </div>
       ) : null}
     </div>
