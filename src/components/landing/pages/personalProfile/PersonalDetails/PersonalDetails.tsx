@@ -24,7 +24,7 @@ const PersonalDetails: React.FC = () => {
     phone: '',
   });
 
-  const [error, setError] = useState('');
+  const [error, setError] = useState(false);
 
   const setNewValue = (value: string, prop: keyof IFormData) => {
     setValue((prev) => ({ ...prev, [prop]: value }));
