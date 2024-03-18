@@ -107,7 +107,7 @@ const ForgotPassword: React.FC = () => {
     e.preventDefault();
     if (value.password != '') {
       toast.success('Password changed successfully!', {
-        duration: 300000,
+        duration: 3000,
         className: 'login',
       });
       // setTimeout(() => {
@@ -143,8 +143,8 @@ const ForgotPassword: React.FC = () => {
                 <div className={s.Form_Fields}>
                   <BaseInput
                     name="email"
-                    placeholder="E-mail address"
-                    label="E-mail address"
+                    placeholder="Email address"
+                    label="Email address"
                     value={value.email}
                     onChange={(val: string) => setNewValue(val, 'email')}
                     error={error}

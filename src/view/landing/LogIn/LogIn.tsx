@@ -60,8 +60,8 @@ const LogIn: React.FC = () => {
             <div className={s.Form_Fields}>
               <BaseInput
                 name="email"
-                placeholder="E-mail address"
-                label="E-mail address"
+                placeholder="Email address"
+                label="Email address"
                 value={value.email}
                 onChange={(val: string) => setNewValue(val, 'email')}
                 error={error}

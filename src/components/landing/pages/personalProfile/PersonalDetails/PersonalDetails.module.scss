@@ -1,0 +1,142 @@
+.PersonalDetails {
+  margin-bottom: em(171px);
+  @include iflaptop {
+    margin-bottom: em(80px);
+  }
+  @include iftablet {
+    margin-bottom: em(60px);
+  }
+  @include ifmobile {
+    margin-bottom: em(40px);
+  }
+
+  &_Content {
+    position: relative;
+    border: 2px solid $border;
+    border-radius: em(16px);
+    box-shadow: -2px 4px 12px 0px rgb(246, 246, 246);
+    background: $white;
+    padding: em(40px) em(100px) em(60px);
+    @include iflaptop {
+      padding: em(40px) em(40px) em(60px);
+    }
+    @include iftablet {
+      padding: em(40px) em(40px) em(60px);
+    }
+    @include ifmobile {
+      padding: em(40px) em(18px) em(48px);
+    }
+  }
+
+  &_Title {
+    margin-bottom: em(28px);
+    @include iflaptop {
+      margin-bottom: em(12px);
+    }
+    @include iftablet {
+      margin-bottom: em(12px);
+    }
+    @include ifmobile {
+      margin-bottom: em(16px);
+    }
+    h2 {
+      color: $text;
+      font-size: em(20px);
+      font-weight: 500;
+      line-height: 135%;
+      @include ifdesktop {
+        font-size: em(26px);
+      }
+    }
+  }
+
+  &_Subtitle {
+    margin-bottom: em(38px);
+    p {
+      color: $grey;
+      font-size: em(16px);
+      font-weight: 400;
+    }
+  }
+
+  &_Form {
+    max-width: em(430px);
+    @include iftablet {
+      max-width: em(336px);
+    }
+    .Fields {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: em(20px) 0;
+      margin-bottom: em(40px);
+      @include iflaptop {
+        margin-bottom: em(28px);
+      }
+      @include iftablet {
+        margin-bottom: em(24px);
+      }
+      @include ifmobile {
+        gap: em(16px) 0;
+        margin-bottom: em(27px);
+      }
+
+      &_Input {
+        position: relative;
+        .IconEdit {
+          position: absolute;
+          top: 50%;
+          transform: translate(0, -50%);
+          right: em(12px);
+          width: em(24px);
+          height: em(24px);
+          cursor: pointer;
+          path {
+            transition: stroke $speed ease;
+          }
+          &:hover {
+            path {
+              stroke: $purple;
+            }
+          }
+        }
+      }
+    }
+    .Button {
+      margin-left: em(6px);
+      @include ifmobile {
+        width: 100%;
+        margin-left: 0;
+      }
+    }
+  }
+
+  &_Image {
+    position: absolute;
+    right: em(100px);
+    bottom: em(92px);
+    width: em(454px);
+    height: em(378px);
+    @include iflaptop {
+      right: em(40px);
+      bottom: em(60px);
+      width: em(360.32px);
+      height: em(300px);
+    }
+    @include iftablet {
+      right: em(40px);
+      bottom: em(60px);
+      width: em(252.22px);
+      height: em(210px);
+    }
+    @include ifmobile {
+      display: none;
+    }
+  }
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}

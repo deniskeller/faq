@@ -3,6 +3,7 @@ export enum OthersIcons {
   MAP_MARKER = 'MAP_MARKER',
   EMAIL = 'EMAIL',
   PHONE = 'PHONE',
+  EDIT = 'EDIT',
 }
 
 export const othersIcons = {
@@ -140,6 +141,29 @@ export const othersIcons = {
         fill="#7656F5"
         fillOpacity="1.000000"
         fillRule="nonzero"
+      />
+    </>
+  ),
+
+  [OthersIcons.EDIT]: (
+    <>
+      <path
+        id="Vector"
+        d="M16.47 5.4L18.59 7.52M12.1 9.27C11.81 9.56 11.61 9.94 11.52 10.35L11 13L13.64 12.47C14.05 12.38 14.43 12.18 14.73 11.89L20.45 6.16C20.62 5.99 20.76 5.78 20.85 5.56C20.95 5.33 21 5.09 21 4.85C21 4.61 20.95 4.36 20.85 4.14C20.76 3.91 20.62 3.71 20.45 3.54C20.28 3.37 20.08 3.23 19.85 3.14C19.63 3.04 19.38 3 19.14 3C18.9 3 18.66 3.04 18.43 3.14C18.21 3.23 18 3.37 17.83 3.54L12.1 9.27Z"
+        stroke="#999999"
+        strokeOpacity="1.000000"
+        strokeWidth="2.000000"
+        strokeLinejoin="round"
+        strokeLinecap="round"
+      />
+      <path
+        id="Vector"
+        d="M19 15L19 18C19 18.53 18.78 19.03 18.41 19.41C18.03 19.78 17.53 20 17 20L6 20C5.46 20 4.96 19.78 4.58 19.41C4.21 19.03 4 18.53 4 18L4 7C4 6.46 4.21 5.96 4.58 5.58C4.96 5.21 5.46 5 6 5L9 "
+        stroke="#999999"
+        strokeOpacity="1.000000"
+        strokeWidth="2.000000"
+        strokeLinejoin="round"
+        strokeLinecap="round"
       />
     </>
   ),
