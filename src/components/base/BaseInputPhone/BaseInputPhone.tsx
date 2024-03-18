@@ -39,12 +39,21 @@ const InputPhone: React.FC<Props> = ({
           value={value}
           onChange={onChange}
           enableSearch
+          specialLabel="Phone number"
           searchPlaceholder="Search"
           searchNotFound="Nothing found"
           inputClass={error ? 'phone-input-error' : ''}
           disabled={disabled}
-          inputStyle={{ borderColor: focus ? '#425eec' : '#e8e8ea' }}
+          inputStyle={{
+            borderColor: focus ? 'rgb(118, 86, 245)' : 'rgb(204, 191, 255)',
+          }}
         />
+
+        {error ? (
+          <div className={s.BaseInput_ErrorText}>
+            <p>{error}</p>
+          </div>
+        ) : null}
       </ReactLenis>
     </div>
   );

@@ -21,7 +21,7 @@ const PersonalDetails: React.FC = () => {
   const [value, setValue] = useState<IFormData>({
     fullName: 'Quentin Tarantino',
     email: 'Quentin@gmail.com',
-    phone: '7871234567',
+    phone: '',
   });
 
   const [error, setError] = useState('');
@@ -100,7 +100,6 @@ const PersonalDetails: React.FC = () => {
                   country="us"
                   value={value.phone}
                   onChange={(val: string) => setNewValue(val, 'phone')}
-                  error={error}
                 />
               </div>
             </div>

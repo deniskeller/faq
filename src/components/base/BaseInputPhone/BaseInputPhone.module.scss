@@ -4,6 +4,16 @@
   display: flex;
   flex-direction: column;
 
+  &_ErrorText {
+    margin-top: em(4px);
+    p {
+      color: rgb(255, 5, 5);
+      font-family: 'Poppins', sans-serif;
+      font-size: em(12px);
+      font-weight: 400;
+    }
+  }
+
   &_Disabled {
     transition: all $speed ease;
     cursor: not-allowed;
