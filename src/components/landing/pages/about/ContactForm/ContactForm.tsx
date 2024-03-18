@@ -6,6 +6,7 @@ import {
   BaseContainer,
   BaseIcon,
   BaseInput,
+  BaseInputPhone,
   BaseTextarea,
 } from '@base/index';
 import { ALL_ICONS } from '@constants/icons';
@@ -98,14 +99,10 @@ const ContactForm: React.FC = () => {
               disabled
             />
 
-            <BaseInput
-              type="phone"
-              name="phone"
-              placeholder="Phone number"
-              label="Phone number"
+            <BaseInputPhone
+              country="us"
               value={value.phone}
               onChange={(val: string) => setNewValue(val, 'phone')}
-              // error="Some text"
             />
 
             <BaseInput

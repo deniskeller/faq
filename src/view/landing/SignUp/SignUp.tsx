@@ -6,6 +6,7 @@ import {
   BaseCheckbox,
   BaseContainer,
   BaseInput,
+  BaseInputPhone,
   BaseText,
 } from '@base/index';
 import Link from 'next/link';
@@ -103,21 +104,11 @@ const SignUp: React.FC = () => {
                 error={error}
               />
 
-              <BaseInput
-                name="phone"
-                placeholder="Phone number"
-                label="Phone number"
+              <BaseInputPhone
+                country="us"
                 value={value.phone}
                 onChange={(val: string) => setNewValue(val, 'phone')}
-                error={error}
               />
-              {/* <BaseInputPhone
-            name="phone"
-            placeholder="Phone"
-            label="Phone"
-            value={value.phone}
-            onChange={(val: string) => setNewValue(val, 'phone')}
-          /> */}
 
               <div className={s.Form_Password}>
                 <BaseInput
