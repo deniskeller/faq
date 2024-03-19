@@ -3,13 +3,14 @@ import React, {
   ElementType,
   MutableRefObject,
   ReactNode,
+  forwardRef,
 } from 'react';
 import s from './BaseButton.module.scss';
 
 type OwnProps<E extends ElementType = ElementType> = {
   children: string | ReactNode | ReactNode[];
   design?: string;
-  ref?: MutableRefObject<null>;
+  // ref?: MutableRefObject<null>;
   disabled?: boolean;
   className?: string;
   onClick?: (ev: React.MouseEvent<HTMLButtonElement>) => void;
@@ -21,18 +22,19 @@ type Props<E extends ElementType> = OwnProps<E> &
 
 const defaultElement = 'button';
 
-export default function BaseButton<
-  E extends ElementType = typeof defaultElement
->({
-  children,
-  disabled = false,
-  design = 'primary',
-  className = '',
-  ref,
-  onClick,
-  as,
-  ...otherProps
-}: Props<E>) {
+function BaseButton<E extends ElementType = typeof defaultElement>(
+  {
+    children,
+    disabled = false,
+    design = 'primary',
+    className = '',
+    // ref,
+    onClick,
+    as,
+    ...otherProps
+  }: Props<E>,
+  ref: React.ForwardedRef<MutableRefObject<null>>
+) {
   const TagName = as || defaultElement;
 
   return (
@@ -47,3 +49,4 @@ export default function BaseButton<
     </TagName>
   );
 }
+export default forwardRef(BaseButton);

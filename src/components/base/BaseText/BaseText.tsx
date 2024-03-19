@@ -1,4 +1,9 @@
-import React, { ComponentProps, ElementType, ReactNode } from 'react';
+import React, {
+  ComponentProps,
+  ElementType,
+  ReactNode,
+  forwardRef,
+} from 'react';
 import s from './BaseText.module.scss';
 
 type OwnProps<E extends ElementType = ElementType> = {
@@ -12,16 +17,19 @@ type Props<E extends ElementType> = OwnProps<E> &
 
 const defaultElement = 'h2';
 
-export default function BaseText<
-  E extends ElementType = typeof defaultElement
->({ children, className = '', as, ...otherProps }: Props<E>) {
+function BaseText<E extends ElementType = typeof defaultElement>(
+  { children, className = '', as, ...otherProps }: Props<E>,
+  ref: React.ForwardedRef<HTMLHeadingElement>
+) {
   const TagName = as || defaultElement;
 
   return (
     <div className={`${className}`} {...otherProps}>
-      <TagName className={`${s.Text} ${s['Text_' + TagName]}`}>
+      <TagName className={`${s.Text} ${s['Text_' + TagName]}`} ref={ref}>
         {children}
       </TagName>
     </div>
   );
 }
+
+export default forwardRef(BaseText);

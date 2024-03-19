@@ -11,7 +11,7 @@ export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
     setTimeout(() => {
       setLoading(true);
-    }, 2000);
+    }, 300);
   }, []);
 
   const lenis = useLenis(({ scroll }) => {
