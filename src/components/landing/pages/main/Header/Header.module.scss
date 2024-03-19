@@ -19,6 +19,7 @@
     z-index: 1;
     max-width: em(860px);
     margin-bottom: em(40px);
+    overflow: hidden;
     @include iflaptop {
       max-width: em(520px);
       margin-bottom: em(34px);
@@ -38,6 +39,7 @@
     z-index: 1;
     max-width: em(860px);
     margin-bottom: em(53px);
+    overflow: hidden;
     @include iflaptop {
       max-width: em(520px);
       margin-bottom: em(40px);
@@ -64,6 +66,8 @@
     position: relative;
     z-index: 1;
     margin-left: em(6px);
+    transform: translate(-100%, 0);
+    opacity: 0;
     @include ifmobile {
       margin: 0 auto em(62px);
       max-width: em(168px);

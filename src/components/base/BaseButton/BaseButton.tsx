@@ -10,7 +10,6 @@ import s from './BaseButton.module.scss';
 type OwnProps<E extends ElementType = ElementType> = {
   children: string | ReactNode | ReactNode[];
   design?: string;
-  // ref?: MutableRefObject<null>;
   disabled?: boolean;
   className?: string;
   onClick?: (ev: React.MouseEvent<HTMLButtonElement>) => void;
@@ -28,12 +27,11 @@ function BaseButton<E extends ElementType = typeof defaultElement>(
     disabled = false,
     design = 'primary',
     className = '',
-    // ref,
     onClick,
     as,
     ...otherProps
   }: Props<E>,
-  ref: React.ForwardedRef<MutableRefObject<null>>
+  ref: React.ForwardedRef<HTMLButtonElement>
 ) {
   const TagName = as || defaultElement;
 

@@ -8,44 +8,23 @@ const { ScrollTrigger } = require('gsap/dist/ScrollTrigger');
 gsap.registerPlugin(ScrollTrigger);
 
 const Header: React.FC = () => {
+  const refTitle = useRef(null);
   const refDEscription = useRef(null);
   const refButton = useRef(null);
-
   const refImage = useRef(null);
 
   useEffect(() => {
-    // var tl = gsap.timeline({ repeat: 2, repeatDelay: 1 });
-    // tl.to('#id', { x: 100, duration: 1 });
-    // tl.to('#id', { y: 50, duration: 1 });
-    // tl.to('#id', { opacity: 0, duration: 1 });
+    const tl = gsap.timeline({});
 
-    console.log('refTitle: ', refTitle);
-    console.log('refDEscription: ', refDEscription);
-    console.log('refButton: ', refButton);
-    console.log('refImage: ', refImage);
-
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: refTitle.current,
-          toggleActions: 'play none none none',
-          start: 'top 80%',
-        },
-      })
-      .fromTo(refTitle.current, { y: '100%' }, { y: '0%' });
-
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: refDEscription.current,
-          toggleActions: 'play none none none',
-          start: 'top 70%',
-        },
-      })
-      .fromTo(refDEscription.current, { y: '100%' }, { y: '0%', delay: 0.5 });
+    tl.fromTo(refTitle.current, { y: '100%' }, { y: '0%' });
+    tl.fromTo(refDEscription.current, { y: '100%' }, { y: '0%' });
+    tl.fromTo(
+      refButton.current,
+      { x: '-100%', opacity: 0 },
+      { x: '0%', opacity: 1 }
+    );
+    tl.fromTo(refImage.current, { scale: '0' }, { scale: '1', delay: 0.5 });
   }, []);
-
-  const refTitle = useRef(null);
 
   return (
     <section className={s.Header}>
@@ -60,14 +39,11 @@ const Header: React.FC = () => {
           manner.
         </BaseText>
 
-        <BaseButton
-          as="a"
-          href="/order"
-          className={s.Header_Button}
-          ref={refButton}
-        >
-          Place an order
-        </BaseButton>
+        <div ref={refButton} className={s.Header_Button}>
+          <BaseButton as="a" href="/order">
+            Place an order
+          </BaseButton>
+        </div>
 
         <Image
           src="/pictures/images/main-header.webp"
