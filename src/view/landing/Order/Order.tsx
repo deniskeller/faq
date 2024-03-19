@@ -329,7 +329,13 @@ const Order: React.FC = () => {
                   withIcon
                 />
 
-                <div className={`${s.Tooltip} ${s.Field_Tooltip}`}>
+                <div
+                  className={`${s.Tooltip} ${s.Field_Tooltip}`}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    e.preventDefault();
+                  }}
+                >
                   <BaseIcon
                     viewBox="0 0 12 12"
                     icon={ALL_ICONS.TOOLTIP}

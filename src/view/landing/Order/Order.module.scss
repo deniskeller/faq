@@ -479,6 +479,7 @@
 
 .Tooltip {
   position: relative;
+  z-index: 100;
   &_Icon {
     display: flex;
     width: em(12px);
