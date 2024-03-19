@@ -63,26 +63,85 @@
     padding: em(40px) em(52px) em(40px) em(60px);
     min-height: em(844px);
     @include iflaptop {
+      grid-template-columns: 1fr;
+      gap: em(38px) 0;
+      padding: em(40px) em(60px) em(46px);
     }
     @include iftablet {
+      grid-template-columns: 1fr;
+      gap: em(40px) 0;
+      padding: em(40px) em(20px) em(46px);
     }
     @include ifmobile {
+      grid-template-columns: 1fr;
+      gap: 0;
+      padding: em(40px) em(18px) em(54px);
     }
 
     .Info {
+      @include iflaptop {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 em(16px);
+      }
+      @include iftablet {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 em(14px);
+      }
+      @include ifmobile {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
       &_Title {
         margin-bottom: em(28px);
+        @include iflaptop {
+          grid-column-start: 1;
+          grid-column-end: 3;
+          margin-bottom: em(2px);
+        }
+        @include iftablet {
+          grid-column-start: 1;
+          grid-column-end: 3;
+          margin-bottom: em(2px);
+        }
+        @include ifmobile {
+          margin-bottom: em(16px);
+        }
         h2 {
           font-weight: 500;
           font-size: em(26px);
           line-height: 135%;
           color: $text;
+          @include iflaptop {
+            font-size: em(20px);
+          }
+          @include iftablet {
+            font-size: em(20px);
+          }
+          @include ifmobile {
+            font-size: em(20px);
+          }
         }
       }
 
       &_Description {
         max-width: em(429px);
         margin-bottom: em(44px);
+        @include iflaptop {
+          margin-bottom: 0;
+          margin-top: auto;
+          max-width: em(278px);
+        }
+        @include iftablet {
+          margin-bottom: 0;
+          margin-top: auto;
+          max-width: em(278px);
+        }
+        @include ifmobile {
+          margin-bottom: em(20px);
+        }
         p {
           font-weight: 400;
           font-size: em(16px);
@@ -92,10 +151,22 @@
 
       &_Contacts {
         margin-bottom: em(60px);
+        @include iflaptop {
+          margin-bottom: 0;
+        }
+        @include iftablet {
+          margin-bottom: 0;
+        }
+        @include ifmobile {
+          margin-bottom: em(32px);
+        }
         .ContactItem {
           display: flex;
           flex-direction: row;
           align-items: center;
+          @include ifmobile {
+            align-items: flex-start;
+          }
           &:not(:last-child) {
             margin-bottom: em(12px);
           }
@@ -109,17 +180,54 @@
             font-weight: 400;
             font-size: em(18px);
             color: $grey;
+            @include iflaptop {
+              font-size: em(16px);
+            }
+            @include iftablet {
+              font-size: em(13px);
+            }
+            @include ifmobile {
+              font-size: em(15px);
+            }
           }
         }
       }
 
       &_PaperFormat {
+        @include iflaptop {
+          grid-column-start: 1;
+          grid-column-end: 3;
+          margin-top: em(26px);
+        }
+        @include iftablet {
+          grid-column-start: 1;
+          grid-column-end: 3;
+          margin-top: em(20px);
+        }
+        @include ifmobile {
+          display: none;
+        }
+
         .Header {
           margin-bottom: em(20px);
+          @include iflaptop {
+            margin-bottom: em(14px);
+          }
+          @include iftablet {
+            margin-bottom: em(12px);
+          }
+          @include ifmobile {
+          }
           span {
             font-weight: 400;
             font-size: em(20px);
             color: $text;
+            @include iflaptop {
+              font-size: em(18px);
+            }
+            @include iftablet {
+              font-size: em(16px);
+            }
           }
         }
 
@@ -127,11 +235,18 @@
           display: grid;
           grid-template-columns: 1fr 1fr;
           gap: em(8px) em(16px);
+          @include iflaptop {
+            gap: em(7px) em(21px);
+          }
+          @include iftablet {
+            gap: em(7px) em(14px);
+          }
           .PaperFormatItem {
             display: flex;
             flex-direction: row;
             align-items: flex-start;
             position: relative;
+            width: max-content;
             &_Icon {
               width: em(20px);
               height: em(24px);
@@ -147,7 +262,7 @@
             &_Tooltip {
               position: absolute;
               top: 0;
-              right: 0;
+              right: em(-24px);
             }
           }
         }
@@ -162,6 +277,20 @@
         grid-template-columns: 1fr 1fr;
         gap: em(20px);
         margin-bottom: em(28px);
+        @include iflaptop {
+          gap: em(24px) em(26px);
+          margin-bottom: em(25px);
+        }
+        @include iftablet {
+          gap: em(16px) em(15px);
+          margin-bottom: em(25px);
+        }
+        @include ifmobile {
+          grid-template-columns: 1fr;
+          gap: em(16px) 0;
+          margin-bottom: em(20px);
+        }
+
         .Field {
           position: relative;
           &_Tooltip {
@@ -174,16 +303,33 @@
               width: em(16px);
               height: em(16px);
             }
+
+            .Tooltip_Content {
+              @include ifmobile {
+                left: auto;
+                right: 0;
+                transform: translate(0%, 0%);
+              }
+            }
           }
 
           &_Message {
             grid-column-start: 1;
             grid-column-end: 3;
+            @include ifmobile {
+              grid-column-start: auto;
+              grid-column-end: auto;
+            }
           }
 
           &_Level {
+            @include ifmobile {
+            }
             .Header {
               margin-bottom: em(6px);
+              @include ifmobile {
+                margin-bottom: em(10px);
+              }
               p {
                 font-weight: 400;
                 font-size: em(12px);
@@ -194,6 +340,9 @@
               display: grid;
               grid-template-columns: 1fr;
               gap: em(3px) 0;
+              @include ifmobile {
+                gap: em(7px) 0;
+              }
             }
           }
 
@@ -209,10 +358,18 @@
         align-items: center;
         justify-content: space-between;
         margin-bottom: em(28px);
+        @include ifmobile {
+          flex-direction: column-reverse;
+          align-items: flex-start;
+          margin-bottom: em(20px);
+        }
         .Price {
           display: flex;
           flex-direction: row;
           align-items: center;
+          @include ifmobile {
+            margin-top: em(12px);
+          }
           &_Label {
             span {
               font-weight: 400;
@@ -225,6 +382,8 @@
             font-weight: 400;
             font-size: em(18px);
             color: $purple;
+            @include ifmobile {
+            }
           }
         }
       }
@@ -233,6 +392,9 @@
         grid-column-start: 1;
         grid-column-end: 3;
         margin-bottom: em(44px);
+        @include ifmobile {
+          margin-bottom: em(32px);
+        }
         a {
           color: $grey;
           text-decoration: underline;
@@ -244,17 +406,73 @@
         }
       }
 
+      &_PaperFormat {
+        display: none;
+        position: relative;
+        align-items: center;
+        margin-bottom: em(20px);
+        @include ifmobile {
+          display: inline-flex;
+        }
+
+        .Label {
+          font-weight: 400;
+          font-size: em(18px);
+          color: $text;
+        }
+
+        .Tooltip {
+          margin-left: em(12px);
+          &_Icon {
+            width: em(16px);
+            height: em(16px);
+          }
+
+          &_Content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: em(4px) 0;
+            padding: em(8px) em(12px);
+            border: 2px solid #f0f0f0;
+            .PaperFormatItem {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              &_Icon {
+                width: em(20px);
+                height: em(24px);
+                margin-right: em(12px);
+                flex-shrink: 0;
+              }
+              &_Value {
+                font-weight: 400;
+                font-size: em(15px);
+                color: $grey;
+              }
+            }
+          }
+        }
+      }
+
       &_Button {
         margin-left: em(6px);
+        @include ifmobile {
+          margin-left: 0;
+          width: 100%;
+        }
       }
     }
 
     .Image {
+      display: none;
       position: absolute;
       left: em(-191px);
       bottom: em(-36px);
       width: em(992px);
       height: em(203px);
+      @include ifdesktop {
+        display: block;
+      }
     }
   }
 }

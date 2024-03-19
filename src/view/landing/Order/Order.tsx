@@ -400,6 +400,104 @@ const Order: React.FC = () => {
               </div>
             </div>
 
+            <div className={s.Form_PaperFormat}>
+              <div className={s.Label}>Paper format</div>
+
+              <div className={s.Tooltip}>
+                <BaseIcon
+                  viewBox="0 0 12 12"
+                  icon={ALL_ICONS.TOOLTIP}
+                  className={s.Tooltip_Icon}
+                />
+
+                <div className={s.Tooltip_Content}>
+                  <div className={s.PaperFormatItem}>
+                    <BaseIcon
+                      viewBox="0 0 20 24"
+                      icon={ALL_ICONS.STAR}
+                      className={s.PaperFormatItem_Icon}
+                    />
+                    <p className={s.PaperFormatItem_Value}>
+                      250 Words Per Page
+                    </p>
+                  </div>
+
+                  <div className={s.PaperFormatItem}>
+                    <BaseIcon
+                      viewBox="0 0 20 24"
+                      icon={ALL_ICONS.STAR}
+                      className={s.PaperFormatItem_Icon}
+                    />
+                    <p className={s.PaperFormatItem_Value}>MS Word Document</p>
+                  </div>
+
+                  <div className={s.PaperFormatItem}>
+                    <BaseIcon
+                      viewBox="0 0 20 24"
+                      icon={ALL_ICONS.STAR}
+                      className={s.PaperFormatItem_Icon}
+                    />
+                    <p className={s.PaperFormatItem_Value}>
+                      Font Arial, Times New Roman
+                    </p>
+                  </div>
+
+                  <div className={s.PaperFormatItem}>
+                    <BaseIcon
+                      viewBox="0 0 20 24"
+                      icon={ALL_ICONS.STAR}
+                      className={s.PaperFormatItem_Icon}
+                    />
+                    <p className={s.PaperFormatItem_Value}>
+                      Double Line Spacing
+                    </p>
+                  </div>
+
+                  <div className={s.PaperFormatItem}>
+                    <BaseIcon
+                      viewBox="0 0 20 24"
+                      icon={ALL_ICONS.STAR}
+                      className={s.PaperFormatItem_Icon}
+                    />
+                    <p className={s.PaperFormatItem_Value}>Font Size 12</p>
+                  </div>
+
+                  <div className={s.PaperFormatItem}>
+                    <BaseIcon
+                      viewBox="0 0 20 24"
+                      icon={ALL_ICONS.STAR}
+                      className={s.PaperFormatItem_Icon}
+                    />
+                    <p className={s.PaperFormatItem_Value}>
+                      Single Line Spacing
+                    </p>
+                  </div>
+
+                  <div className={s.PaperFormatItem}>
+                    <BaseIcon
+                      viewBox="0 0 20 24"
+                      icon={ALL_ICONS.STAR}
+                      className={s.PaperFormatItem_Icon}
+                    />
+                    <p className={s.PaperFormatItem_Value}>
+                      1 Inch Margin Indent
+                    </p>
+                  </div>
+
+                  <div className={s.PaperFormatItem}>
+                    <BaseIcon
+                      viewBox="0 0 20 24"
+                      icon={ALL_ICONS.STAR}
+                      className={s.PaperFormatItem_Icon}
+                    />
+                    <p className={s.PaperFormatItem_Value}>
+                      Properly Referenced
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div className={s.Form_Price}>
               <div className={s.Price}>
                 <div className={s.Price_Label}>
