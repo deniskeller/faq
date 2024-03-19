@@ -86,7 +86,7 @@ const BaseSelect: React.FC<Props> = ({
 
   return (
     <div
-      className={`${s.SelectContainer} ${className}`}
+      className={`${s.SelectContainer} ${s['Select_' + type]} ${className}`}
       ref={selectContainerRef}
     >
       <div

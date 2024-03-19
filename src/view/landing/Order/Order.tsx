@@ -7,6 +7,7 @@ import {
   BaseContainer,
   BaseIcon,
   BaseInput,
+  BaseRadioButton,
   BaseSelect,
   BaseText,
   BaseTextarea,
@@ -21,9 +22,9 @@ interface IFormData {
   deliveryTime: ISelectItem[];
   pages: string;
   coupon: string;
-  level: string;
   files: File[];
   message: string;
+  currency: ISelectItem[];
 }
 
 interface ISelectItem {
@@ -41,9 +42,14 @@ const Order: React.FC = () => {
     deliveryTime: [],
     pages: '',
     coupon: '',
-    level: 'A level / O level',
     files: [],
     message: '',
+    currency: [
+      {
+        value: 'USD',
+        label: 'USD',
+      },
+    ],
   };
 
   const [value, setValue] = useState<IFormData>(initialState);
@@ -58,6 +64,18 @@ const Order: React.FC = () => {
   const [error, setError] = useState(false);
   //checkbox
   const [checked, setChecked] = useState<boolean>(false);
+
+  //radio buttons
+  const levels = [
+    { id: '1', value: 'A level / O level' },
+    { id: '2', value: 'Undergraduate' },
+    { id: '3', value: 'Graduate/Masters' },
+    { id: '4', value: 'PhD' },
+  ];
+
+  const [paymentMethod, setPaymentMethod] = React.useState<string>(
+    levels[0].id
+  );
 
   const submitHandler = (e: { preventDefault: () => void }) => {
     e.preventDefault();
@@ -336,15 +354,27 @@ const Order: React.FC = () => {
                 />
               </div>
 
-              <div className={s.Field}>
-                <BaseInput
-                  name="email"
-                  placeholder="тут будут радиобатоны"
-                  label="тут будут радиобатоны"
-                  value={value.email}
-                  onChange={(val: string) => setNewValue(val, 'email')}
-                  error={error}
-                />
+              <div className={`${s.Field} ${s.Field_Level}`}>
+                <div className={s.Header}>
+                  <p>Writer and Editor Level</p>
+                </div>
+
+                <div className={s.Body}>
+                  {levels?.map((item, index) => {
+                    return (
+                      <BaseRadioButton
+                        key={index}
+                        name="bankTransfer"
+                        id={item.id}
+                        isActive={paymentMethod === item.id}
+                        onClick={() => setPaymentMethod(item.id)}
+                        className={s.RadionButton}
+                      >
+                        {item.value}
+                      </BaseRadioButton>
+                    );
+                  })}
+                </div>
               </div>
 
               <div className={s.Field}>
@@ -378,10 +408,28 @@ const Order: React.FC = () => {
                   <span>Total price:</span>
                 </div>
 
-                <div className={s.Price_Value}>&nbsp;0&nbsp;USD</div>
+                <div className={s.Price_Value}>
+                  &nbsp;0&nbsp;{value.currency[0].value}
+                </div>
               </div>
 
-              <div className={s.Select}>Тут будет селект</div>
+              <BaseSelect
+                name="currency"
+                value={value.currency}
+                placeholder="Currency"
+                options={[
+                  { value: 'USD', label: 'USD' },
+                  { value: 'EUR', label: 'EUR' },
+                  { value: 'RUB', label: 'RUB' },
+                ]}
+                onChange={(val: ISelectItem[] | ISelectItem) =>
+                  setNewValue(val, 'currency')
+                }
+                onClear={() => {}}
+                onBlur={() => {}}
+                type="currency"
+                className={s.Select}
+              />
             </div>
 
             <BaseCheckbox
@@ -404,6 +452,20 @@ const Order: React.FC = () => {
               Proceed to checkout
             </BaseButton>
           </form>
+
+          <svg
+            viewBox="0 0 992 203"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className={s.Image}
+          >
+            <path
+              d="M1 3.41157C57.36 42.6736 122.544 84.0653 194.849 81.2747C260.144 78.7546 331.771 48.1902 392.5 28.5669C467.688 4.27145 575.443 -27.3366 627 49.4632C660.924 109.514 630.882 219.687 550.862 200.144C520.013 192.61 504.072 156.846 517.736 132.035C532.495 105.237 576.615 92.3177 607.128 86.1352C689.074 69.531 743.668 136.191 817.819 147.899C887.096 158.837 938.541 131.888 991 95.4421"
+              stroke="#424242"
+              strokeLinecap="round"
+              strokeDasharray="14 14"
+            />
+          </svg>
         </div>
       </BaseContainer>
     </section>
