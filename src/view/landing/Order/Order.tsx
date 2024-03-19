@@ -14,6 +14,7 @@ import {
 } from '@base/index';
 import { ALL_ICONS } from '@constants/icons';
 import Link from 'next/link';
+import { UploadFile } from '@content/landing/index';
 
 interface IFormData {
   fullname: string;
@@ -350,7 +351,6 @@ const Order: React.FC = () => {
                   value={value.coupon}
                   onChange={(val: string) => setNewValue(val, 'coupon')}
                   required={false}
-                  error={error}
                 />
               </div>
 
@@ -378,12 +378,11 @@ const Order: React.FC = () => {
               </div>
 
               <div className={s.Field}>
-                <BaseInput
-                  name="email"
-                  placeholder="тут будет инпут файл"
-                  label="тут будет инпут файл"
-                  value={value.email}
-                  onChange={(val: string) => setNewValue(val, 'email')}
+                <UploadFile
+                  label="to upload your file (max 20 MB, 1 file)"
+                  files={value.files}
+                  onChange={(val: any[]) => setNewValue(val, 'files')}
+                  className={s.Field_UploadFile}
                   error={error}
                 />
               </div>
@@ -396,7 +395,6 @@ const Order: React.FC = () => {
                   value={value.message}
                   onChange={(val: string) => setNewValue(val, 'message')}
                   className={s.Message}
-                  error={error}
                   required={false}
                 />
               </div>

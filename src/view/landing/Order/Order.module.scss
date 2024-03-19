@@ -34,7 +34,7 @@
   &_Subtitle {
     text-align: center;
     max-width: em(670px);
-    margin: 0 auto em(40px);
+    margin: 0 auto em(37px);
     @include iflaptop {
       max-width: em(640px);
       margin: 0 auto em(60px);
@@ -183,7 +183,7 @@
 
           &_Level {
             .Header {
-              margin-bottom: em(8px);
+              margin-bottom: em(6px);
               p {
                 font-weight: 400;
                 font-size: em(12px);
@@ -193,8 +193,12 @@
             .Body {
               display: grid;
               grid-template-columns: 1fr;
-              gap: em(4px) 0;
+              gap: em(3px) 0;
             }
+          }
+
+          &_UploadFile {
+            min-height: em(140px);
           }
         }
       }

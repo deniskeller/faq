@@ -1,0 +1,131 @@
+.FileInput {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: inherit;
+
+  .Empty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: em(12px);
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+    min-height: inherit;
+    border-radius: em(8px);
+    // border: 1px dashed #ccbfff;
+    // transition: border-color $speed ease;
+    transition: background-image $speed ease;
+
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='8' ry='8' stroke='%23ccbfff' stroke-width='2' stroke-dasharray='10%2c 9' stroke-dashoffset='0' stroke-linecap='butt'/%3e%3c/svg%3e");
+    border-radius: 8px;
+
+    &_Icon {
+      width: em(40px);
+      height: em(40px);
+      margin-bottom: em(8px);
+    }
+
+    &_Title {
+      margin-bottom: em(4px);
+      p {
+        font-weight: 400;
+        font-size: em(16px);
+        text-align: center;
+        color: #999;
+      }
+    }
+
+    &_Description {
+      font-weight: 400;
+      font-size: em(12px);
+      text-align: center;
+      color: #999;
+    }
+
+    &:hover {
+      // border-color: #7656f5;
+      background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='8' ry='8' stroke='%237656f5' stroke-width='2' stroke-dasharray='10%2c 9' stroke-dashoffset='0' stroke-linecap='butt'/%3e%3c/svg%3e");
+    }
+
+    &__Active {
+      // border-color: #7656f5 !important;
+      background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='8' ry='8' stroke='%237656f5' stroke-width='2' stroke-dasharray='10%2c 9' stroke-dashoffset='0' stroke-linecap='butt'/%3e%3c/svg%3e");
+    }
+
+    &__Error {
+      // border-color: #ff3f3f !important;
+      background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='8' ry='8' stroke='%23ff3f3f' stroke-width='2' stroke-dasharray='10%2c 9' stroke-dashoffset='0' stroke-linecap='butt'/%3e%3c/svg%3e");
+    }
+  }
+
+  .UploadFile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: em(12px);
+    width: 100%;
+    min-height: inherit;
+    border-radius: em(8px);
+    // border: 1px dashed #ccbfff;
+    // transition: border-color $speed ease;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='8' ry='8' stroke='%23ccbfff' stroke-width='2' stroke-dasharray='10%2c 9' stroke-dashoffset='0' stroke-linecap='butt'/%3e%3c/svg%3e");
+    transition: background-image $speed ease;
+
+    &_Icon {
+      width: em(40px);
+      height: em(40px);
+      margin-bottom: em(8px);
+    }
+
+    &_Name {
+      margin-bottom: em(4px);
+      p {
+        font-weight: 400;
+        font-size: em(12px);
+        color: #636363;
+      }
+    }
+
+    &_Size {
+      font-weight: 400;
+      font-size: em(10px);
+      color: #999;
+    }
+
+    &_Delete {
+      position: absolute;
+      top: em(12px);
+      right: em(12px);
+      width: em(20px);
+      height: em(20px);
+      path {
+        transition: fill $speed ease;
+      }
+      &:hover {
+        path {
+          stroke: rgb(118, 86, 245);
+        }
+      }
+    }
+
+    &:hover {
+      // border-color: #7656f5;
+      background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='8' ry='8' stroke='%237656f5' stroke-width='2' stroke-dasharray='10%2c 9' stroke-dashoffset='0' stroke-linecap='butt'/%3e%3c/svg%3e");
+    }
+  }
+
+  .ErrorText {
+    margin-top: em(4px);
+    p {
+      color: rgb(255, 5, 5);
+      font-family: 'Poppins', sans-serif;
+      font-size: em(12px);
+      font-weight: 400;
+    }
+  }
+}
