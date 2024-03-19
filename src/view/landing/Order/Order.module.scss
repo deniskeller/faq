@@ -1,5 +1,5 @@
 .Order {
-  padding: em(160px) 0 em(187px);
+  padding: em(160px) 0 em(100px);
   @include iflaptop {
     padding: em(134px) 0 em(80px);
   }
@@ -11,10 +11,7 @@
   }
 
   &_Container {
-    max-width: em(1296px);
-    @include iftablet {
-      max-width: em(550px);
-    }
+    max-width: em(1448px);
   }
 
   &_Title {
@@ -27,7 +24,7 @@
       margin-bottom: em(28px);
     }
     @include ifmobile {
-      margin-bottom: em(23px);
+      margin-bottom: em(24px);
     }
     span {
       color: $purple;
@@ -39,15 +36,16 @@
     max-width: em(670px);
     margin: 0 auto em(40px);
     @include iflaptop {
-      max-width: em(537px);
+      max-width: em(640px);
       margin: 0 auto em(60px);
     }
     @include iftablet {
-      max-width: em(536px);
-      margin: 0 auto em(50px);
+      max-width: em(578px);
+      margin: 0 auto em(52px);
     }
     @include ifmobile {
-      margin: 0 auto em(37px);
+      max-width: em(330px);
+      margin: 0 auto em(56px);
     }
   }
 
@@ -58,21 +56,99 @@
     background: $white;
     border-radius: em(16px);
     display: grid;
-    grid-template-columns: em(404px) 1fr;
-    gap: 0 em(186px);
-    padding: em(60px) em(91px) em(32px);
+    grid-template-columns: em(544px) 1fr;
+    gap: 0 em(76px);
+    padding: em(40px) em(52px) em(40px) em(60px);
     @include iflaptop {
-      grid-template-columns: em(269px) 1fr;
-      gap: 0 em(136px);
-      padding: em(38px) em(52px) em(32px) em(38px);
     }
     @include iftablet {
-      grid-template-columns: 1fr;
-      padding: em(38px) em(38px) em(32px) em(40px);
     }
     @include ifmobile {
-      grid-template-columns: 1fr;
-      padding: em(38px) em(18px) em(30px);
+    }
+
+    .Info {
+      &_Title {
+        margin-bottom: em(28px);
+        h2 {
+          font-weight: 500;
+          font-size: em(26px);
+          line-height: 135%;
+          color: $text;
+        }
+      }
+
+      &_Description {
+        max-width: em(429px);
+        margin-bottom: em(44px);
+        p {
+          font-weight: 400;
+          font-size: em(16px);
+          color: $grey;
+        }
+      }
+
+      &_Contacts {
+        margin-bottom: em(60px);
+        .ContactItem {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          &:not(:last-child) {
+            margin-bottom: em(12px);
+          }
+          .Icon {
+            width: em(24px);
+            height: em(24px);
+            margin-right: em(8px);
+            flex-shrink: 0;
+          }
+          .Value {
+            font-weight: 400;
+            font-size: em(18px);
+            color: $grey;
+          }
+        }
+      }
+
+      &_PaperFormat {
+        .Header {
+          margin-bottom: em(20px);
+          span {
+            font-weight: 400;
+            font-size: em(20px);
+            color: $text;
+          }
+        }
+
+        .Body {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: em(8px) em(16px);
+          .PaperFormatItem {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            position: relative;
+            &_Icon {
+              width: em(20px);
+              height: em(24px);
+              margin-right: em(12px);
+              flex-shrink: 0;
+            }
+            &_Value {
+              font-weight: 400;
+              font-size: em(16px);
+              color: $grey;
+            }
+
+            &_Tooltip {
+              position: absolute;
+              top: 0;
+              right: 0;
+            }
+          }
+        }
+      }
     }
 
     .Form {
@@ -80,29 +156,116 @@
       flex-direction: column;
       &_Fields {
         display: grid;
-        grid-template-columns: 1fr;
-        gap: em(20px) 0;
-        margin-bottom: em(20px);
-        @include ifmobile {
-          margin-bottom: em(28px);
+        grid-template-columns: 1fr 1fr;
+        gap: em(20px);
+        margin-bottom: em(28px);
+        .Field {
+          position: relative;
+          &_Tooltip {
+            position: absolute;
+            z-index: 100;
+            right: em(12px);
+            top: 50%;
+            transform: translate(0, -50%);
+          }
+
+          &_Message {
+            grid-column-start: 1;
+            grid-column-end: 3;
+          }
+        }
+      }
+
+      &_Price {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: em(28px);
+        .Price {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          &_Label {
+            span {
+              font-weight: 400;
+              font-size: em(18px);
+              color: $text;
+            }
+          }
+          &_Value {
+            font-family: $DaysOne;
+            font-weight: 400;
+            font-size: em(18px);
+            color: $purple;
+          }
+        }
+      }
+
+      &_Confirm {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        margin-bottom: em(44px);
+        a {
+          color: $grey;
+          text-decoration: underline;
+          transition: color $speed ease;
+          &:hover {
+            color: $purple;
+            text-decoration: none;
+          }
         }
       }
 
       &_Button {
         margin-left: em(6px);
-        margin-bottom: em(52px);
-        @include iflaptop {
-          margin-bottom: em(72px);
-        }
-        @include iftablet {
-          margin-bottom: em(72px);
-        }
-        @include ifmobile {
-          width: 100%;
-          margin-bottom: em(45px);
-          margin-left: 0;
-        }
       }
+    }
+  }
+}
+
+.Tooltip {
+  position: relative;
+  &_Icon {
+    display: flex;
+    width: em(16px);
+    height: em(16px);
+    cursor: pointer;
+    path {
+      transition: fill $speed ease;
+    }
+    &:hover {
+      path {
+        fill: $purple;
+      }
+    }
+  }
+
+  &_Content {
+    pointer-events: none;
+    position: absolute;
+    top: calc(100% + em(10px));
+    left: 50%;
+    transform: translate(-50%, 0%);
+    z-index: 10;
+    box-shadow: -2px 4px 12px 0 #f6f6f6;
+    background: $white;
+    border: 1px solid $border;
+    border-radius: em(8px);
+    padding: em(12px);
+    width: max-content;
+    opacity: 0;
+    transition: opacity $speed ease;
+    p {
+      font-weight: 400;
+      font-size: em(16px);
+      color: $grey;
+    }
+  }
+
+  &:hover {
+    .Tooltip_Content {
+      opacity: 1;
     }
   }
 }
