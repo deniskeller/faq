@@ -1,8 +1,17 @@
-import React, { useState } from 'react';
+//@ts-nocheck
+import React, { useLayoutEffect, useRef, useState } from 'react';
 import s from './Questions.module.scss';
 import { BaseContainer, BaseText } from '@base/index';
 import Image from 'next/image';
 import { AccordionItem } from '@content/landing/index';
+
+import { gsap } from 'gsap';
+const { ScrollTrigger } = require('gsap/dist/ScrollTrigger');
+gsap.registerPlugin(ScrollTrigger);
+
+const DELAY = 0.8;
+const DURATION = 1;
+const SCALE = '.9';
 
 const questions = [
   {
@@ -66,11 +75,68 @@ const Questions: React.FC = () => {
     }
   };
 
+  // animation
+  const refTitle = useRef(null);
+  const refImage = useRef(null);
+  const refAnswers = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    //заголовок, картинка
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: refTitle.current,
+          toggleActions: 'play none none none',
+          start: 'top 80%',
+        },
+      })
+      .fromTo(
+        refTitle.current,
+        { scale: SCALE, opacity: 0 },
+        { scale: '1', opacity: 1, delay: DELAY, duration: DURATION }
+      );
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: refImage.current,
+          toggleActions: 'play none none none',
+          start: 'top 80%',
+        },
+      })
+      .fromTo(
+        refImage.current,
+        { scale: SCALE, opacity: 0 },
+        { scale: '1', opacity: 1, delay: DELAY, duration: DURATION }
+      );
+
+    // карточки
+    if (refAnswers.current != null) {
+      const childNodes = refAnswers.current.childNodes;
+      // УБРАТЬ @ts-nocheck И ОПИСАТЬ ТИПЫ
+      gsap.utils.toArray(childNodes).forEach((item) => {
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: item,
+              toggleActions: 'play none none none',
+              start: 'top 70%',
+            },
+          })
+          .fromTo(
+            item,
+            { scale: SCALE, opacity: 0 },
+            { scale: '1', opacity: 1, delay: DELAY, duration: DURATION }
+          );
+      });
+    }
+  }, []);
+
   return (
     <section className={s.Questions}>
       <BaseContainer className={s.Questions_Container} large>
         <div className={s.Header}>
-          <BaseText className={s.Questions_Title}>
+          <BaseText className={s.Questions_Title} ref={refTitle}>
             Got questions? <br /> We have answers
           </BaseText>
 
@@ -80,10 +146,11 @@ const Questions: React.FC = () => {
             height={482.72}
             alt=""
             className={s.Questions_Image}
+            ref={refImage}
           />
         </div>
 
-        <div className={s.Answers}>
+        <div className={s.Answers} ref={refAnswers}>
           {questions?.map((item, index) => {
             return (
               <AccordionItem
