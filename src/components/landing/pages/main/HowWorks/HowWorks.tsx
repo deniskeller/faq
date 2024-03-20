@@ -54,27 +54,24 @@ const HowWorks: React.FC = () => {
   const refStep_1_Description = useRef(null);
   const refStep_1_Image = useRef(null);
   useLayoutEffect(() => {
-    // console.log('refStep_1: ', refStep_1);
     const stepElement = refStep_1.current;
     if (!stepElement) {
       return;
     }
     const myPath = stepElement.querySelector('path') as SVGPathElement;
-    console.log('myPath: ', myPath);
 
-    // gsap
-    //   .timeline({
-    //     scrollTrigger: {
-    //       trigger: myPath,
-    //       toggleActions: 'play none none none',
-    //       start: 'top 70%',
-    //     },
-    //   })
-    //   .fromTo(
-    //     myPath,
-    //     { scaleY: 0, opacity: 0 },
-    //     { scaleY: 1, opacity: 1, delay: DELAY, duration: DURATION }
-    //   );
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: myPath,
+        toggleActions: 'play none none none',
+        start: 'top 40%',
+        onEnter: () => startAnimation(),
+      },
+    });
+
+    const startAnimation = () => {
+      myPath.classList.add('path1');
+    };
 
     gsap
       .timeline({
@@ -140,6 +137,25 @@ const HowWorks: React.FC = () => {
   const refStep_2_Description = useRef(null);
   const refStep_2_Image = useRef(null);
   useLayoutEffect(() => {
+    const stepElement = refStep_2.current;
+    if (!stepElement) {
+      return;
+    }
+    const myPath = stepElement.querySelector('path') as SVGPathElement;
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: myPath,
+        toggleActions: 'play none none none',
+        start: 'top 30%',
+        onEnter: () => startAnimation(),
+      },
+    });
+
+    const startAnimation = () => {
+      myPath.classList.add('path1');
+    };
+
     gsap
       .timeline({
         scrollTrigger: {
@@ -204,6 +220,25 @@ const HowWorks: React.FC = () => {
   const refStep_3_Description = useRef(null);
   const refStep_3_Image = useRef(null);
   useLayoutEffect(() => {
+    const stepElement = refStep_3.current;
+    if (!stepElement) {
+      return;
+    }
+    const myPath = stepElement.querySelector('path') as SVGPathElement;
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: myPath,
+        toggleActions: 'play none none none',
+        start: 'top 30%',
+        onEnter: () => startAnimation(),
+      },
+    });
+
+    const startAnimation = () => {
+      myPath.classList.add('path1');
+    };
+
     gsap
       .timeline({
         scrollTrigger: {
@@ -300,12 +335,43 @@ const HowWorks: React.FC = () => {
               viewBox="0 0 581 294"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
+              enableBackground="new 0 0 581 294"
+              xmlSpace="preserve"
               className={`${s.Step_Line} ${s.Step_Line__Desktop}`}
             >
-              <path
+              {/* <path
                 d="M1 0.664062V68.6641C1 96.2783 23.3858 118.664 51 118.664H530C557.614 118.664 580 141.05 580 168.664V293.664"
                 stroke="#424242"
                 strokeDasharray="14 14"
+              />
+
+              <path
+                className="dashed"
+                fill="none"
+                stroke="white"
+                strokeWidth="4"
+                strokeLinejoin="round"
+                strokeMiterlimit="10"
+                d="M1 0.664062V68.6641C1 96.2783 23.3858 118.664 51 118.664H530C557.614 118.664 580 141.05 580 168.664V293.664"
+              /> */}
+
+              <path
+                className="path"
+                fill="none"
+                stroke="#424242"
+                strokeLinejoin="round"
+                strokeMiterlimit="10"
+                d="M1 0.664062V68.6641C1 96.2783 23.3858 118.664 51 118.664H530C557.614 118.664 580 141.05 580 168.664V293.664"
+              />
+
+              <path
+                className="dashed"
+                fill="none"
+                stroke="white"
+                strokeWidth="4"
+                strokeLinejoin="round"
+                strokeMiterlimit="10"
+                d="M1 0.664062V68.6641C1 96.2783 23.3858 118.664 51 118.664H530C557.614 118.664 580 141.05 580 168.664V293.664"
               />
             </svg>
 
@@ -313,6 +379,8 @@ const HowWorks: React.FC = () => {
               viewBox="0 0 435 159"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
+              enableBackground="new 0 0 435 159"
+              xmlSpace="preserve"
               className={`${s.Step_Line} ${s.Step_Line__Laptop}`}
             >
               <path
@@ -320,6 +388,25 @@ const HowWorks: React.FC = () => {
                 stroke="#636363"
                 strokeDasharray="7.47 7.47"
               />
+
+              {/* <path
+                className="path"
+                fill="none"
+                stroke="#424242"
+                strokeLinejoin="round"
+                strokeMiterlimit="7.47"
+                d="M1 0V53.3333C1 68.0609 12.9391 80 27.6667 80H407.333C422.061 80 434 91.9391 434 106.667V159"
+              />
+
+              <path
+                className="dashed"
+                fill="none"
+                stroke="white"
+                strokeWidth="4"
+                strokeLinejoin="round"
+                strokeMiterlimit="7.47"
+                d="M1 0V53.3333C1 68.0609 12.9391 80 27.6667 80H407.333C422.061 80 434 91.9391 434 106.667V159"
+              /> */}
             </svg>
 
             <svg
@@ -382,10 +469,29 @@ const HowWorks: React.FC = () => {
               xmlns="http://www.w3.org/2000/svg"
               className={`${s.Step_Line} ${s.Step_Line__Desktop}`}
             >
-              <path
+              {/* <path
                 d="M1 293.664V225.664C1 198.05 23.3858 175.664 51 175.664H530C557.614 175.664 580 153.278 580 125.664V0.664062"
                 stroke="#424242"
                 strokeDasharray="14 14"
+              /> */}
+
+              <path
+                className="pathMiddle"
+                fill="none"
+                stroke="#424242"
+                strokeLinejoin="round"
+                strokeMiterlimit="10"
+                d="M1 293.664V225.664C1 198.05 23.3858 175.664 51 175.664H530C557.614 175.664 580 153.278 580 125.664V0.664062"
+              />
+
+              <path
+                className="dashed"
+                fill="none"
+                stroke="white"
+                strokeWidth="4"
+                strokeLinejoin="round"
+                strokeMiterlimit="10"
+                d="M1 293.664V225.664C1 198.05 23.3858 175.664 51 175.664H530C557.614 175.664 580 153.278 580 125.664V0.664062"
               />
             </svg>
 
@@ -465,10 +571,29 @@ const HowWorks: React.FC = () => {
               xmlns="http://www.w3.org/2000/svg"
               className={`${s.Step_Line} ${s.Step_Line__Desktop}`}
             >
-              <path
+              {/* <path
                 d="M1 0.664062V129.664C1 157.278 23.3858 179.664 51 179.664H530C557.614 179.664 580 202.05 580 229.664V293.664"
                 stroke="#424242"
                 strokeDasharray="14 14"
+              /> */}
+
+              <path
+                className="path"
+                fill="none"
+                stroke="#424242"
+                strokeLinejoin="round"
+                strokeMiterlimit="10"
+                d="M1 0.664062V129.664C1 157.278 23.3858 179.664 51 179.664H530C557.614 179.664 580 202.05 580 229.664V293.664"
+              />
+
+              <path
+                className="dashed"
+                fill="none"
+                stroke="white"
+                strokeWidth="4"
+                strokeLinejoin="round"
+                strokeMiterlimit="10"
+                d="M1 0.664062V129.664C1 157.278 23.3858 179.664 51 179.664H530C557.614 179.664 580 202.05 580 229.664V293.664"
               />
             </svg>
 

@@ -291,3 +291,44 @@ input[type='search']::-webkit-search-results-decoration {
   justify-content: center;
 }
 // ТЕЛЕФОН КОНЕЦ
+
+// АНИМАЦИЯ ЛИНИЙ
+.dashed {
+  stroke-dasharray: 14;
+}
+
+.path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+}
+
+.pathMiddle {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+}
+
+.pathMiddle1 {
+  animation: dashMiddle 1s linear alternate forwards;
+}
+
+.path1 {
+  animation: dash 1s linear alternate forwards;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes dashMiddle {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
