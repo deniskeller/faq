@@ -118,6 +118,7 @@ const PersonalDetails: React.FC = () => {
             width={908}
             height={756}
             alt=""
+            quality={100}
             className={s.PersonalDetails_Image}
           />
         </div>

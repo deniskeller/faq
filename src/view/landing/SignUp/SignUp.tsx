@@ -82,6 +82,7 @@ const SignUp: React.FC = () => {
             height={822}
             alt=""
             priority
+            quality={100}
             className={s.Image}
           />
 

@@ -150,6 +150,7 @@ const Questions: React.FC = () => {
             width={539.7}
             height={482.72}
             alt=""
+            quality={100}
             className={s.Questions_Image}
             ref={refImage}
           />

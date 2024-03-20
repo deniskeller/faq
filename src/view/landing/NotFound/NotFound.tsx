@@ -24,6 +24,7 @@ const NotFound: React.FC = () => {
           height={581}
           alt="404"
           priority
+          quality={100}
           className={s.NotFound_Image}
         />
 

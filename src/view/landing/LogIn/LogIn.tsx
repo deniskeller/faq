@@ -53,6 +53,7 @@ const LogIn: React.FC = () => {
             height={808}
             alt=""
             priority
+            quality={100}
             className={s.Image}
           />
 

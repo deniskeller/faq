@@ -138,6 +138,7 @@ const Advantages: React.FC = () => {
               width={123}
               height={100}
               alt=""
+              quality={100}
               className={s.AdvantageCard_Image}
             />
             <div className={s.AdvantageCard_Title}>
@@ -161,6 +162,7 @@ const Advantages: React.FC = () => {
               width={66.36}
               height={100}
               alt=""
+              quality={100}
               className={s.AdvantageCard_Image}
             />
             <div className={s.AdvantageCard_Title}>
@@ -184,6 +186,7 @@ const Advantages: React.FC = () => {
               width={134}
               height={100}
               alt=""
+              quality={100}
               className={s.AdvantageCard_Image}
             />
             <div className={s.AdvantageCard_Title}>
@@ -207,6 +210,7 @@ const Advantages: React.FC = () => {
               width={121}
               height={100}
               alt=""
+              quality={100}
               className={s.AdvantageCard_Image}
             />
             <div className={s.AdvantageCard_Title}>
@@ -230,6 +234,7 @@ const Advantages: React.FC = () => {
               width={97}
               height={100}
               alt=""
+              quality={100}
               className={s.AdvantageCard_Image}
             />
             <div className={s.AdvantageCard_Title}>
@@ -253,6 +258,7 @@ const Advantages: React.FC = () => {
               width={90}
               height={100}
               alt=""
+              quality={100}
               className={s.AdvantageCard_Image}
             />
             <div className={s.AdvantageCard_Title}>

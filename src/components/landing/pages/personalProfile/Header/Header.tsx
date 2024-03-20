@@ -48,6 +48,7 @@ const Header: React.FC = () => {
           height={722}
           alt=""
           priority
+          quality={100}
           className={s.Header_Image}
         />
       </BaseContainer>
