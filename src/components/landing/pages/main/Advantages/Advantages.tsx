@@ -1,5 +1,5 @@
 //@ts-nocheck
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import s from './Advantages.module.scss';
 import { BaseButton, BaseContainer, BaseText } from '@base/index';
 import Link from 'next/link';
@@ -33,7 +33,7 @@ const Advantages: React.FC = () => {
   const refCard_5 = useRef(null);
   const refCard_6 = useRef(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     //заголовок, текс, кнопка
     gsap
       .timeline({
@@ -81,7 +81,7 @@ const Advantages: React.FC = () => {
     if (refAdvantages.current != null) {
       const childNodes = refAdvantages.current.childNodes;
       console.log('childNodes: ', childNodes);
-
+      // УБРАТЬ @ts-nocheck И ОПИСАТЬ ТИПЫ
       childNodes.forEach((item) => {
         gsap
           .timeline({

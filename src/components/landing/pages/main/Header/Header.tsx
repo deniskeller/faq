@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useLayoutEffect, useRef } from 'react';
 import s from './Header.module.scss';
 import { BaseButton, BaseContainer, BaseText } from '@base/index';
 import Image from 'next/image';
@@ -15,7 +15,7 @@ const Header: React.FC = () => {
   const refButton = useRef(null);
   const refImage = useRef(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     gsap.fromTo(
       refTitle.current,
       { scale: SCALE, opacity: 0 },
