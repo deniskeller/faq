@@ -126,7 +126,12 @@ const Questions: React.FC = () => {
           .fromTo(
             item,
             { scale: SCALE, opacity: 0 },
-            { scale: '1', opacity: 1, delay: DELAY, duration: DURATION }
+            {
+              scale: '1',
+              opacity: 1,
+              delay: DELAY,
+              duration: DURATION,
+            }
           );
       });
     }
