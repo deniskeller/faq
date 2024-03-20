@@ -66,8 +66,6 @@
     position: relative;
     z-index: 1;
     margin-left: em(6px);
-    transform: translate(-100%, 0);
-    opacity: 0;
     @include ifmobile {
       margin: 0 auto em(62px);
       max-width: em(168px);

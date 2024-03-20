@@ -7,6 +7,10 @@ import { gsap } from 'gsap';
 const { ScrollTrigger } = require('gsap/dist/ScrollTrigger');
 gsap.registerPlugin(ScrollTrigger);
 
+const DELAY = 0.8;
+const DURATION = 1;
+const SCALE = '.9';
+
 const Header: React.FC = () => {
   const refTitle = useRef(null);
   const refDEscription = useRef(null);
@@ -16,14 +20,34 @@ const Header: React.FC = () => {
   useEffect(() => {
     const tl = gsap.timeline({});
 
-    tl.fromTo(refTitle.current, { y: '100%' }, { y: '0%', delay: 0.8 });
-    tl.fromTo(refDEscription.current, { y: '100%' }, { y: '0%' });
-    tl.fromTo(
-      refButton.current,
-      { x: '-100%', opacity: 0 },
-      { x: '0%', opacity: 1 }
+    gsap.fromTo(
+      refTitle.current,
+      { scale: SCALE, opacity: 0 },
+      { scale: '1', opacity: 1, delay: DELAY, duration: DURATION }
     );
-    tl.fromTo(refImage.current, { scale: '0' }, { scale: '1' });
+    gsap.fromTo(
+      refDEscription.current,
+      { scale: SCALE, opacity: 0 },
+      { scale: '1', opacity: 1, delay: DELAY, duration: DURATION }
+    );
+    gsap.fromTo(
+      refButton.current,
+      { scale: SCALE, opacity: 0 },
+      { scale: '1', opacity: 1, delay: DELAY, duration: DURATION }
+    );
+    gsap.fromTo(
+      refImage.current,
+      {
+        scale: SCALE,
+        opacity: 0,
+      },
+      {
+        scale: '1',
+        opacity: 1,
+        delay: DELAY,
+        duration: DURATION,
+      }
+    );
   }, []);
 
   return (
