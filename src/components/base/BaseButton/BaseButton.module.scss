@@ -26,7 +26,7 @@
     font-style: normal;
     line-height: normal;
     font-size: em(16px);
-    transition: all $speed ease;
+    transition: color $speed ease;
     @include ifdesktop {
       font-size: em(18px);
     }

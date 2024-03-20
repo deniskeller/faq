@@ -80,9 +80,8 @@ const Advantages: React.FC = () => {
     // карточки
     if (refAdvantages.current != null) {
       const childNodes = refAdvantages.current.childNodes;
-      console.log('childNodes: ', childNodes);
       // УБРАТЬ @ts-nocheck И ОПИСАТЬ ТИПЫ
-      childNodes.forEach((item) => {
+      gsap.utils.toArray(childNodes).forEach((item) => {
         gsap
           .timeline({
             scrollTrigger: {
