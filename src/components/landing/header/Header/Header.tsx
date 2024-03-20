@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useLayoutEffect } from 'react';
+import React, { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import s from './Header.module.scss';
-import { BaseButton, BaseContainer, BaseIcon } from '@base/index';
+import { BaseButton, BaseContainer } from '@base/index';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { Logo } from '@content/landing/index';
-import { ALL_ICONS } from '@constants/icons';
+import { gsap } from 'gsap';
 
 interface ILink {
   name: string;
@@ -45,8 +45,13 @@ const Header: React.FC<Props> = ({ pages }) => {
     setAuth(false);
   };
 
+  const refHeader = useRef(null);
+  useLayoutEffect(() => {
+    gsap.fromTo(refHeader.current, { y: '-100%' }, { y: '0%' });
+  }, []);
+
   return (
-    <div className={`${s.Header}`}>
+    <div className={`${s.Header}`} ref={refHeader}>
       <BaseContainer className={s.Header_Container} large>
         <Logo className={s.Header_Logo} />
 

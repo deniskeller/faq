@@ -16,14 +16,14 @@ const Header: React.FC = () => {
   useEffect(() => {
     const tl = gsap.timeline({});
 
-    tl.fromTo(refTitle.current, { y: '100%' }, { y: '0%' });
+    tl.fromTo(refTitle.current, { y: '100%' }, { y: '0%', delay: 0.8 });
     tl.fromTo(refDEscription.current, { y: '100%' }, { y: '0%' });
     tl.fromTo(
       refButton.current,
       { x: '-100%', opacity: 0 },
       { x: '0%', opacity: 1 }
     );
-    tl.fromTo(refImage.current, { scale: '0' }, { scale: '1', delay: 0.5 });
+    tl.fromTo(refImage.current, { scale: '0' }, { scale: '1' });
   }, []);
 
   return (
