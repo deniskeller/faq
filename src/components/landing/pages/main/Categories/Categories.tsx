@@ -1,6 +1,15 @@
-import React from 'react';
+//@ts-nocheck
+import React, { useLayoutEffect, useRef } from 'react';
 import s from './Categories.module.scss';
 import { BaseButton, BaseContainer, BaseText } from '@base/index';
+
+import { gsap } from 'gsap';
+const { ScrollTrigger } = require('gsap/dist/ScrollTrigger');
+gsap.registerPlugin(ScrollTrigger);
+
+const DELAY = 0.8;
+const DURATION = 1;
+const SCALE = '.9';
 
 const categories = [
   {
@@ -47,19 +56,80 @@ const categories = [
 ];
 
 const Categories: React.FC = () => {
+  // animation
+  const refTitle = useRef(null);
+  const refDescription = useRef(null);
+  const refCategories = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    //заголовок, текст
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: refTitle.current,
+          toggleActions: 'play none none none',
+          start: 'top 80%',
+        },
+      })
+      .fromTo(
+        refTitle.current,
+        { scale: SCALE, opacity: 0 },
+        { scale: '1', opacity: 1, delay: DELAY, duration: DURATION }
+      );
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: refDescription.current,
+          toggleActions: 'play none none none',
+          start: 'top 80%',
+        },
+      })
+      .fromTo(
+        refDescription.current,
+        { scale: SCALE, opacity: 0 },
+        { scale: '1', opacity: 1, delay: DELAY, duration: DURATION }
+      );
+
+    // карточки
+    if (refCategories.current != null) {
+      const childNodes = refCategories.current.childNodes;
+      // УБРАТЬ @ts-nocheck И ОПИСАТЬ ТИПЫ
+      gsap.utils.toArray(childNodes).forEach((item) => {
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: item,
+              toggleActions: 'play none none none',
+              start: 'top 70%',
+            },
+          })
+          .fromTo(
+            item,
+            { scale: SCALE, opacity: 0 },
+            { scale: '1', opacity: 1, delay: DELAY, duration: DURATION }
+          );
+      });
+    }
+  }, []);
+
   return (
     <section className={s.Categories}>
       <BaseContainer className={s.Categories_Container} large>
-        <BaseText className={s.Categories_Title}>
+        <BaseText className={s.Categories_Title} ref={refTitle}>
           Choose an author according to his/her category
         </BaseText>
 
-        <BaseText className={s.Categories_Description} as="p">
+        <BaseText
+          className={s.Categories_Description}
+          as="p"
+          ref={refDescription}
+        >
           We have 3 categories of authors and you can choose who to entrust your
           work to:
         </BaseText>
 
-        <div className={s.Categories_Content}>
+        <div className={s.Categories_Content} ref={refCategories}>
           {categories?.map((item, index) => {
             return (
               <div className={s.CategoryItem} key={index}>
