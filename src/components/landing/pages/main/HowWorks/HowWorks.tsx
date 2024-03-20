@@ -13,11 +13,11 @@ const SCALE = '.9';
 
 const HowWorks: React.FC = () => {
   // animation
+  //заголовок, текст
   const refTitle = useRef(null);
   const refDescription = useRef(null);
-
+  const refHowWorks = useRef(null);
   useLayoutEffect(() => {
-    //заголовок, текс
     gsap
       .timeline({
         scrollTrigger: {
@@ -47,8 +47,222 @@ const HowWorks: React.FC = () => {
       );
   }, []);
 
+  // STEP 1
+  const refStep_1 = useRef<HTMLDivElement>(null);
+  const refStep_1_Number = useRef(null);
+  const refStep_1_Title = useRef(null);
+  const refStep_1_Description = useRef(null);
+  const refStep_1_Image = useRef(null);
+  useLayoutEffect(() => {
+    // console.log('refStep_1: ', refStep_1);
+    const stepElement = refStep_1.current;
+    if (!stepElement) {
+      return;
+    }
+    const myPath = stepElement.querySelector('path') as SVGPathElement;
+    console.log('myPath: ', myPath);
+
+    // gsap
+    //   .timeline({
+    //     scrollTrigger: {
+    //       trigger: myPath,
+    //       toggleActions: 'play none none none',
+    //       start: 'top 70%',
+    //     },
+    //   })
+    //   .fromTo(
+    //     myPath,
+    //     { scaleY: 0, opacity: 0 },
+    //     { scaleY: 1, opacity: 1, delay: DELAY, duration: DURATION }
+    //   );
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: refStep_1_Number.current,
+          toggleActions: 'play none none none',
+          start: 'top 70%',
+        },
+      })
+      .fromTo(
+        refStep_1_Number.current,
+        { scale: SCALE, opacity: 0 },
+        { scale: '1', opacity: 1, delay: DELAY, duration: DURATION }
+      );
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: refStep_1_Title.current,
+          toggleActions: 'play none none none',
+          start: 'top 70%',
+        },
+      })
+      .fromTo(
+        refStep_1_Title.current,
+        { scale: SCALE, opacity: 0 },
+        { scale: '1', opacity: 1, delay: DELAY, duration: DURATION }
+      );
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: refStep_1_Description.current,
+          toggleActions: 'play none none none',
+          start: 'top 70%',
+        },
+      })
+      .fromTo(
+        refStep_1_Description.current,
+        { scale: SCALE, opacity: 0 },
+        { scale: '1', opacity: 1, delay: DELAY, duration: DURATION }
+      );
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: refStep_1_Image.current,
+          toggleActions: 'play none none none',
+          start: 'top 50%',
+        },
+      })
+      .fromTo(
+        refStep_1_Image.current,
+        { scale: SCALE, opacity: 0 },
+        { scale: '1', opacity: 1, delay: DELAY, duration: DURATION }
+      );
+  }, []);
+
+  // STEP 2
+  const refStep_2 = useRef<HTMLDivElement>(null);
+  const refStep_2_Number = useRef(null);
+  const refStep_2_Title = useRef(null);
+  const refStep_2_Description = useRef(null);
+  const refStep_2_Image = useRef(null);
+  useLayoutEffect(() => {
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: refStep_2_Number.current,
+          toggleActions: 'play none none none',
+          start: 'top 70%',
+        },
+      })
+      .fromTo(
+        refStep_2_Number.current,
+        { scale: SCALE, opacity: 0 },
+        { scale: '1', opacity: 1, delay: DELAY, duration: DURATION }
+      );
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: refStep_2_Title.current,
+          toggleActions: 'play none none none',
+          start: 'top 70%',
+        },
+      })
+      .fromTo(
+        refStep_2_Title.current,
+        { scale: SCALE, opacity: 0 },
+        { scale: '1', opacity: 1, delay: DELAY, duration: DURATION }
+      );
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: refStep_2_Description.current,
+          toggleActions: 'play none none none',
+          start: 'top 70%',
+        },
+      })
+      .fromTo(
+        refStep_2_Description.current,
+        { scale: SCALE, opacity: 0 },
+        { scale: '1', opacity: 1, delay: DELAY, duration: DURATION }
+      );
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: refStep_2_Image.current,
+          toggleActions: 'play none none none',
+          start: 'top 50%',
+        },
+      })
+      .fromTo(
+        refStep_2_Image.current,
+        { scale: SCALE, opacity: 0 },
+        { scale: '1', opacity: 1, delay: DELAY, duration: DURATION }
+      );
+  }, []);
+
+  // STEP 3
+  const refStep_3 = useRef<HTMLDivElement>(null);
+  const refStep_3_Number = useRef(null);
+  const refStep_3_Title = useRef(null);
+  const refStep_3_Description = useRef(null);
+  const refStep_3_Image = useRef(null);
+  useLayoutEffect(() => {
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: refStep_3_Number.current,
+          toggleActions: 'play none none none',
+          start: 'top 70%',
+        },
+      })
+      .fromTo(
+        refStep_3_Number.current,
+        { scale: SCALE, opacity: 0 },
+        { scale: '1', opacity: 1, delay: DELAY, duration: DURATION }
+      );
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: refStep_3_Title.current,
+          toggleActions: 'play none none none',
+          start: 'top 70%',
+        },
+      })
+      .fromTo(
+        refStep_3_Title.current,
+        { scale: SCALE, opacity: 0 },
+        { scale: '1', opacity: 1, delay: DELAY, duration: DURATION }
+      );
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: refStep_3_Description.current,
+          toggleActions: 'play none none none',
+          start: 'top 70%',
+        },
+      })
+      .fromTo(
+        refStep_3_Description.current,
+        { scale: SCALE, opacity: 0 },
+        { scale: '1', opacity: 1, delay: DELAY, duration: DURATION }
+      );
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: refStep_3_Image.current,
+          toggleActions: 'play none none none',
+          start: 'top 50%',
+        },
+      })
+      .fromTo(
+        refStep_3_Image.current,
+        { scale: SCALE, opacity: 0 },
+        { scale: '1', opacity: 1, delay: DELAY, duration: DURATION }
+      );
+  }, []);
+
   return (
-    <section className={s.HowWorks}>
+    <section className={s.HowWorks} ref={refHowWorks}>
       <BaseContainer className={s.HowWorks_Container} large>
         <BaseText className={s.HowWorks_Title} ref={refTitle}>
           How our service works
@@ -65,17 +279,17 @@ const HowWorks: React.FC = () => {
 
         <div className={s.HowWorks_Content}>
           {/* STEP 1 */}
-          <div className={`${s.Step} ${s.Step__1}`}>
-            <div className={s.Step_Number}>
+          <div className={`${s.Step} ${s.Step__1}`} ref={refStep_1}>
+            <div className={s.Step_Number} ref={refStep_1_Number}>
               <span>Step 1</span>
             </div>
 
             <div className={s.Step_Content}>
-              <div className={s.Title}>
+              <div className={s.Title} ref={refStep_1_Title}>
                 <p>Complete the order form</p>
               </div>
 
-              <p className={s.Description}>
+              <p className={s.Description} ref={refStep_1_Description}>
                 Use our user-friendly order form, fill in all required fields.
                 Ask our manager for pricing or check our pricing page for
                 details.
@@ -140,21 +354,22 @@ const HowWorks: React.FC = () => {
               alt=""
               quality={100}
               className={s.Step_Image}
+              ref={refStep_1_Image}
             />
           </div>
 
           {/* STEP 2 */}
-          <div className={`${s.Step} ${s.Step__2}`}>
-            <div className={s.Step_Number}>
+          <div className={`${s.Step} ${s.Step__2}`} ref={refStep_2}>
+            <div className={s.Step_Number} ref={refStep_2_Number}>
               <span>Step 2</span>
             </div>
 
             <div className={s.Step_Content}>
-              <div className={s.Title}>
+              <div className={s.Title} ref={refStep_2_Title}>
                 <p>Talk with manager</p>
               </div>
 
-              <p className={s.Description}>
+              <p className={s.Description} ref={refStep_2_Description}>
                 After you find the best solution for you and place an order, our
                 manager will contact you within an hour to clarify the details.
                 Check your order and give the correct e-mail address.
@@ -221,21 +436,22 @@ const HowWorks: React.FC = () => {
               alt=""
               quality={100}
               className={s.Step_Image}
+              ref={refStep_2_Image}
             />
           </div>
 
           {/* STEP 3 */}
-          <div className={`${s.Step} ${s.Step__3}`}>
-            <div className={s.Step_Number}>
+          <div className={`${s.Step} ${s.Step__3}`} ref={refStep_3}>
+            <div className={s.Step_Number} ref={refStep_3_Number}>
               <span>Step 3</span>
             </div>
 
             <div className={s.Step_Content}>
-              <div className={s.Title}>
+              <div className={s.Title} ref={refStep_3_Title}>
                 <p>Get your work</p>
               </div>
 
-              <p className={s.Description}>
+              <p className={s.Description} ref={refStep_3_Description}>
                 After agreeing on all the details, our manager will send you
                 payment instructions. When the payment has been confirmed, your
                 order will be given to the writer. You just have to wait for the
@@ -303,6 +519,7 @@ const HowWorks: React.FC = () => {
               alt=""
               quality={100}
               className={s.Step_Image}
+              ref={refStep_3_Image}
             />
           </div>
         </div>

@@ -1,4 +1,6 @@
 .HowWorks {
+  position: relative;
+  z-index: 1;
   border-radius: em(80px);
   background: $white;
   padding: em(100px) 0 em(120px);
@@ -176,6 +178,12 @@
             display: block;
           }
         }
+
+        // path {
+        //   stroke-dasharray: 959;
+        //   stroke-dashoffset: 959;
+        //   animation: dash_1 2s ease forwards;
+        // }
       }
 
       &__1 {
@@ -395,19 +403,15 @@
   }
 }
 
+// @include keyframe(dash_1) {
+//   100% {
+//     stroke-dashoffset: 1918;
+//   }
+// }
+
 @include iflaptop {
 }
 @include iftablet {
 }
 @include ifmobile {
 }
-// path {
-//   stroke-dasharray: 959;
-//   stroke-dashoffset: 959;
-//   animation: dash_1 2s ease forwards;
-// }
-// @include keyframe(dash_1) {
-//   100% {
-//     stroke-dashoffset: 1918;
-//   }
-// }
