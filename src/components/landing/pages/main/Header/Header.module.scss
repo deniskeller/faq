@@ -66,7 +66,9 @@
     position: relative;
     z-index: 1;
     margin-left: em(6px);
+    display: inline-flex;
     @include ifmobile {
+      display: block;
       margin: 0 auto em(62px);
       max-width: em(168px);
     }

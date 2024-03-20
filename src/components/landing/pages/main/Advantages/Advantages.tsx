@@ -1,9 +1,18 @@
-import React, { useState } from 'react';
+//@ts-nocheck
+import React, { useEffect, useRef, useState } from 'react';
 import s from './Advantages.module.scss';
 import { BaseButton, BaseContainer, BaseText } from '@base/index';
 import Link from 'next/link';
 import Image from 'next/image';
 import { isMobile } from 'react-device-detect';
+
+import { gsap } from 'gsap';
+const { ScrollTrigger } = require('gsap/dist/ScrollTrigger');
+gsap.registerPlugin(ScrollTrigger);
+
+const DELAY = 0.8;
+const DURATION = 1;
+const SCALE = '.9';
 
 const Advantages: React.FC = () => {
   const [showMore, setShowMore] = useState(false);
@@ -11,32 +20,119 @@ const Advantages: React.FC = () => {
   const showMoreHundler = () => {
     setShowMore(!showMore);
   };
+  // animation
+  const refTitle = useRef(null);
+  const refDescription = useRef(null);
+  const refButton = useRef(null);
+
+  const refAdvantages = useRef<HTMLDivElement>(null);
+  const refCard_1 = useRef(null);
+  const refCard_2 = useRef(null);
+  const refCard_3 = useRef(null);
+  const refCard_4 = useRef(null);
+  const refCard_5 = useRef(null);
+  const refCard_6 = useRef(null);
+
+  useEffect(() => {
+    //заголовок, текс, кнопка
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: refTitle.current,
+          toggleActions: 'play none none none',
+          start: 'top 80%',
+        },
+      })
+      .fromTo(
+        refTitle.current,
+        { scale: SCALE, opacity: 0 },
+        { scale: '1', opacity: 1, delay: DELAY, duration: DURATION }
+      );
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: refDescription.current,
+          toggleActions: 'play none none none',
+          start: 'top 80%',
+        },
+      })
+      .fromTo(
+        refDescription.current,
+        { scale: SCALE, opacity: 0 },
+        { scale: '1', opacity: 1, delay: DELAY, duration: DURATION }
+      );
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: refButton.current,
+          toggleActions: 'play none none none',
+          start: 'top 80%',
+        },
+      })
+      .fromTo(
+        refButton.current,
+        { scale: SCALE, opacity: 0 },
+        { scale: '1', opacity: 1, delay: DELAY, duration: DURATION }
+      );
+
+    // карточки
+    if (refAdvantages.current != null) {
+      const childNodes = refAdvantages.current.childNodes;
+      console.log('childNodes: ', childNodes);
+
+      childNodes.forEach((item) => {
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: item,
+              toggleActions: 'play none none none',
+              start: 'top 70%',
+            },
+          })
+          .fromTo(
+            item,
+            { scale: SCALE, opacity: 0 },
+            { scale: '1', opacity: 1, delay: DELAY, duration: DURATION }
+          );
+      });
+    }
+  }, []);
 
   return (
     <section className={s.Advantages}>
       <BaseContainer className={s.Advantages_Container} large>
-        <BaseText className={s.Advantages_Title}>
+        <BaseText className={s.Advantages_Title} ref={refTitle}>
           Why choose Coursepal?
         </BaseText>
 
-        <BaseText className={s.Advantages_Description} as="p">
+        <BaseText
+          className={s.Advantages_Description}
+          as="p"
+          ref={refDescription}
+        >
           Choosing the right service can be challenging due to the abundance of
           options. We'll highlight our advantages to help you make an informed.
         </BaseText>
 
-        <BaseButton as="a" href="/order" className={s.Advantages_Button}>
-          Place an order
-        </BaseButton>
+        <div ref={refButton} className={s.Advantages_Button}>
+          <BaseButton as="a" href="/order">
+            Place an order
+          </BaseButton>
+        </div>
 
         <div
           className={`${s.Advantages_Content} ${
             showMore && isMobile ? s.Advantages_Content__ShowMore : ''
           }`}
+          ref={refAdvantages}
         >
           {/* 1 */}
           <Link
             href={'/'}
             className={`${s.AdvantageCard} ${s.AdvantageCard__ReasonablePrices}`}
+            ref={refCard_1}
           >
             <Image
               src="/pictures/icons/reasonable-prices.webp"

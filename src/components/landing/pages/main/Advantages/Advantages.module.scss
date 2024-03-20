@@ -48,6 +48,8 @@
   }
 
   &_Button {
+    display: flex;
+    justify-content: center;
     margin: 0 auto em(86px);
     @include iflaptop {
       margin: 0 auto em(66px);
@@ -99,7 +101,7 @@
       box-shadow: -2px 4px 12px 0px rgb(246, 246, 246);
       background: $white;
       padding: em(20px) em(16px);
-      transition: all $speed ease;
+      transition: border-color $speed ease, box-shadow $speed ease;
       @include ifdesktop {
         padding: em(28px) em(16px);
       }
