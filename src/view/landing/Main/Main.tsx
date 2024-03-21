@@ -5,7 +5,6 @@ import {
   Categories,
   Header,
   HowWorks,
-  HowWorks2,
   Questions,
   TypesOfJobs,
 } from 'components/landing/pages/main';
@@ -13,12 +12,11 @@ import {
 const Main: React.FC = () => {
   return (
     <div className={s.Main}>
-      {/* <Header />
+      <Header />
       <Advantages />
-      <TypesOfJobs /> */}
+      <TypesOfJobs />
       <Categories />
-      {/* <HowWorks /> */}
-      <HowWorks2 />
+      <HowWorks />
       <Questions />
     </div>
   );

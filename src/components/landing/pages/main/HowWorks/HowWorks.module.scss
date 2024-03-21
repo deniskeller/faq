@@ -151,6 +151,7 @@
 
       &_Line {
         position: absolute;
+        overflow: visible;
 
         &__Desktop {
           display: none;
@@ -178,10 +179,6 @@
           @include ifmobile {
             display: block;
           }
-        }
-
-        path {
-          opacity: 0;
         }
       }
 
@@ -250,7 +247,7 @@
             top: em(23px);
             left: em(22px);
             width: em(2px);
-            height: em(123px);
+            height: em(118px);
           }
         }
       }
@@ -321,7 +318,7 @@
             top: em(35px);
             left: em(30px);
             width: em(323px);
-            height: em(160px);
+            height: em(173px);
           }
           @include ifmobile {
             top: em(25px);
