@@ -12,9 +12,9 @@ import {
 const Main: React.FC = () => {
   return (
     <div className={s.Main}>
-      <Header />
+      {/* <Header />
       <Advantages />
-      <TypesOfJobs />
+      <TypesOfJobs /> */}
       <Categories />
       <HowWorks />
       <Questions />
