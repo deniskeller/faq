@@ -291,3 +291,239 @@ input[type='search']::-webkit-search-results-decoration {
   justify-content: center;
 }
 // ТЕЛЕФОН КОНЕЦ
+
+// АНИМАЦИЯ ЛИНИЙ
+
+// step 1 desktop
+.dashedDesktopStep1 {
+  stroke-dasharray: 14;
+}
+.pathDesktopStep1 {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+}
+.pathPlayDesktopStep1 {
+  animation: dashDesktopStep1 1s linear forwards;
+}
+@keyframes dashDesktopStep1 {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+// step 1 laptop
+.dashedLaptopStep1 {
+  stroke-dasharray: 7.47;
+}
+.pathLaptopStep1 {
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+}
+.pathPlayLaptopStep1 {
+  animation: dashLaptopStep1 1s linear forwards;
+}
+@keyframes dashLaptopStep1 {
+  from {
+    stroke-dashoffset: 800;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+// step 1 tablet
+.dashedTabletStep1 {
+  stroke-dasharray: 7.47;
+}
+.pathTabletStep1 {
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+}
+.pathPlayTabletStep1 {
+  animation: dashTabletStep1 1s linear forwards;
+}
+@keyframes dashTabletStep1 {
+  from {
+    stroke-dashoffset: 600;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+// step 1 mobile
+.dashedMobileStep1 {
+  stroke-dasharray: 8.1;
+}
+.pathMobileStep1 {
+  stroke-dasharray: 118;
+  stroke-dashoffset: 118;
+}
+.pathPlayMobileStep1 {
+  animation: dashMobileStep1 0.5s linear forwards;
+}
+@keyframes dashMobileStep1 {
+  from {
+    stroke-dashoffset: 118;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+// step 2 desktop
+.dashedDesktopStep2 {
+  stroke-dasharray: 14;
+}
+.pathDesktopStep2 {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+}
+.pathPlayDesktopStep2 {
+  animation: dashDesktopStep2 1s linear forwards;
+}
+@keyframes dashDesktopStep2 {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+// step 2 laptop
+.dashedLaptopStep2 {
+  stroke-dasharray: 8.1;
+}
+.pathLaptopStep2 {
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+}
+.pathPlayLaptopStep2 {
+  animation: dashLaptopStep2 1s linear forwards;
+}
+@keyframes dashLaptopStep2 {
+  from {
+    stroke-dashoffset: 800;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+// step 2 tablet
+.dashedTabletStep2 {
+  stroke-dasharray: 8.1;
+}
+.pathTabletStep2 {
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+}
+.pathPlayTabletStep2 {
+  animation: dashTabletStep2 1s linear forwards;
+}
+@keyframes dashTabletStep2 {
+  from {
+    stroke-dashoffset: 600;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+// step 2 mobile
+.dashedMobileStep2 {
+  stroke-dasharray: 8;
+}
+.pathMobileStep2 {
+  stroke-dasharray: 140;
+  stroke-dashoffset: 140;
+}
+.pathPlayMobileStep2 {
+  animation: dashMobileStep2 0.5s linear forwards;
+}
+@keyframes dashMobileStep2 {
+  from {
+    stroke-dashoffset: 140;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+// step 3 desktop
+.dashedDesktopStep3 {
+  stroke-dasharray: 14;
+}
+.pathDesktopStep3 {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+}
+.pathPlayDesktopStep3 {
+  animation: dashDesktopStep3 1s linear forwards;
+}
+@keyframes dashDesktopStep3 {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+// step 3 laptop
+.dashedLaptopStep3 {
+  stroke-dasharray: 7.47;
+}
+.pathLaptopStep3 {
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+}
+.pathPlayLaptopStep3 {
+  animation: dashLaptopStep3 1s linear forwards;
+}
+@keyframes dashLaptopStep3 {
+  from {
+    stroke-dashoffset: 800;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+// step 3 tablet
+.dashedTabletStep3 {
+  stroke-dasharray: 7.47;
+}
+.pathTabletStep3 {
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+}
+.pathPlayTabletStep3 {
+  animation: dashTabletStep3 1s linear forwards;
+}
+@keyframes dashTabletStep3 {
+  from {
+    stroke-dashoffset: 600;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+// step 3 mobile
+.dashedMobileStep3 {
+  stroke-dasharray: 8;
+}
+.pathMobileStep3 {
+  stroke-dasharray: 270;
+  stroke-dashoffset: 270;
+}
+.pathPlayMobileStep3 {
+  animation: dashMobileStep3 0.5s linear forwards;
+}
+@keyframes dashMobileStep3 {
+  from {
+    stroke-dashoffset: 270;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}

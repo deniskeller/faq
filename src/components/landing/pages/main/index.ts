@@ -4,3 +4,4 @@ export { default as TypesOfJobs } from "./TypesOfJobs/TypesOfJobs";
 export { default as Categories } from "./Categories/Categories";
 export { default as HowWorks } from "./HowWorks/HowWorks";
 export { default as Questions } from "./Questions/Questions";
+export { default as HowWorks2 } from "./HowWorks2/HowWorks";
