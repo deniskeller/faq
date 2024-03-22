@@ -208,7 +208,7 @@ const SignUp: React.FC = () => {
               onChange={() => setChecked(!checked)}
               className={s.Form_Checkbox}
             >
-              I have read, understood and accept the &nbsp;
+              I have read and accept the&nbsp;
               <Link href={'/terms-and-conditions'}>Terms and Conditions</Link>
             </BaseCheckbox>
 

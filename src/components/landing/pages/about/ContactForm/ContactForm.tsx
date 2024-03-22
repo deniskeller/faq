@@ -169,7 +169,7 @@ const ContactForm: React.FC = () => {
               className={s.Checkbox}
               error={error}
             >
-              I have read and agree with the&nbsp;
+              I have read and accept the&nbsp;
               <Link href={'/terms-and-conditions'}>terms and conditions</Link>
               &nbsp; and&nbsp;
               <Link href={'/privacy-policy'}>privacy policy</Link>
