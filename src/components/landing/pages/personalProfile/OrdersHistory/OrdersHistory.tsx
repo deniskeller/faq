@@ -2,6 +2,7 @@ import React, { useLayoutEffect, useRef, useState } from 'react';
 import s from './OrdersHistory.module.scss';
 import { BaseContainer } from '@base/index';
 import { ReactLenis, useLenis } from '@studio-freight/react-lenis';
+var GeminiScrollbar = require('react-gemini-scrollbar');
 
 const orderList = [
   {
@@ -113,6 +114,7 @@ const OrdersHistory: React.FC = () => {
               </div>
             </div>
             <ReactLenis options={{ smoothWheel: false }}>
+              {/* <GeminiScrollbar></GeminiScrollbar> */}
               <div className={s.TBody} ref={scrollBlock}>
                 {orders?.map((item, index) => {
                   return (

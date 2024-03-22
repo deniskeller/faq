@@ -21,6 +21,7 @@
     "react-device-detect": "^2.2.3",
     "react-dom": "^18",
     "react-dropzone": "^14.2.3",
+    "react-gemini-scrollbar": "^2.3.4",
     "react-hot-toast": "^2.4.1",
     "react-phone-input-2": "^2.15.1",
     "react-verification-input": "^4.1.1",

@@ -239,7 +239,7 @@
             gap: em(7px) em(21px);
           }
           @include iftablet {
-            gap: em(7px) em(14px);
+            gap: em(8px) em(16px);
           }
           .PaperFormatItem {
             display: flex;
@@ -257,6 +257,9 @@
               font-weight: 400;
               font-size: em(16px);
               color: $grey;
+              @include iftablet {
+                font-size: em(15px);
+              }
             }
 
             &_Tooltip {
