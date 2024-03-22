@@ -228,7 +228,7 @@
           2px -4px 12px 0px rgba(193, 253, 97, 0.6);
       }
 
-      &:active {
+      &:nth-child(2n):hover {
         border: 2px solid rgba(118, 86, 245, 0.6);
         box-shadow: -2px 4px 12px 0px rgba(118, 86, 245, 0.6),
           2px -4px 12px 0px rgba(118, 86, 245, 0.6);

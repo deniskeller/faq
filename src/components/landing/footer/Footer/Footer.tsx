@@ -257,8 +257,8 @@ const Footer: React.FC<Props> = () => {
 
         <div className={s.Footer_Copyright}>
           <p>
-            Copyright © 2023 FN MEDIA LTD (dba FAQSolutions) | All rights
-            reserved
+            Copyright © 2023 FN MEDIA LTD (dba FAQSolutions) |{' '}
+            <br className={s.Footer_Copyright_Br} /> All rights reserved
           </p>
         </div>
       </BaseContainer>

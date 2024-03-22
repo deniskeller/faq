@@ -25,6 +25,7 @@
   background: rgb(255, 255, 255);
   line-height: 100%;
   @include placeholder-color(transparent);
+  transition: border-color $speed ease;
 
   &__DefaultPadding {
     padding: em(15px) em(16px) em(15px) em(10px);
@@ -71,7 +72,7 @@
   &__Focus {
     border-color: rgb(118, 86, 245);
     border-radius: em(8px) em(8px) 0 0;
-    border-bottom: 1px solid rgb(255, 255, 255) !important;
+    // border-bottom: 1px solid rgb(255, 255, 255) !important;
     .SelectHeader_Chevron {
       transform: translate(0, -50%) rotate(0deg);
     }
@@ -98,6 +99,7 @@
   overflow: auto;
   border-radius: 0 0 em(8px) em(8px);
   border: 1px solid rgb(118, 86, 245);
+  border-top: none;
   background: rgb(255, 255, 255);
   box-shadow: 0px 15px 12px -8px rgba(0, 0, 0, 0.05);
 
@@ -168,10 +170,6 @@
   }
 }
 
-.Error {
-  border-bottom: 1px solid $error !important;
-}
-
 .Disabled {
   cursor: not-allowed;
   pointer-events: none;
@@ -209,9 +207,22 @@
   .SelectHeader {
     height: em(38px);
     padding: em(4px) em(36px) em(4px) em(8px);
+    border-color: #f0f0f0;
     p {
       font-size: em(20px);
       color: rgb(99, 99, 99);
+    }
+
+    &__Focus {
+      border-color: rgb(118, 86, 245);
+    }
+
+    &:hover {
+      border-color: rgb(118, 86, 245);
+    }
+
+    &__Error {
+      border-color: $error !important;
     }
   }
 }

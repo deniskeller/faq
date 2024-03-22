@@ -132,8 +132,6 @@ const ContactForm: React.FC = () => {
               value={value.email}
               onChange={(val: string) => setNewValue(val, 'email')}
               required={false}
-              error
-              errorText="werwer"
             />
 
             <BaseSelect

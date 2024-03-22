@@ -128,8 +128,7 @@ const Advantages: React.FC = () => {
           ref={refAdvantages}
         >
           {/* 1 */}
-          <Link
-            href={'/'}
+          <div
             className={`${s.AdvantageCard} ${s.AdvantageCard__ReasonablePrices}`}
             ref={refCard_1}
           >
@@ -150,11 +149,10 @@ const Advantages: React.FC = () => {
                 pay for the discussed work.
               </p>
             </div>
-          </Link>
+          </div>
 
           {/* 2 */}
-          <Link
-            href={'/'}
+          <div
             className={`${s.AdvantageCard} ${s.AdvantageCard__UniquenessGuaranteed}`}
           >
             <Image
@@ -174,13 +172,10 @@ const Advantages: React.FC = () => {
                 check every work before delivery.
               </p>
             </div>
-          </Link>
+          </div>
 
           {/* 3 */}
-          <Link
-            href={'/'}
-            className={`${s.AdvantageCard} ${s.AdvantageCard__Support}`}
-          >
+          <div className={`${s.AdvantageCard} ${s.AdvantageCard__Support}`}>
             <Image
               src="/pictures/icons/support.webp"
               width={134}
@@ -198,11 +193,10 @@ const Advantages: React.FC = () => {
                 rush orders even at night.
               </p>
             </div>
-          </Link>
+          </div>
 
           {/* 4 */}
-          <Link
-            href={'/'}
+          <div
             className={`${s.AdvantageCard} ${s.AdvantageCard__PrivacyGuarantee}`}
           >
             <Image
@@ -222,13 +216,10 @@ const Advantages: React.FC = () => {
                 with third parties without your consent.
               </p>
             </div>
-          </Link>
+          </div>
 
           {/* 5 */}
-          <Link
-            href={'/'}
-            className={`${s.AdvantageCard} ${s.AdvantageCard__TopWriters}`}
-          >
+          <div className={`${s.AdvantageCard} ${s.AdvantageCard__TopWriters}`}>
             <Image
               src="/pictures/icons/top-writers.webp"
               width={97}
@@ -246,13 +237,10 @@ const Advantages: React.FC = () => {
                 diverse subjects and topics.
               </p>
             </div>
-          </Link>
+          </div>
 
           {/* 6 */}
-          <Link
-            href={'/'}
-            className={`${s.AdvantageCard} ${s.AdvantageCard__OnTime}`}
-          >
+          <div className={`${s.AdvantageCard} ${s.AdvantageCard__OnTime}`}>
             <Image
               src="/pictures/icons/on-time.webp"
               width={90}
@@ -270,7 +258,7 @@ const Advantages: React.FC = () => {
                 maybe even a little earlier).
               </p>
             </div>
-          </Link>
+          </div>
         </div>
 
         <div className={s.Advantages_ShowMore} onClick={showMoreHundler}>

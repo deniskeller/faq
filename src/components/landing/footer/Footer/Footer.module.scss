@@ -25,7 +25,7 @@
 
   &_Logo {
     @include ifmobile {
-      margin-bottom: em(28px);
+      margin-bottom: em(30px);
     }
   }
 
@@ -87,6 +87,10 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(4, 1fr);
     margin: 0 em(200px) 0 em(180px);
+    @include ifdesktop {
+      width: 100%;
+      max-width: em(648px);
+    }
     @include iflaptop {
       margin: 0 em(50px) 0 em(56px);
     }
@@ -96,14 +100,14 @@
       grid-row-start: 1;
       grid-row-end: 3;
       margin: 0 0 em(28px) em(40px);
-      row-gap: em(12px);
+      gap: em(12px) em(80px);
     }
     @include ifmobile {
       grid-column-start: auto;
       grid-column-end: auto;
       grid-row-start: auto;
       grid-row-end: auto;
-      margin: 0 0 em(32px) 0;
+      margin: 0 0 em(30px) 0;
       row-gap: em(12px);
     }
 
@@ -129,7 +133,7 @@
       background-position: 100%;
       transition: background-position $speed ease;
       @include ifmobile {
-        font-size: em(12px);
+        font-size: em(13px);
       }
       &:hover {
         // color: $purple;
@@ -204,6 +208,19 @@
       }
       @include ifmobile {
         font-size: em(12px);
+      }
+    }
+
+    &_Br {
+      display: none;
+      @include iflaptop {
+        display: block;
+      }
+      @include iftablet {
+        display: none;
+      }
+      @include ifmobile {
+        display: block;
       }
     }
   }
