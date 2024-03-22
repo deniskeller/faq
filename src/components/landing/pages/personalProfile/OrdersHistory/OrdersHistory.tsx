@@ -1,8 +1,14 @@
-import React, { useLayoutEffect, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import s from './OrdersHistory.module.scss';
 import { BaseContainer } from '@base/index';
 import { ReactLenis, useLenis } from '@studio-freight/react-lenis';
-var GeminiScrollbar = require('react-gemini-scrollbar');
+
+import {
+  OverlayScrollbarsComponent,
+  useOverlayScrollbars,
+} from 'overlayscrollbars-react';
+// import 'overlayscrollbars/styles/overlayscrollbars.css';
+// import 'overlayscrollbars/overlayscrollbars.css';
 
 const orderList = [
   {
@@ -75,6 +81,18 @@ const OrdersHistory: React.FC = () => {
     if (status == 'Refund') return 'rgb(255, 5, 5)';
   };
 
+  const [initialize, instance] = useOverlayScrollbars({
+    // options,
+    // events,
+    // defer,
+  });
+
+  useEffect(() => {
+    if (scrollBlock.current != null) {
+      initialize(scrollBlock.current);
+    }
+  }, [initialize]);
+
   return (
     <section className={s.OrdersHistory}>
       <BaseContainer className={s.OrdersHistory_Container}>
@@ -88,7 +106,8 @@ const OrdersHistory: React.FC = () => {
 
         <div className={s.OrdersHistory_Table}>
           <div className={s.ScrollWrapper}>
-            <div className={s.THead} style={{ paddingRight: `${padding}px` }}>
+            {/* style={{ paddingRight: `${padding}px` }} */}
+            <div className={s.THead}>
               <div className={s.THead_Column}>
                 <span>Order ID</span>
               </div>
@@ -113,8 +132,8 @@ const OrdersHistory: React.FC = () => {
                 <span>Status</span>
               </div>
             </div>
+
             <ReactLenis options={{ smoothWheel: false }}>
-              {/* <GeminiScrollbar></GeminiScrollbar> */}
               <div className={s.TBody} ref={scrollBlock}>
                 {orders?.map((item, index) => {
                   return (

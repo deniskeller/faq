@@ -5,6 +5,8 @@ import '../styles/globals.scss';
 import { ReactLenis, useLenis } from '@studio-freight/react-lenis';
 import { Preloader } from '@content/landing/index';
 
+import 'overlayscrollbars/overlayscrollbars.css';
+
 export default function App({ Component, pageProps }: AppProps) {
   const [loading, setLoading] = React.useState(false);
 
@@ -27,7 +29,7 @@ export default function App({ Component, pageProps }: AppProps) {
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
         />
       </Head>
-      <ReactLenis root options={{ lerp: 0.05 }}>
+      <ReactLenis root options={{ lerp: 0.05, smoothWheel: false }}>
         {loading ? <Component {...pageProps} /> : <Preloader />}
       </ReactLenis>
     </>
