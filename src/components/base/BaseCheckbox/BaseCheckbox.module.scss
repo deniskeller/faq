@@ -23,8 +23,8 @@
     align-items: center;
     position: relative;
     box-sizing: border-box;
-    width: em(16px);
-    height: em(16px);
+    width: em(18px);
+    height: em(18px);
     border-radius: em(3px);
     border: 2px solid rgb(153, 153, 153);
     transform: translateY(em(1px));
@@ -42,6 +42,7 @@
     display: flex;
     line-height: 100%;
     margin-left: em(10px);
+    margin-top: em(2px);
     p {
       color: rgb(99, 99, 99);
       font-family: 'Poppins', sans-serif;

@@ -94,9 +94,12 @@
           minmax(em(95px), 1fr) minmax(em(100px), 1fr) minmax(em(136px), 1fr);
       }
       @include ifmobile {
-        grid-template-columns:
-          minmax(em(118px), 1fr) minmax(em(132px), 1fr) minmax(em(148px), 1fr)
-          minmax(em(95px), 1fr) minmax(em(100px), 1fr) minmax(em(136px), 1fr);
+        // grid-template-columns:
+        //   minmax(em(118px), 1fr) minmax(em(132px), 1fr) minmax(em(148px), 1fr)
+        //   minmax(em(95px), 1fr) minmax(em(100px), 1fr) minmax(em(136px), 1fr);
+        grid-template-columns: em(112px) em(129px) em(140px) em(84px) em(100px) em(
+            130px
+          );
       }
 
       &_Column {
@@ -113,7 +116,7 @@
           padding: 0 em(10px) 0 em(20px);
         }
         @include ifmobile {
-          min-height: em(56px);
+          min-height: em(52px);
           padding: 0 em(10px) 0 em(20px);
         }
         span {
@@ -124,7 +127,7 @@
             font-size: em(15px);
           }
           @include ifmobile {
-            font-size: em(15px);
+            font-size: em(14px);
           }
         }
       }
@@ -163,9 +166,12 @@
             minmax(em(95px), 1fr) minmax(em(100px), 1fr) minmax(em(136px), 1fr);
         }
         @include ifmobile {
+          // grid-template-columns:
+          //   minmax(em(118px), 1fr) minmax(em(132px), 1fr) minmax(em(148px), 1fr)
+          //   minmax(em(95px), 1fr) minmax(em(100px), 1fr) minmax(em(136px), 1fr);
           grid-template-columns:
-            minmax(em(118px), 1fr) minmax(em(132px), 1fr) minmax(em(148px), 1fr)
-            minmax(em(95px), 1fr) minmax(em(100px), 1fr) minmax(em(136px), 1fr);
+            em(112px) em(129px) em(140px) em(84px) em(100px)
+            em(130px);
         }
 
         &:not(:last-child) {
@@ -186,6 +192,8 @@
             padding: em(4px) em(10px) em(4px) em(20px);
           }
           @include ifmobile {
+            min-height: em(48px);
+            padding: em(4px) em(10px) em(4px) em(20px);
           }
           &:not(:last-child) {
             border-right: 2px solid $border;
@@ -201,7 +209,7 @@
               font-size: em(14px);
             }
             @include ifmobile {
-              font-size: em(14px);
+              font-size: em(13px);
             }
           }
           .Marker {

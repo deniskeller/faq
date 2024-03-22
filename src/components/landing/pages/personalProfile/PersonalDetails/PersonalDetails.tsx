@@ -50,7 +50,7 @@ const PersonalDetails: React.FC = () => {
           </div>
 
           <div className={s.PersonalDetails_Subtitle}>
-            <p>Wiev and edit your data</p>
+            <p>View and edit your data</p>
           </div>
 
           <form className={s.PersonalDetails_Form} autoComplete="off">

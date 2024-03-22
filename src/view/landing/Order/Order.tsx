@@ -15,6 +15,7 @@ import {
 import { ALL_ICONS } from '@constants/icons';
 import Link from 'next/link';
 import { UploadFile } from '@content/landing/index';
+import toast from 'react-hot-toast';
 
 interface IFormData {
   fullname: string;
@@ -80,8 +81,11 @@ const Order: React.FC = () => {
 
   const submitHandler = (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    if (value.email != '') {
-      router.push('/');
+    if (value.fullname != '') {
+      // router.push('/');
+      toast.success('Thank you! Our manager will contact you shortly.', {
+        duration: 3000,
+      });
     } else {
       setError(true);
     }
@@ -402,6 +406,7 @@ const Order: React.FC = () => {
                   onChange={(val: string) => setNewValue(val, 'message')}
                   className={s.Message}
                   required={false}
+                  maxLength={500}
                 />
               </div>
             </div>
