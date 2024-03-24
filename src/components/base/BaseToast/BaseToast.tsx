@@ -1,5 +1,5 @@
 //@ts-nocheck
-import React from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { ToastType, toast as toastOBj, useToaster } from 'react-hot-toast';
 import s from './BaseToast.module.scss';
 import Link from 'next/link';
@@ -7,6 +7,40 @@ import Link from 'next/link';
 const BaseToast: React.FC = () => {
   const { toasts, handlers } = useToaster();
   const { startPause, endPause, calculateOffset, updateHeight } = handlers;
+
+  const [countdown, setCountdown] = useState(3);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const startTimer = useCallback(() => {
+    setIsPlaying(true);
+
+    // if (isPlaying) {
+    //   const interval = setInterval(() => {
+    //     setCountdown((prevState) => prevState - 1);
+
+    //     if (countdown === 0) {
+    //       clearInterval(interval);
+    //       setIsPlaying(false);
+    //       setCountdown(3);
+    //     }
+    //   }, 1000);
+    // }
+
+    countdown > 0 && setTimeout(() => setCountdown(countdown - 1), 1000);
+    if (countdown == 0) {
+      setCountdown(3);
+    }
+  }, [countdown]);
+
+  useEffect(() => {
+    console.log('countdown: ', countdown);
+  }, [countdown]);
+
+  useEffect(() => {
+    if (toasts[0]?.visible) {
+      startTimer();
+    }
+  }, [startTimer, toasts]);
 
   // console.log('toasts: ', toasts);
 
@@ -90,7 +124,7 @@ const BaseToast: React.FC = () => {
                     />
                   </svg>
 
-                  <div className={s.Value}>3</div>
+                  <div className={s.Value}>{countdown}</div>
                 </div>
               </div>
 

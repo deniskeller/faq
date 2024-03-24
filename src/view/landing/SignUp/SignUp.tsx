@@ -54,9 +54,9 @@ const SignUp: React.FC = () => {
     e.preventDefault();
     if (value.fullname != '') {
       // router.push('/');
-      toast.success('Thank you! Our manager will contact you shortly.', {
+      toast.success('Successful Registration!', {
         duration: 3000,
-        // className: 'login',
+        className: 'login',
       });
     } else {
       setError(true);
