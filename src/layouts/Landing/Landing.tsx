@@ -35,18 +35,18 @@ const Landing: React.FC<Props> = ({ children, footer = true }) => {
 
   return (
     <>
-      <OverlayScrollbarsComponent
+      {/* <OverlayScrollbarsComponent
         className="overlayscrollbars-react222222222222"
         defer
-      >
-        <div className={s.Landing}>
-          <Header pages={pages} />
+      > */}
+      <div className={s.Landing}>
+        <Header pages={pages} />
 
-          <div className={s.Content}>{children}</div>
+        <div className={s.Content}>{children}</div>
 
-          {footer ? <Footer /> : null}
-        </div>
-      </OverlayScrollbarsComponent>
+        {footer ? <Footer /> : null}
+      </div>
+      {/* </OverlayScrollbarsComponent> */}
 
       <BaseToast />
     </>
