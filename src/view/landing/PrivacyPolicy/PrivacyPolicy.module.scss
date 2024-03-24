@@ -71,6 +71,7 @@
           margin-bottom: em(16px);
         }
         @include ifmobile {
+          margin-bottom: em(20px);
         }
       }
 
@@ -90,13 +91,13 @@
             font-size: em(20px);
             font-weight: 500;
             @include iflaptop {
-              font-size: em(18px);
+              font-size: em(16px);
             }
             @include iftablet {
-              font-size: em(18px);
+              font-size: em(16px);
             }
             @include ifmobile {
-              font-size: em(16px);
+              font-size: em(15px);
             }
           }
         }
@@ -128,12 +129,8 @@
               font-size: em($size);
               font-style: normal;
               font-weight: 400;
-              @include iflaptop {
-                $size: 14px;
-                font-size: em($size);
-              }
               @include iftablet {
-                $size: 14px;
+                $size: 15px;
                 font-size: em($size);
               }
               @include ifmobile {
@@ -173,11 +170,11 @@
                 font-weight: 400;
                 line-height: 150%;
                 @include iflaptop {
-                  $size: 14px;
+                  $size: 15px;
                   font-size: em($size);
                 }
                 @include iftablet {
-                  $size: 14px;
+                  $size: 15px;
                   font-size: em($size);
                 }
                 @include ifmobile {
@@ -250,6 +247,9 @@
           line-height: 100%;
           &:not(:last-child) {
             margin-bottom: em(12px);
+            @include iflaptop {
+              margin-bottom: em(14px);
+            }
           }
           &::before {
             display: block;
@@ -265,24 +265,27 @@
           }
 
           p {
-            color: $grey;
+            color: #636363;
             font-size: em(14px);
             font-weight: 400;
             line-height: 140%;
             transition: all $speed ease;
             user-select: none;
-            @include iflaptop {
-              font-size: em(12px);
-            }
           }
           &:hover {
             p {
-              color: rgba(12, 5, 40, 1);
+              color: #0c0528;
             }
           }
           &:active {
             &::before {
               opacity: 1;
+            }
+          }
+
+          &__Active {
+            p {
+              color: #0c0528;
             }
           }
         }

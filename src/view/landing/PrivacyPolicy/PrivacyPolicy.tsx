@@ -5,8 +5,8 @@ import { useRouter } from 'next/navigation';
 import { ToMainPage } from '@content/landing/index';
 import Link from 'next/link';
 
-// var Scroll = require('react-scroll');
-// var scroller = Scroll.scroller;
+var Scroll = require('react-scroll');
+var scroller = Scroll.scroller;
 
 const PrivacyPolicy: React.FC = () => {
   const router = useRouter();
@@ -32,12 +32,12 @@ const PrivacyPolicy: React.FC = () => {
   const handleClickNavbar = (index: number) => {
     setIsActive(index);
 
-    // scroller.scrollTo(`section-${index + 1}`, {
-    //   duration: 0,
-    //   delay: 0,
-    //   smooth: true,
-    //   offset: -100,
-    // });
+    scroller.scrollTo(`section-${index + 1}`, {
+      duration: 0,
+      delay: 0,
+      smooth: true,
+      offset: -100,
+    });
   };
 
   return (
@@ -458,7 +458,9 @@ const PrivacyPolicy: React.FC = () => {
                 {navbar_links?.map((link, index) => {
                   return (
                     <li
-                      className={s.Sidebar_Navbar_Item}
+                      className={`${s.Sidebar_Navbar_Item} ${
+                        index == isActive ? s.Sidebar_Navbar_Item__Active : null
+                      }`}
                       key={index}
                       onClick={() => handleClickNavbar(index)}
                     >

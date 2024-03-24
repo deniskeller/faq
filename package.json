@@ -25,6 +25,7 @@
     "react-dropzone": "^14.2.3",
     "react-hot-toast": "^2.4.1",
     "react-phone-input-2": "^2.15.1",
+    "react-scroll": "^1.9.0",
     "react-verification-input": "^4.1.1",
     "sass": "^1.71.1"
   },
