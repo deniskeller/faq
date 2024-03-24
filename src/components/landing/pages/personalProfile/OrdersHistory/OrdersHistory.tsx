@@ -1,6 +1,6 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import s from './OrdersHistory.module.scss';
-import { BaseContainer } from '@base/index';
+import { BaseButton, BaseContainer } from '@base/index';
 import { ReactLenis, useLenis } from '@studio-freight/react-lenis';
 
 import {
@@ -9,6 +9,16 @@ import {
 } from 'overlayscrollbars-react';
 // import 'overlayscrollbars/styles/overlayscrollbars.css';
 // import 'overlayscrollbars/overlayscrollbars.css';
+
+interface IOrder {
+  id: number;
+  orderId: number;
+  service: string;
+  writerLevel: string;
+  pages: number;
+  amount: number;
+  status: string;
+}
 
 const orderList = [
   {
@@ -60,7 +70,8 @@ for (let i = 1; i < 20; i++) {
 }
 
 const OrdersHistory: React.FC = () => {
-  const [orders, setOrders] = useState(orderList);
+  // const [orders, setOrders] = useState(orderList);
+  const [orders, setOrders] = useState<IOrder[]>([]);
 
   //вычислаем ширину скрола в текущем браузере
   const scrollBlock = useRef<HTMLDivElement>(null);
@@ -104,79 +115,95 @@ const OrdersHistory: React.FC = () => {
           <p>Discover all of your orders for all time</p>
         </div>
 
-        <div className={s.OrdersHistory_Table}>
-          <div className={s.ScrollWrapper}>
-            {/* style={{ paddingRight: `${padding}px` }} */}
-            <div className={s.THead}>
-              <div className={s.THead_Column}>
-                <span>Order ID</span>
-              </div>
+        {orders?.length > 0 ? (
+          <>
+            <div className={s.OrdersHistory_Table}>
+              <div className={s.ScrollWrapper}>
+                {/* style={{ paddingRight: `${padding}px` }} */}
+                <div className={s.THead}>
+                  <div className={s.THead_Column}>
+                    <span>Order ID</span>
+                  </div>
 
-              <div className={s.THead_Column}>
-                <span>Service</span>
-              </div>
+                  <div className={s.THead_Column}>
+                    <span>Service</span>
+                  </div>
 
-              <div className={s.THead_Column}>
-                <span>Writer level</span>
-              </div>
+                  <div className={s.THead_Column}>
+                    <span>Writer level</span>
+                  </div>
 
-              <div className={s.THead_Column}>
-                <span>Pages</span>
-              </div>
+                  <div className={s.THead_Column}>
+                    <span>Pages</span>
+                  </div>
 
-              <div className={s.THead_Column}>
-                <span>Amount</span>
-              </div>
+                  <div className={s.THead_Column}>
+                    <span>Amount</span>
+                  </div>
 
-              <div className={s.THead_Column}>
-                <span>Status</span>
+                  <div className={s.THead_Column}>
+                    <span>Status</span>
+                  </div>
+                </div>
+
+                <ReactLenis options={{ smoothWheel: false }}>
+                  <div className={s.TBody} ref={scrollBlock}>
+                    {orders?.map((item, index) => {
+                      return (
+                        <div className={s.TBody_Row} key={index}>
+                          <div className={s.TBody_Row_Column}>
+                            <span className={s.OrderId}>{item.orderId}</span>
+                          </div>
+
+                          <div className={s.TBody_Row_Column}>
+                            <span className={s.Service}>{item.service}</span>
+                          </div>
+
+                          <div className={s.TBody_Row_Column}>
+                            <span className={s.WriterLevel}>
+                              {item.writerLevel}
+                            </span>
+                          </div>
+
+                          <div className={s.TBody_Row_Column}>
+                            <span className={s.Pages}>{item.pages}</span>
+                          </div>
+
+                          <div className={s.TBody_Row_Column}>
+                            <span className={s.Amount}>{item.amount}</span>
+                          </div>
+
+                          <div className={s.TBody_Row_Column}>
+                            <span
+                              className={s.Marker}
+                              style={{
+                                background: computedStatusBackground(
+                                  item.status
+                                ),
+                              }}
+                            ></span>
+
+                            <span className={s.Status}>{item.status}</span>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </ReactLenis>
               </div>
             </div>
+          </>
+        ) : (
+          <div className={s.OrdersHistory_OrderListEmpty}>
+            <div className={s.Title}>
+              <h3>You haven't made any orders yet</h3>
+            </div>
 
-            <ReactLenis options={{ smoothWheel: false }}>
-              <div className={s.TBody} ref={scrollBlock}>
-                {orders?.map((item, index) => {
-                  return (
-                    <div className={s.TBody_Row} key={index}>
-                      <div className={s.TBody_Row_Column}>
-                        <span className={s.OrderId}>{item.orderId}</span>
-                      </div>
-
-                      <div className={s.TBody_Row_Column}>
-                        <span className={s.Service}>{item.service}</span>
-                      </div>
-
-                      <div className={s.TBody_Row_Column}>
-                        <span className={s.WriterLevel}>
-                          {item.writerLevel}
-                        </span>
-                      </div>
-
-                      <div className={s.TBody_Row_Column}>
-                        <span className={s.Pages}>{item.pages}</span>
-                      </div>
-
-                      <div className={s.TBody_Row_Column}>
-                        <span className={s.Amount}>{item.amount}</span>
-                      </div>
-
-                      <div className={s.TBody_Row_Column}>
-                        <span
-                          className={s.Marker}
-                          style={{
-                            background: computedStatusBackground(item.status),
-                          }}
-                        ></span>
-
-                        <span className={s.Status}>{item.status}</span>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </ReactLenis>
+            <BaseButton as="a" href="/order" className={s.Button}>
+              Place an order
+            </BaseButton>
           </div>
-        </div>
+        )}
       </BaseContainer>
     </section>
   );

@@ -229,6 +229,66 @@
       }
     }
   }
+
+  &_OrderListEmpty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #f0f0f0;
+    border-radius: em(16px);
+    padding: em(40px) em(100px) em(60px);
+    width: 100%;
+    min-height: em(219px);
+    box-shadow: -2px 4px 12px 0 #f6f6f6;
+    background: #fff;
+    @include iflaptop {
+      padding: em(40px) em(100px) em(48px);
+      min-height: em(185px);
+    }
+    @include iftablet {
+      padding: em(28px) em(100px) em(32px);
+      min-height: em(154px);
+    }
+    @include ifmobile {
+      padding: em(28px) em(20px) em(32px);
+      min-height: em(154px);
+      max-width: em(336px);
+      margin: 0 auto;
+    }
+
+    .Title {
+      margin-bottom: em(28px);
+      @include iflaptop {
+        margin-bottom: em(20px);
+      }
+      @include iftablet {
+        margin-bottom: em(20px);
+      }
+      @include ifmobile {
+        margin-bottom: em(20px);
+      }
+      h3 {
+        font-weight: 500;
+        font-size: em(20px);
+        color: #373737;
+        @include iflaptop {
+          font-size: em(18px);
+        }
+        @include iftablet {
+          font-size: em(16px);
+        }
+        @include ifmobile {
+          font-size: em(16px);
+        }
+      }
+    }
+    .Button {
+      @include ifmobile {
+        width: 100%;
+      }
+    }
+  }
 }
 
 @include iflaptop {
