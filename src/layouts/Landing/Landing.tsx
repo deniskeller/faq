@@ -5,7 +5,6 @@ import { Header } from 'components/landing/header';
 import { Footer } from 'components/landing/footer';
 import { BaseToast } from '@base/index';
 
-import { OverlayScrollbarsComponent } from 'overlayscrollbars-react';
 const pages = [
   {
     name: 'Order',
@@ -35,10 +34,6 @@ const Landing: React.FC<Props> = ({ children, footer = true }) => {
 
   return (
     <>
-      {/* <OverlayScrollbarsComponent
-        className="overlayscrollbars-react222222222222"
-        defer
-      > */}
       <div className={s.Landing}>
         <Header pages={pages} />
 
@@ -46,7 +41,6 @@ const Landing: React.FC<Props> = ({ children, footer = true }) => {
 
         {footer ? <Footer /> : null}
       </div>
-      {/* </OverlayScrollbarsComponent> */}
 
       <BaseToast />
     </>

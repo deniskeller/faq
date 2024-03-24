@@ -259,6 +259,7 @@
 
     .Overlay {
       @extend %fullsize;
+      height: 100vh;
       background: rgba(55, 55, 55, 0.3);
     }
 

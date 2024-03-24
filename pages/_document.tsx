@@ -2,7 +2,7 @@ import { Head, Html, Main, NextScript } from 'next/document';
 
 export default function Document() {
   return (
-    <Html lang="en" data-overlayscrollbars-initialize>
+    <Html lang="en">
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -17,7 +17,7 @@ export default function Document() {
       </Head>
       <title>FAQ solution</title>
 
-      <body data-overlayscrollbars-initialize>
+      <body>
         <Main />
         <NextScript />
       </body>

@@ -70,8 +70,8 @@ for (let i = 1; i < 20; i++) {
 }
 
 const OrdersHistory: React.FC = () => {
-  // const [orders, setOrders] = useState(orderList);
-  const [orders, setOrders] = useState<IOrder[]>([]);
+  const [orders, setOrders] = useState(orderList);
+  // const [orders, setOrders] = useState<IOrder[]>([]);
 
   //вычислаем ширину скрола в текущем браузере
   const scrollBlock = useRef<HTMLDivElement>(null);
